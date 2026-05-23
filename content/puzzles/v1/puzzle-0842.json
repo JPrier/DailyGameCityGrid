@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "daily-game-puzzle.v1",
+  "gameId": "city-grid",
+  "puzzleId": "city-grid-v1-0842",
+  "date": "2026-01-01",
+  "seed": "city-grid-v1-0842",
+  "display": {
+    "title": "City Grid",
+    "initialPrompt": "Identify the city from the unlabeled street grid."
+  },
+  "extension": {
+    "answer": {
+      "entityId": "city:us:ny:new-york",
+      "canonicalName": "New York",
+      "aliases": [
+        "New York City",
+        "NYC",
+        "New York, NY",
+        "New York NY"
+      ],
+      "countryCode": "US",
+      "country": "United States",
+      "admin1": "New York",
+      "lat": 40.7128,
+      "lon": -74.006,
+      "population": 8804190
+    },
+    "candidateSetId": "world-famous-cities-v1",
+    "assetStages": [
+      {
+        "stage": 0,
+        "assetPath": "content/assets/v1/city-grid/new-york/stage-0.svg",
+        "reveals": [
+          "roads-tight"
+        ]
+      },
+      {
+        "stage": 1,
+        "assetPath": "content/assets/v1/city-grid/new-york/stage-1.svg",
+        "reveals": [
+          "roads-wide"
+        ]
+      },
+      {
+        "stage": 2,
+        "assetPath": "content/assets/v1/city-grid/new-york/stage-2.svg",
+        "reveals": [
+          "water",
+          "coastline"
+        ]
+      },
+      {
+        "stage": 3,
+        "assetPath": "content/assets/v1/city-grid/new-york/stage-3.svg",
+        "reveals": [
+          "parks",
+          "rail"
+        ]
+      },
+      {
+        "stage": 4,
+        "assetPath": "content/assets/v1/city-grid/new-york/stage-4.svg",
+        "reveals": [
+          "landmarks",
+          "metro-outline"
+        ]
+      },
+      {
+        "stage": 5,
+        "assetPath": "content/assets/v1/city-grid/new-york/stage-5.svg",
+        "reveals": [
+          "full-map",
+          "answer-context"
+        ]
+      }
+    ],
+    "clues": {
+      "continent": "North America",
+      "country": "United States",
+      "populationBand": "5m+",
+      "coastal": true,
+      "hasMajorRapidTransit": true
+    }
+  }
+}

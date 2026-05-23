@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "daily-game-puzzle.v1",
+  "gameId": "city-grid",
+  "puzzleId": "city-grid-v1-0189",
+  "date": "2026-01-01",
+  "seed": "city-grid-v1-0189",
+  "display": {
+    "title": "City Grid",
+    "initialPrompt": "Identify the city from the unlabeled street grid."
+  },
+  "extension": {
+    "answer": {
+      "entityId": "city:gb:eng:london",
+      "canonicalName": "London",
+      "aliases": [
+        "London, UK",
+        "London England",
+        "Greater London",
+        "London GB"
+      ],
+      "countryCode": "GB",
+      "country": "United Kingdom",
+      "admin1": "England",
+      "lat": 51.5072,
+      "lon": -0.1276,
+      "population": 8982000
+    },
+    "candidateSetId": "world-famous-cities-v1",
+    "assetStages": [
+      {
+        "stage": 0,
+        "assetPath": "content/assets/v1/city-grid/london/stage-0.svg",
+        "reveals": [
+          "roads-tight"
+        ]
+      },
+      {
+        "stage": 1,
+        "assetPath": "content/assets/v1/city-grid/london/stage-1.svg",
+        "reveals": [
+          "roads-wide"
+        ]
+      },
+      {
+        "stage": 2,
+        "assetPath": "content/assets/v1/city-grid/london/stage-2.svg",
+        "reveals": [
+          "water",
+          "coastline"
+        ]
+      },
+      {
+        "stage": 3,
+        "assetPath": "content/assets/v1/city-grid/london/stage-3.svg",
+        "reveals": [
+          "parks",
+          "rail"
+        ]
+      },
+      {
+        "stage": 4,
+        "assetPath": "content/assets/v1/city-grid/london/stage-4.svg",
+        "reveals": [
+          "landmarks",
+          "metro-outline"
+        ]
+      },
+      {
+        "stage": 5,
+        "assetPath": "content/assets/v1/city-grid/london/stage-5.svg",
+        "reveals": [
+          "full-map",
+          "answer-context"
+        ]
+      }
+    ],
+    "clues": {
+      "continent": "Europe",
+      "country": "United Kingdom",
+      "populationBand": "5m+",
+      "coastal": false,
+      "hasMajorRapidTransit": true
+    }
+  }
+}

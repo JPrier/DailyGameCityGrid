@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "daily-game-puzzle.v1",
+  "gameId": "city-grid",
+  "puzzleId": "city-grid-v1-0471",
+  "date": "2026-01-01",
+  "seed": "city-grid-v1-0471",
+  "display": {
+    "title": "City Grid",
+    "initialPrompt": "Identify the city from the unlabeled street grid."
+  },
+  "extension": {
+    "answer": {
+      "entityId": "city:jp:tokyo:tokyo",
+      "canonicalName": "Tokyo",
+      "aliases": [
+        "Tokyo, Japan",
+        "Tokyo Metropolis",
+        "Tokyo JP",
+        "Tokio"
+      ],
+      "countryCode": "JP",
+      "country": "Japan",
+      "admin1": "Tokyo",
+      "lat": 35.6762,
+      "lon": 139.6503,
+      "population": 13960000
+    },
+    "candidateSetId": "world-famous-cities-v1",
+    "assetStages": [
+      {
+        "stage": 0,
+        "assetPath": "content/assets/v1/city-grid/tokyo/stage-0.svg",
+        "reveals": [
+          "roads-tight"
+        ]
+      },
+      {
+        "stage": 1,
+        "assetPath": "content/assets/v1/city-grid/tokyo/stage-1.svg",
+        "reveals": [
+          "roads-wide"
+        ]
+      },
+      {
+        "stage": 2,
+        "assetPath": "content/assets/v1/city-grid/tokyo/stage-2.svg",
+        "reveals": [
+          "water",
+          "coastline"
+        ]
+      },
+      {
+        "stage": 3,
+        "assetPath": "content/assets/v1/city-grid/tokyo/stage-3.svg",
+        "reveals": [
+          "parks",
+          "rail"
+        ]
+      },
+      {
+        "stage": 4,
+        "assetPath": "content/assets/v1/city-grid/tokyo/stage-4.svg",
+        "reveals": [
+          "landmarks",
+          "metro-outline"
+        ]
+      },
+      {
+        "stage": 5,
+        "assetPath": "content/assets/v1/city-grid/tokyo/stage-5.svg",
+        "reveals": [
+          "full-map",
+          "answer-context"
+        ]
+      }
+    ],
+    "clues": {
+      "continent": "Asia",
+      "country": "Japan",
+      "populationBand": "5m+",
+      "coastal": true,
+      "hasMajorRapidTransit": true
+    }
+  }
+}

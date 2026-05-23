@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "daily-game-content-manifest.v1",
+  "gameId": "city-grid",
+  "displayName": "City Grid",
+  "defaultMaxGuesses": 6,
+  "inputModes": ["text"],
+  "share": {
+    "emoji": "🏙️",
+    "includeGuessCount": true,
+    "includeDate": true
+  },
+  "puzzleResolver": {
+    "mode": "static-pool",
+    "timezone": "America/New_York",
+    "startDate": "2026-01-01",
+    "poolVersions": [
+      {
+        "version": "v1",
+        "startDate": "2026-01-01",
+        "poolSize": 1000,
+        "pathPattern": "content/puzzles/v1/puzzle-{index:04}.json",
+        "selector": {
+          "type": "affine-permutation",
+          "a": 137,
+          "b": 431
+        },
+        "cyclePolicy": "repeat"
+      }
+    ]
+  },
+  "archive": {
+    "mode": "rolling-window",
+    "days": 30,
+    "includeToday": true,
+    "allowFutureDates": false,
+    "directAccess": "within-archive-window"
+  },
+  "extension": {
+    "specVersion": "city-grid.spec.v1",
+    "candidateSet": "world-famous-cities-v1",
+    "distanceUnit": "mi",
+    "assetKind": "svg"
+  }
+}

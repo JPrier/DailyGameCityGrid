@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "daily-game-package.v1",
+  "contractVersion": "daily-game-runtime.v1",
+  "game": {
+    "id": "city-grid",
+    "slug": "city-grid",
+    "displayName": "City Grid",
+    "shortDescription": "Guess the city from an unlabeled street-grid crop.",
+    "category": "geography",
+    "status": "playable"
+  },
+  "runtime": {
+    "entry": "dist/runtime/index.js"
+  },
+  "ui": {
+    "entry": "src/GameView.svelte"
+  },
+  "content": {
+    "manifest": "content/manifest.json",
+    "puzzlesDir": "content/puzzles",
+    "assetsDir": "content/assets"
+  },
+  "build": {
+    "mode": "prebuilt"
+  },
+  "extension": {
+    "specVersion": "city-grid.spec.v1"
+  }
+}

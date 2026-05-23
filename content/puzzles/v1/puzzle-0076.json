@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "daily-game-puzzle.v1",
+  "gameId": "city-grid",
+  "puzzleId": "city-grid-v1-0076",
+  "date": "2026-01-01",
+  "seed": "city-grid-v1-0076",
+  "display": {
+    "title": "City Grid",
+    "initialPrompt": "Identify the city from the unlabeled street grid."
+  },
+  "extension": {
+    "answer": {
+      "entityId": "city:us:wa:seattle",
+      "canonicalName": "Seattle",
+      "aliases": [
+        "Seattle, WA",
+        "Seattle Washington",
+        "Emerald City",
+        "Seattle WA"
+      ],
+      "countryCode": "US",
+      "country": "United States",
+      "admin1": "Washington",
+      "lat": 47.6062,
+      "lon": -122.3321,
+      "population": 737015
+    },
+    "candidateSetId": "world-famous-cities-v1",
+    "assetStages": [
+      {
+        "stage": 0,
+        "assetPath": "content/assets/v1/city-grid/seattle/stage-0.svg",
+        "reveals": [
+          "roads-tight"
+        ]
+      },
+      {
+        "stage": 1,
+        "assetPath": "content/assets/v1/city-grid/seattle/stage-1.svg",
+        "reveals": [
+          "roads-wide"
+        ]
+      },
+      {
+        "stage": 2,
+        "assetPath": "content/assets/v1/city-grid/seattle/stage-2.svg",
+        "reveals": [
+          "water",
+          "coastline"
+        ]
+      },
+      {
+        "stage": 3,
+        "assetPath": "content/assets/v1/city-grid/seattle/stage-3.svg",
+        "reveals": [
+          "parks",
+          "rail"
+        ]
+      },
+      {
+        "stage": 4,
+        "assetPath": "content/assets/v1/city-grid/seattle/stage-4.svg",
+        "reveals": [
+          "landmarks",
+          "metro-outline"
+        ]
+      },
+      {
+        "stage": 5,
+        "assetPath": "content/assets/v1/city-grid/seattle/stage-5.svg",
+        "reveals": [
+          "full-map",
+          "answer-context"
+        ]
+      }
+    ],
+    "clues": {
+      "continent": "North America",
+      "country": "United States",
+      "populationBand": "500k-1m",
+      "coastal": true,
+      "hasMajorRapidTransit": true
+    }
+  }
+}

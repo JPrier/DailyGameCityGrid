@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "daily-game-puzzle.v1",
+  "gameId": "city-grid",
+  "puzzleId": "city-grid-v1-0230",
+  "date": "2026-01-01",
+  "seed": "city-grid-v1-0230",
+  "display": {
+    "title": "City Grid",
+    "initialPrompt": "Identify the city from the unlabeled street grid."
+  },
+  "extension": {
+    "answer": {
+      "entityId": "city:fr:idf:paris",
+      "canonicalName": "Paris",
+      "aliases": [
+        "Paris, France",
+        "Ville de Paris",
+        "Paris FR",
+        "City of Light"
+      ],
+      "countryCode": "FR",
+      "country": "France",
+      "admin1": "Ile-de-France",
+      "lat": 48.8566,
+      "lon": 2.3522,
+      "population": 2161000
+    },
+    "candidateSetId": "world-famous-cities-v1",
+    "assetStages": [
+      {
+        "stage": 0,
+        "assetPath": "content/assets/v1/city-grid/paris/stage-0.svg",
+        "reveals": [
+          "roads-tight"
+        ]
+      },
+      {
+        "stage": 1,
+        "assetPath": "content/assets/v1/city-grid/paris/stage-1.svg",
+        "reveals": [
+          "roads-wide"
+        ]
+      },
+      {
+        "stage": 2,
+        "assetPath": "content/assets/v1/city-grid/paris/stage-2.svg",
+        "reveals": [
+          "water",
+          "coastline"
+        ]
+      },
+      {
+        "stage": 3,
+        "assetPath": "content/assets/v1/city-grid/paris/stage-3.svg",
+        "reveals": [
+          "parks",
+          "rail"
+        ]
+      },
+      {
+        "stage": 4,
+        "assetPath": "content/assets/v1/city-grid/paris/stage-4.svg",
+        "reveals": [
+          "landmarks",
+          "metro-outline"
+        ]
+      },
+      {
+        "stage": 5,
+        "assetPath": "content/assets/v1/city-grid/paris/stage-5.svg",
+        "reveals": [
+          "full-map",
+          "answer-context"
+        ]
+      }
+    ],
+    "clues": {
+      "continent": "Europe",
+      "country": "France",
+      "populationBand": "1m-5m",
+      "coastal": false,
+      "hasMajorRapidTransit": true
+    }
+  }
+}

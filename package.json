@@ -1,0 +1,11 @@
+{
+  "name": "daily-game-city-grid",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "node tools/generate-puzzles.mjs",
+    "build": "node tools/validate-puzzles.mjs",
+    "test": "node --test tests/runtime.test.mjs"
+  }
+}
