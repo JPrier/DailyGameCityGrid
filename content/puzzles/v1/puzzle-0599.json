@@ -25,7 +25,19 @@
       "lon": 139.6503,
       "population": 13960000
     },
-    "candidateSetId": "world-famous-cities-v1",
+    "candidateSetId": "fixture-famous-cities-v1",
+    "source": {
+      "kind": "osm-derived",
+      "sourceManifest": "content/source/osm-source-manifest.json",
+      "sourceExtractId": "locked-osm-derived-fixture-v1",
+      "bbox": {
+        "left": 139.52,
+        "bottom": 35.52,
+        "right": 139.91,
+        "top": 35.82
+      },
+      "geometryVersion": "city-grid-geometry.v1"
+    },
     "assetStages": [
       {
         "stage": 0,
@@ -61,19 +73,25 @@
         "stage": 4,
         "assetPath": "content/assets/v1/city-grid/tokyo/stage-4.svg",
         "reveals": [
-          "landmarks",
-          "metro-outline"
+          "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
         "assetPath": "content/assets/v1/city-grid/tokyo/stage-5.svg",
         "reveals": [
-          "full-map",
-          "answer-context"
+          "full-map-geometry"
         ]
       }
     ],
+    "geometryMetrics": {
+      "roadLineCount": 204,
+      "roadTotalLengthMeters": 90000,
+      "intersectionCount": 296,
+      "waterGeometryCount": 2,
+      "parkGeometryCount": 2,
+      "railLineCount": 1
+    },
     "clues": {
       "continent": "Asia",
       "country": "Japan",

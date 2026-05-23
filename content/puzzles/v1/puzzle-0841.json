@@ -25,7 +25,19 @@
       "lon": -87.6298,
       "population": 2746388
     },
-    "candidateSetId": "world-famous-cities-v1",
+    "candidateSetId": "fixture-famous-cities-v1",
+    "source": {
+      "kind": "osm-derived",
+      "sourceManifest": "content/source/osm-source-manifest.json",
+      "sourceExtractId": "locked-osm-derived-fixture-v1",
+      "bbox": {
+        "left": -87.94,
+        "bottom": 41.64,
+        "right": -87.52,
+        "top": 42.02
+      },
+      "geometryVersion": "city-grid-geometry.v1"
+    },
     "assetStages": [
       {
         "stage": 0,
@@ -61,19 +73,25 @@
         "stage": 4,
         "assetPath": "content/assets/v1/city-grid/chicago/stage-4.svg",
         "reveals": [
-          "landmarks",
-          "metro-outline"
+          "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
         "assetPath": "content/assets/v1/city-grid/chicago/stage-5.svg",
         "reveals": [
-          "full-map",
-          "answer-context"
+          "full-map-geometry"
         ]
       }
     ],
+    "geometryMetrics": {
+      "roadLineCount": 204,
+      "roadTotalLengthMeters": 103500,
+      "intersectionCount": 296,
+      "waterGeometryCount": 2,
+      "parkGeometryCount": 2,
+      "railLineCount": 1
+    },
     "clues": {
       "continent": "North America",
       "country": "United States",

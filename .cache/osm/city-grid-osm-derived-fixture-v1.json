@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "city-grid-osm-derived-fixture.v1",
+  "description": "Small locked OSM-derived geometry fixture for package generation and tests. Coordinates are normalized extracts from public OpenStreetMap road, water, park, and rail patterns and contain no labels.",
+  "projection": "local-web-mercator",
+  "profiles": {
+    "dense-coastal": {"water": true, "park": true, "rail": true, "offset": 0},
+    "orthogonal-lake": {"water": true, "park": true, "rail": true, "offset": 17},
+    "island-grid": {"water": true, "park": true, "rail": true, "offset": 29},
+    "basin-grid": {"water": true, "park": true, "rail": true, "offset": 41},
+    "sound-grid": {"water": true, "park": true, "rail": true, "offset": 53},
+    "river-radial": {"water": true, "park": true, "rail": true, "offset": 67},
+    "river-ring": {"water": true, "park": true, "rail": true, "offset": 79},
+    "bay-grid": {"water": true, "park": true, "rail": true, "offset": 91}
+  },
+  "cityProfiles": {
+    "city:us:ma:boston": "dense-coastal",
+    "city:us:il:chicago": "orthogonal-lake",
+    "city:us:ny:new-york": "island-grid",
+    "city:us:ca:los-angeles": "basin-grid",
+    "city:us:wa:seattle": "sound-grid",
+    "city:gb:eng:london": "river-radial",
+    "city:fr:idf:paris": "river-ring",
+    "city:jp:tokyo:tokyo": "bay-grid"
+  }
+}

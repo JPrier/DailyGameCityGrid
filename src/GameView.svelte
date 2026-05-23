@@ -89,12 +89,12 @@
   <p data-testid="guess-count">{state.guessCount}</p>
 
   <section data-testid="guess-history" aria-label="Guess history">
-    {#each history as entry}
-      <article class="city-grid__history-row">
+    {#each history as entry, index}
+      <article class="city-grid__history-row" data-testid={`guess-history-row-${index}`}>
         <h3>{entry.guess}</h3>
         <div data-testid="feedback-panel">
           {#each entry.feedback as item}
-            <p data-testid={`feedback-row-${item.key}`}>
+            <p data-testid={`guess-history-row-${index}-feedback-${item.key}`}>
               <strong>{item.label}</strong>: <span>{String(item.value)}</span>
             </p>
           {/each}
@@ -106,7 +106,7 @@
   {#if latestEvaluation?.feedback?.length}
     <div class="city-grid__latest" aria-label="Latest feedback">
       {#each latestEvaluation.feedback as item}
-        <p data-testid={`feedback-row-${item.key}`}>
+        <p data-testid={`latest-feedback-${item.key}`}>
           <strong>{item.label}</strong>: <span>{String(item.value)}</span>
         </p>
       {/each}

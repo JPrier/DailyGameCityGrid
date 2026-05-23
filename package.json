@@ -4,8 +4,13 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "generate": "node tools/generate-puzzles.mjs",
-    "build": "node tools/validate-puzzles.mjs",
-    "test": "node --test tests/runtime.test.mjs"
+    "generate": "node tools/generate-content.mjs --mode locked",
+    "generate:content": "node tools/generate-content.mjs",
+    "generate:content:locked": "node tools/generate-content.mjs --mode locked",
+    "generate:content:refresh": "node tools/generate-content.mjs --mode online-refresh",
+    "build": "npm run validate",
+    "build:runtime": "node tools/build-runtime.mjs",
+    "validate": "node tools/validate-package.mjs",
+    "test": "node --test tests/runtime.test.mjs tests/generator.test.mjs tests/validator.test.mjs"
   }
 }

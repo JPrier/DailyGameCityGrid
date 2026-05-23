@@ -1,114 +1,8 @@
+import { CANDIDATE_SET_ID, CANDIDATES } from './candidates.generated.js';
+
 const GAME_ID = 'city-grid';
 const SPEC_VERSION = 'city-grid.spec.v1';
-const CANDIDATE_SET = 'world-famous-cities-v1';
 const MAX_GUESSES = 6;
-
-const CANDIDATES = [
-  {
-    entityId: 'city:us:ma:boston',
-    canonicalName: 'Boston',
-    aliases: ['Boston, MA', 'Boston Massachusetts', 'Beantown', 'Boston MA'],
-    countryCode: 'US',
-    country: 'United States',
-    admin1: 'Massachusetts',
-    lat: 42.3601,
-    lon: -71.0589,
-    population: 675647,
-    assetSlug: 'boston',
-    clues: { continent: 'North America', country: 'United States', populationBand: '500k-1m', coastal: true, hasMajorRapidTransit: true },
-  },
-  {
-    entityId: 'city:us:il:chicago',
-    canonicalName: 'Chicago',
-    aliases: ['Chicago, IL', 'Chicago Illinois', 'Windy City', 'Chicago IL'],
-    countryCode: 'US',
-    country: 'United States',
-    admin1: 'Illinois',
-    lat: 41.8781,
-    lon: -87.6298,
-    population: 2746388,
-    assetSlug: 'chicago',
-    clues: { continent: 'North America', country: 'United States', populationBand: '1m-5m', coastal: true, hasMajorRapidTransit: true },
-  },
-  {
-    entityId: 'city:us:ny:new-york',
-    canonicalName: 'New York',
-    aliases: ['New York City', 'NYC', 'New York, NY', 'New York NY'],
-    countryCode: 'US',
-    country: 'United States',
-    admin1: 'New York',
-    lat: 40.7128,
-    lon: -74.006,
-    population: 8804190,
-    assetSlug: 'new-york',
-    clues: { continent: 'North America', country: 'United States', populationBand: '5m+', coastal: true, hasMajorRapidTransit: true },
-  },
-  {
-    entityId: 'city:us:ca:los-angeles',
-    canonicalName: 'Los Angeles',
-    aliases: ['LA', 'L.A.', 'Los Angeles, CA', 'Los Angeles California'],
-    countryCode: 'US',
-    country: 'United States',
-    admin1: 'California',
-    lat: 34.0522,
-    lon: -118.2437,
-    population: 3898747,
-    assetSlug: 'los-angeles',
-    clues: { continent: 'North America', country: 'United States', populationBand: '1m-5m', coastal: true, hasMajorRapidTransit: true },
-  },
-  {
-    entityId: 'city:us:wa:seattle',
-    canonicalName: 'Seattle',
-    aliases: ['Seattle, WA', 'Seattle Washington', 'Emerald City', 'Seattle WA'],
-    countryCode: 'US',
-    country: 'United States',
-    admin1: 'Washington',
-    lat: 47.6062,
-    lon: -122.3321,
-    population: 737015,
-    assetSlug: 'seattle',
-    clues: { continent: 'North America', country: 'United States', populationBand: '500k-1m', coastal: true, hasMajorRapidTransit: true },
-  },
-  {
-    entityId: 'city:gb:eng:london',
-    canonicalName: 'London',
-    aliases: ['London, UK', 'London England', 'Greater London', 'London GB'],
-    countryCode: 'GB',
-    country: 'United Kingdom',
-    admin1: 'England',
-    lat: 51.5072,
-    lon: -0.1276,
-    population: 8982000,
-    assetSlug: 'london',
-    clues: { continent: 'Europe', country: 'United Kingdom', populationBand: '5m+', coastal: false, hasMajorRapidTransit: true },
-  },
-  {
-    entityId: 'city:fr:idf:paris',
-    canonicalName: 'Paris',
-    aliases: ['Paris, France', 'Ville de Paris', 'Paris FR', 'City of Light'],
-    countryCode: 'FR',
-    country: 'France',
-    admin1: 'Ile-de-France',
-    lat: 48.8566,
-    lon: 2.3522,
-    population: 2161000,
-    assetSlug: 'paris',
-    clues: { continent: 'Europe', country: 'France', populationBand: '1m-5m', coastal: false, hasMajorRapidTransit: true },
-  },
-  {
-    entityId: 'city:jp:tokyo:tokyo',
-    canonicalName: 'Tokyo',
-    aliases: ['Tokyo, Japan', 'Tokyo Metropolis', 'Tokyo JP', 'Tokio'],
-    countryCode: 'JP',
-    country: 'Japan',
-    admin1: 'Tokyo',
-    lat: 35.6762,
-    lon: 139.6503,
-    population: 13960000,
-    assetSlug: 'tokyo',
-    clues: { continent: 'Asia', country: 'Japan', populationBand: '5m+', coastal: true, hasMajorRapidTransit: true },
-  },
-];
 
 const NORMALIZED_CANDIDATES = new Map();
 for (const city of CANDIDATES) {
@@ -143,7 +37,7 @@ async function validateContent({ contentManifest }) {
     errors.push(error('defaultMaxGuesses', 'City Grid max guesses must be between 3 and 8.'));
   }
   if (contentManifest?.extension?.specVersion !== SPEC_VERSION) errors.push(error('extension.specVersion', 'Unsupported City Grid spec version.'));
-  if (contentManifest?.extension?.candidateSet !== CANDIDATE_SET) errors.push(error('extension.candidateSet', 'Unsupported candidate set.'));
+  if (contentManifest?.extension?.candidateSet !== CANDIDATE_SET_ID) errors.push(error('extension.candidateSet', 'Unsupported candidate set.'));
   if (contentManifest?.extension?.distanceUnit !== 'mi') errors.push(error('extension.distanceUnit', 'Distance unit must be mi.'));
   if (contentManifest?.extension?.assetKind !== 'svg') errors.push(error('extension.assetKind', 'Asset kind must be svg.'));
   return result(errors);
@@ -173,8 +67,23 @@ async function validatePuzzle({ puzzle }) {
     if (!Number.isFinite(answer.lat) || answer.lat < -90 || answer.lat > 90) errors.push(error('extension.answer.lat', 'Answer latitude must be finite.'));
     if (!Number.isFinite(answer.lon) || answer.lon < -180 || answer.lon > 180) errors.push(error('extension.answer.lon', 'Answer longitude must be finite.'));
     if (!Number.isFinite(answer.population) || answer.population <= 0) errors.push(error('extension.answer.population', 'Population must be positive.'));
+    const candidate = CANDIDATES.find((item) => item.entityId === answer.entityId);
+    if (!candidate) {
+      errors.push(error('extension.answer.entityId', 'Answer is absent from runtime candidate set.'));
+    } else {
+      for (const alias of answer.aliases) {
+        if (!candidate.aliases.map(normalizeGuess).includes(normalizeGuess(alias))) {
+          errors.push(error('extension.answer.aliases', `Alias ${alias} is absent from runtime candidate set.`));
+        }
+      }
+    }
   }
-  if (ext.candidateSetId !== CANDIDATE_SET) errors.push(error('extension.candidateSetId', 'Puzzle candidate set is unsupported.'));
+  if (ext.candidateSetId !== CANDIDATE_SET_ID) errors.push(error('extension.candidateSetId', 'Puzzle candidate set is unsupported.'));
+  if (ext.source?.kind !== 'osm-derived') errors.push(error('extension.source.kind', 'Puzzle source must be osm-derived.'));
+  if (!ext.source?.sourceManifest || !ext.source?.sourceExtractId || !ext.source?.geometryVersion) errors.push(error('extension.source', 'Puzzle source provenance is required.'));
+  for (const key of ['roadLineCount', 'roadTotalLengthMeters', 'intersectionCount']) {
+    if (!Number.isFinite(ext.geometryMetrics?.[key]) || ext.geometryMetrics[key] <= 0) errors.push(error(`extension.geometryMetrics.${key}`, `Missing geometry metric ${key}.`));
+  }
   if (!Array.isArray(ext.assetStages) || ext.assetStages.length < MAX_GUESSES) {
     errors.push(error('extension.assetStages', 'Six ordered visual stages are required.'));
   } else {

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "city-grid-osm-source-manifest.v1",
+  "generatedAt": "2026-05-23T00:00:00.000Z",
+  "mode": "locked",
+  "sources": [
+    {
+      "id": "locked-osm-derived-fixture-v1",
+      "kind": "committed-osm-derived-fixture",
+      "displayName": "Locked OSM-derived City Grid Fixture",
+      "url": "https://www.openstreetmap.org/copyright",
+      "localPath": ".cache/osm/city-grid-osm-derived-fixture-v1.json",
+      "sha256": "54021a8d052a628387ee0e8e3aeb733a07217e82f36b982d3ba1d485bc87c564",
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors"
+    }
+  ]
+}

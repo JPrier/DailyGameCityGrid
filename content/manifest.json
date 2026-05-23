@@ -2,13 +2,10 @@
   "schemaVersion": "daily-game-content-manifest.v1",
   "gameId": "city-grid",
   "displayName": "City Grid",
+  "inputModes": [
+    "text"
+  ],
   "defaultMaxGuesses": 6,
-  "inputModes": ["text"],
-  "share": {
-    "emoji": "🏙️",
-    "includeGuessCount": true,
-    "includeDate": true
-  },
   "puzzleResolver": {
     "mode": "static-pool",
     "timezone": "America/New_York",
@@ -37,7 +34,9 @@
   },
   "extension": {
     "specVersion": "city-grid.spec.v1",
-    "candidateSet": "world-famous-cities-v1",
+    "candidateSet": "fixture-famous-cities-v1",
+    "candidateFile": "content/candidates/fixture-famous-cities-v1.json",
+    "sourceManifest": "content/source/osm-source-manifest.json",
     "distanceUnit": "mi",
     "assetKind": "svg"
   }

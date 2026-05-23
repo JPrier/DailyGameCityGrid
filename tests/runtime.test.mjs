@@ -27,6 +27,17 @@ test('validatePuzzle accepts fixture and rejects required missing fields', async
   assert.equal((await runtime.validatePuzzle({ puzzle: missingAnswer })).ok, false);
 });
 
+test('validatePuzzle rejects missing or non-osm-derived source provenance', async () => {
+  const runtime = await createRuntime();
+  const missingSource = structuredClone(fixture);
+  delete missingSource.extension.source;
+  assert.equal((await runtime.validatePuzzle({ puzzle: missingSource })).ok, false);
+
+  const wrongKind = structuredClone(fixture);
+  wrongKind.extension.source.kind = 'synthetic';
+  assert.equal((await runtime.validatePuzzle({ puzzle: wrongKind })).ok, false);
+});
+
 test('createInitialState does not leak answer-only fields', async () => {
   const runtime = await createRuntime();
   const state = await runtime.createInitialState({ contentManifest: manifest, puzzle: fixture, date: '2026-05-22' });
@@ -37,9 +48,11 @@ test('createInitialState does not leak answer-only fields', async () => {
 test('submitGuess rejects invalid input without consuming a guess', async () => {
   const runtime = await createRuntime();
   const state = await runtime.createInitialState({ contentManifest: manifest, puzzle: fixture, date: '2026-05-22' });
-  const result = await runtime.submitGuess({ contentManifest: manifest, puzzle: fixture, state, input: { kind: 'text', value: 'Notacityville' } });
-  assert.equal(result.evaluation.consumedGuess, false);
-  assert.equal(result.state.guessCount, 0);
+  for (const value of ['', 'Notacityville']) {
+    const result = await runtime.submitGuess({ contentManifest: manifest, puzzle: fixture, state, input: { kind: 'text', value } });
+    assert.equal(result.evaluation.consumedGuess, false);
+    assert.equal(result.state.guessCount, 0);
+  }
 });
 
 test('submitGuess returns stable feedback keys for a valid wrong city', async () => {
@@ -61,6 +74,20 @@ test('submitGuess accepts canonical names and normalized aliases', async () => {
   const alias = await runtime.submitGuess({ contentManifest: manifest, puzzle: fixture, state: aliasState, input: { kind: 'text', value: 'Boston, MA' } });
   assert.equal(alias.evaluation.outcome, 'correct');
   assert.equal(alias.state.status, 'won');
+});
+
+test('six wrong guesses loses and completed games reject further guesses', async () => {
+  const runtime = await createRuntime();
+  let state = await runtime.createInitialState({ contentManifest: manifest, puzzle: fixture, date: '2026-05-22' });
+  for (const value of ['Chicago', 'New York', 'Los Angeles', 'Seattle', 'London', 'Paris']) {
+    const result = await runtime.submitGuess({ contentManifest: manifest, puzzle: fixture, state, input: { kind: 'text', value } });
+    state = result.state;
+  }
+  assert.equal(state.status, 'lost');
+  assert.equal(state.guessCount, 6);
+  const afterComplete = await runtime.submitGuess({ contentManifest: manifest, puzzle: fixture, state, input: { kind: 'text', value: 'Boston' } });
+  assert.equal(afterComplete.evaluation.consumedGuess, false);
+  assert.equal(afterComplete.state.guessCount, 6);
 });
 
 test('buildShareText excludes the answer', async () => {

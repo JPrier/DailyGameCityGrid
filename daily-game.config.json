@@ -21,7 +21,46 @@
     "assetsDir": "content/assets"
   },
   "build": {
-    "mode": "prebuilt"
+    "mode": "command",
+    "commands": [
+      {
+        "name": "install",
+        "run": "npm ci"
+      },
+      {
+        "name": "generate-content",
+        "run": "npm run generate:content:locked",
+        "timeoutSeconds": 1800
+      },
+      {
+        "name": "build-runtime",
+        "run": "npm run build:runtime"
+      },
+      {
+        "name": "validate",
+        "run": "npm run validate"
+      }
+    ],
+    "outputs": [
+      "dist/runtime/index.js",
+      "dist/runtime/candidates.generated.js",
+      "src/GameView.svelte",
+      "content/manifest.json",
+      "content/candidates/fixture-famous-cities-v1.json",
+      "content/source/osm-source-manifest.json",
+      "content/puzzles",
+      "content/assets"
+    ],
+    "environment": {
+      "node": ">=22",
+      "systemTools": [],
+      "network": "disabled-by-default",
+      "cacheDirs": [
+        ".cache/osm",
+        ".cache/cities"
+      ],
+      "maxBuildSeconds": 1800
+    }
   },
   "extension": {
     "specVersion": "city-grid.spec.v1"

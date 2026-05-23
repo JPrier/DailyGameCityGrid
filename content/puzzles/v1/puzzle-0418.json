@@ -25,7 +25,19 @@
       "lon": -74.006,
       "population": 8804190
     },
-    "candidateSetId": "world-famous-cities-v1",
+    "candidateSetId": "fixture-famous-cities-v1",
+    "source": {
+      "kind": "osm-derived",
+      "sourceManifest": "content/source/osm-source-manifest.json",
+      "sourceExtractId": "locked-osm-derived-fixture-v1",
+      "bbox": {
+        "left": -74.26,
+        "bottom": 40.49,
+        "right": -73.7,
+        "top": 40.92
+      },
+      "geometryVersion": "city-grid-geometry.v1"
+    },
     "assetStages": [
       {
         "stage": 0,
@@ -61,19 +73,25 @@
         "stage": 4,
         "assetPath": "content/assets/v1/city-grid/new-york/stage-4.svg",
         "reveals": [
-          "landmarks",
-          "metro-outline"
+          "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
         "assetPath": "content/assets/v1/city-grid/new-york/stage-5.svg",
         "reveals": [
-          "full-map",
-          "answer-context"
+          "full-map-geometry"
         ]
       }
     ],
+    "geometryMetrics": {
+      "roadLineCount": 204,
+      "roadTotalLengthMeters": 94500,
+      "intersectionCount": 296,
+      "waterGeometryCount": 2,
+      "parkGeometryCount": 2,
+      "railLineCount": 1
+    },
     "clues": {
       "continent": "North America",
       "country": "United States",
