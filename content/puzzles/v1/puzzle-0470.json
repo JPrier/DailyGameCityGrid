@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:fr:idf:paris",
-      "canonicalName": "Paris",
+      "entityId": "city:geonames:184745",
+      "canonicalName": "Nairobi",
       "aliases": [
-        "Paris, France",
-        "Ville de Paris",
-        "Paris FR",
-        "City of Light"
+        "Nairobi",
+        "Nairobi, KE",
+        "Nairobi Kenya",
+        "Nairobi Nairobi County"
       ],
-      "countryCode": "FR",
-      "country": "France",
-      "admin1": "Ile-de-France",
-      "lat": 48.8566,
-      "lon": 2.3522,
-      "population": 2145906
+      "countryCode": "KE",
+      "country": "Kenya",
+      "admin1": "Nairobi County",
+      "lat": -1.28333,
+      "lon": 36.81667,
+      "population": 4397073
     },
-    "candidateSetId": "real-osm-city-sample-v1",
+    "candidateSetId": "world-top-100-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-city-sample-v1",
+      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
       "bbox": {
-        "left": 2.31,
-        "bottom": 48.84,
-        "right": 2.38,
-        "top": 48.88
+        "left": 36.780625,
+        "bottom": -1.319366,
+        "right": 36.852715,
+        "top": -1.247294
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/paris/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/nairobi-ke-184745/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/paris/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/nairobi-ke-184745/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/paris/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/nairobi-ke-184745/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/paris/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/nairobi-ke-184745/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,31 +71,31 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/paris/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/nairobi-ke-184745/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/paris/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/nairobi-ke-184745/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
       }
     ],
     "geometryMetrics": {
-      "roadLineCount": 780,
-      "roadTotalLengthMeters": 203370,
-      "intersectionCount": 390,
-      "waterGeometryCount": 120,
-      "parkGeometryCount": 140,
-      "railLineCount": 120
+      "roadLineCount": 380,
+      "roadTotalLengthMeters": 315054,
+      "intersectionCount": 207,
+      "waterGeometryCount": 60,
+      "parkGeometryCount": 80,
+      "railLineCount": 70
     },
     "clues": {
-      "continent": "Europe",
-      "country": "France",
-      "populationBand": "1m+",
+      "continent": "Africa",
+      "country": "Kenya",
+      "populationBand": "3m-5m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

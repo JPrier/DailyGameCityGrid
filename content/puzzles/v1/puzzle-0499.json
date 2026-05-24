@@ -10,52 +10,53 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:us:ca:los-angeles",
-      "canonicalName": "Los Angeles",
+      "entityId": "city:geonames:13512505",
+      "canonicalName": "Lueliang",
       "aliases": [
-        "LA",
-        "Los Angeles, CA",
-        "Los Angeles California",
-        "L.A."
+        "Lueliang",
+        "Lüliang",
+        "Lueliang, CN",
+        "Lueliang China",
+        "Lueliang Shanxi"
       ],
-      "countryCode": "US",
-      "country": "United States",
-      "admin1": "California",
-      "lat": 34.0522,
-      "lon": -118.2437,
-      "population": 3898747
+      "countryCode": "CN",
+      "country": "China",
+      "admin1": "Shanxi",
+      "lat": 37.5192,
+      "lon": 111.14436,
+      "population": 3346500
     },
-    "candidateSetId": "real-osm-city-sample-v1",
+    "candidateSetId": "world-top-100-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-city-sample-v1",
+      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
       "bbox": {
-        "left": -118.3,
-        "bottom": 34.01,
-        "right": -118.2,
-        "top": 34.09
+        "left": 111.098926,
+        "bottom": 37.483164,
+        "right": 111.189794,
+        "top": 37.555236
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/los-angeles/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/lueliang-cn-13512505/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/los-angeles/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/lueliang-cn-13512505/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/los-angeles/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/lueliang-cn-13512505/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +64,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/los-angeles/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/lueliang-cn-13512505/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,32 +72,32 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/los-angeles/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/lueliang-cn-13512505/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/los-angeles/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/lueliang-cn-13512505/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
       }
     ],
     "geometryMetrics": {
-      "roadLineCount": 780,
-      "roadTotalLengthMeters": 498601,
-      "intersectionCount": 397,
-      "waterGeometryCount": 18,
-      "parkGeometryCount": 140,
-      "railLineCount": 120
+      "roadLineCount": 359,
+      "roadTotalLengthMeters": 330927,
+      "intersectionCount": 281,
+      "waterGeometryCount": 42,
+      "parkGeometryCount": 18,
+      "railLineCount": 10
     },
     "clues": {
-      "continent": "North America",
-      "country": "United States",
-      "populationBand": "1m+",
-      "coastal": true,
+      "continent": "Asia",
+      "country": "China",
+      "populationBand": "3m-5m",
+      "coastal": false,
       "hasMajorRapidTransit": true
     }
   }

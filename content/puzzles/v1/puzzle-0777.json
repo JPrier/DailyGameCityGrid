@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:us:il:chicago",
-      "canonicalName": "Chicago",
+      "entityId": "city:geonames:108410",
+      "canonicalName": "Riyadh",
       "aliases": [
-        "Chicago, IL",
-        "Chicago Illinois",
-        "Windy City",
-        "Chicago IL"
+        "Riyadh",
+        "Riyadh, SA",
+        "Riyadh Saudi Arabia",
+        "Riyadh Riyadh Region"
       ],
-      "countryCode": "US",
-      "country": "United States",
-      "admin1": "Illinois",
-      "lat": 41.8781,
-      "lon": -87.6298,
-      "population": 2746388
+      "countryCode": "SA",
+      "country": "Saudi Arabia",
+      "admin1": "Riyadh Region",
+      "lat": 24.68773,
+      "lon": 46.72185,
+      "population": 4205961
     },
-    "candidateSetId": "real-osm-city-sample-v1",
+    "candidateSetId": "world-top-100-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-city-sample-v1",
+      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
       "bbox": {
-        "left": -87.68,
-        "bottom": 41.84,
-        "right": -87.58,
-        "top": 41.93
+        "left": 46.682189,
+        "bottom": 24.651694,
+        "right": 46.761511,
+        "top": 24.723766
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/chicago/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/riyadh-sa-108410/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/chicago/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/riyadh-sa-108410/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/chicago/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/riyadh-sa-108410/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/chicago/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/riyadh-sa-108410/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,32 +71,32 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/chicago/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/riyadh-sa-108410/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/chicago/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/riyadh-sa-108410/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
       }
     ],
     "geometryMetrics": {
-      "roadLineCount": 780,
-      "roadTotalLengthMeters": 401172,
-      "intersectionCount": 426,
-      "waterGeometryCount": 120,
-      "parkGeometryCount": 140,
-      "railLineCount": 120
+      "roadLineCount": 380,
+      "roadTotalLengthMeters": 488218,
+      "intersectionCount": 229,
+      "waterGeometryCount": 41,
+      "parkGeometryCount": 42,
+      "railLineCount": 23
     },
     "clues": {
-      "continent": "North America",
-      "country": "United States",
-      "populationBand": "1m+",
-      "coastal": true,
+      "continent": "Asia",
+      "country": "Saudi Arabia",
+      "populationBand": "3m-5m",
+      "coastal": false,
       "hasMajorRapidTransit": true
     }
   }

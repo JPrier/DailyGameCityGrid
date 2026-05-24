@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "generate": "node tools/generate-content.mjs --mode locked",
+    "generate:candidates": "node tools/generate-top-candidates.mjs",
     "generate:content": "node tools/generate-content.mjs",
     "generate:content:locked": "node tools/generate-content.mjs --mode locked",
     "generate:content:refresh": "node tools/generate-content.mjs --mode online-refresh",

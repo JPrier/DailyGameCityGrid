@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:us:ma:boston",
-      "canonicalName": "Boston",
+      "entityId": "city:geonames:1277333",
+      "canonicalName": "Bengaluru",
       "aliases": [
-        "Boston, MA",
-        "Boston Massachusetts",
-        "Beantown",
-        "Boston MA"
+        "Bengaluru",
+        "Bengaluru, IN",
+        "Bengaluru India",
+        "Bengaluru Karnataka"
       ],
-      "countryCode": "US",
-      "country": "United States",
-      "admin1": "Massachusetts",
-      "lat": 42.3601,
-      "lon": -71.0589,
-      "population": 675647
+      "countryCode": "IN",
+      "country": "India",
+      "admin1": "Karnataka",
+      "lat": 12.97194,
+      "lon": 77.59369,
+      "population": 8495492
     },
-    "candidateSetId": "real-osm-city-sample-v1",
+    "candidateSetId": "world-top-100-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-city-sample-v1",
+      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
       "bbox": {
-        "left": -71.12,
-        "bottom": 42.32,
-        "right": -71.02,
-        "top": 42.39
+        "left": 77.554399,
+        "bottom": 12.933652,
+        "right": 77.632981,
+        "top": 13.010228
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/boston/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/bengaluru-in-1277333/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/boston/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/bengaluru-in-1277333/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/boston/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/bengaluru-in-1277333/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/boston/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/bengaluru-in-1277333/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,32 +71,32 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/boston/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/bengaluru-in-1277333/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/boston/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/bengaluru-in-1277333/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
       }
     ],
     "geometryMetrics": {
-      "roadLineCount": 780,
-      "roadTotalLengthMeters": 381425,
-      "intersectionCount": 438,
-      "waterGeometryCount": 120,
-      "parkGeometryCount": 140,
-      "railLineCount": 120
+      "roadLineCount": 380,
+      "roadTotalLengthMeters": 291821,
+      "intersectionCount": 211,
+      "waterGeometryCount": 70,
+      "parkGeometryCount": 80,
+      "railLineCount": 70
     },
     "clues": {
-      "continent": "North America",
-      "country": "United States",
-      "populationBand": "500k-1m",
-      "coastal": true,
+      "continent": "Asia",
+      "country": "India",
+      "populationBand": "5m-10m",
+      "coastal": false,
       "hasMajorRapidTransit": true
     }
   }

@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:gb:eng:london",
-      "canonicalName": "London",
+      "entityId": "city:geonames:344979",
+      "canonicalName": "Addis Ababa",
       "aliases": [
-        "London, UK",
-        "London England",
-        "City of London",
-        "London GB"
+        "Addis Ababa",
+        "Addis Ababa, ET",
+        "Addis Ababa Ethiopia",
+        "Addis Ababa Addis Ababa"
       ],
-      "countryCode": "GB",
-      "country": "United Kingdom",
-      "admin1": "England",
-      "lat": 51.5072,
-      "lon": -0.1276,
-      "population": 8799800
+      "countryCode": "ET",
+      "country": "Ethiopia",
+      "admin1": "Addis Ababa",
+      "lat": 9.02497,
+      "lon": 38.74689,
+      "population": 3860000
     },
-    "candidateSetId": "real-osm-city-sample-v1",
+    "candidateSetId": "world-top-100-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-city-sample-v1",
+      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
       "bbox": {
-        "left": -0.15,
-        "bottom": 51.49,
-        "right": -0.07,
-        "top": 51.53
+        "left": 38.710402,
+        "bottom": 8.988934,
+        "right": 38.783378,
+        "top": 9.061006
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/london/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/addis-ababa-et-344979/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/london/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/addis-ababa-et-344979/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/london/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/addis-ababa-et-344979/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/london/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/addis-ababa-et-344979/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,31 +71,31 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/london/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/addis-ababa-et-344979/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/london/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/addis-ababa-et-344979/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
       }
     ],
     "geometryMetrics": {
-      "roadLineCount": 780,
-      "roadTotalLengthMeters": 150036,
-      "intersectionCount": 352,
-      "waterGeometryCount": 80,
-      "parkGeometryCount": 140,
-      "railLineCount": 120
+      "roadLineCount": 380,
+      "roadTotalLengthMeters": 299787,
+      "intersectionCount": 254,
+      "waterGeometryCount": 54,
+      "parkGeometryCount": 80,
+      "railLineCount": 62
     },
     "clues": {
-      "continent": "Europe",
-      "country": "United Kingdom",
-      "populationBand": "1m+",
+      "continent": "Africa",
+      "country": "Ethiopia",
+      "populationBand": "3m-5m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

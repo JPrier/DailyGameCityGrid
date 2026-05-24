@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:us:ma:boston",
-      "canonicalName": "Boston",
+      "entityId": "city:geonames:1205733",
+      "canonicalName": "Chattogram",
       "aliases": [
-        "Boston, MA",
-        "Boston Massachusetts",
-        "Beantown",
-        "Boston MA"
+        "Chattogram",
+        "Chattogram, BD",
+        "Chattogram Bangladesh",
+        "Chattogram Chittagong"
       ],
-      "countryCode": "US",
-      "country": "United States",
-      "admin1": "Massachusetts",
-      "lat": 42.3601,
-      "lon": -71.0589,
-      "population": 675647
+      "countryCode": "BD",
+      "country": "Bangladesh",
+      "admin1": "Chittagong",
+      "lat": 22.3384,
+      "lon": 91.83168,
+      "population": 3920222
     },
-    "candidateSetId": "real-osm-city-sample-v1",
+    "candidateSetId": "world-top-100-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-city-sample-v1",
+      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
       "bbox": {
-        "left": -71.12,
-        "bottom": 42.32,
-        "right": -71.02,
-        "top": 42.39
+        "left": 91.79272,
+        "bottom": 22.302364,
+        "right": 91.87064,
+        "top": 22.374436
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/boston/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/chattogram-bd-1205733/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/boston/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/chattogram-bd-1205733/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/boston/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/chattogram-bd-1205733/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/boston/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/chattogram-bd-1205733/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,32 +71,32 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/boston/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/chattogram-bd-1205733/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/boston/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/chattogram-bd-1205733/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
       }
     ],
     "geometryMetrics": {
-      "roadLineCount": 780,
-      "roadTotalLengthMeters": 381425,
-      "intersectionCount": 438,
-      "waterGeometryCount": 120,
-      "parkGeometryCount": 140,
-      "railLineCount": 120
+      "roadLineCount": 380,
+      "roadTotalLengthMeters": 321037,
+      "intersectionCount": 305,
+      "waterGeometryCount": 70,
+      "parkGeometryCount": 63,
+      "railLineCount": 70
     },
     "clues": {
-      "continent": "North America",
-      "country": "United States",
-      "populationBand": "500k-1m",
-      "coastal": true,
+      "continent": "Asia",
+      "country": "Bangladesh",
+      "populationBand": "3m-5m",
+      "coastal": false,
       "hasMajorRapidTransit": true
     }
   }

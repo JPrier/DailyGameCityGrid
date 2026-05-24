@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:fr:idf:paris",
-      "canonicalName": "Paris",
+      "entityId": "city:geonames:3936456",
+      "canonicalName": "Lima",
       "aliases": [
-        "Paris, France",
-        "Ville de Paris",
-        "Paris FR",
-        "City of Light"
+        "Lima",
+        "Lima, PE",
+        "Lima Peru",
+        "Lima Lima Province"
       ],
-      "countryCode": "FR",
-      "country": "France",
-      "admin1": "Ile-de-France",
-      "lat": 48.8566,
-      "lon": 2.3522,
-      "population": 2145906
+      "countryCode": "PE",
+      "country": "Peru",
+      "admin1": "Lima Province",
+      "lat": -12.04318,
+      "lon": -77.02824,
+      "population": 7737002
     },
-    "candidateSetId": "real-osm-city-sample-v1",
+    "candidateSetId": "world-top-100-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-city-sample-v1",
+      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
       "bbox": {
-        "left": 2.31,
-        "bottom": 48.84,
-        "right": 2.38,
-        "top": 48.88
+        "left": -77.06739,
+        "bottom": -12.081468,
+        "right": -76.98909,
+        "top": -12.004892
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/paris/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/lima-pe-3936456/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/paris/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/lima-pe-3936456/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/paris/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/lima-pe-3936456/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/paris/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/lima-pe-3936456/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,31 +71,31 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/paris/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/lima-pe-3936456/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/paris/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/lima-pe-3936456/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
       }
     ],
     "geometryMetrics": {
-      "roadLineCount": 780,
-      "roadTotalLengthMeters": 203370,
-      "intersectionCount": 390,
-      "waterGeometryCount": 120,
-      "parkGeometryCount": 140,
-      "railLineCount": 120
+      "roadLineCount": 380,
+      "roadTotalLengthMeters": 293438,
+      "intersectionCount": 177,
+      "waterGeometryCount": 36,
+      "parkGeometryCount": 80,
+      "railLineCount": 70
     },
     "clues": {
-      "continent": "Europe",
-      "country": "France",
-      "populationBand": "1m+",
+      "continent": "South America",
+      "country": "Peru",
+      "populationBand": "5m-10m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

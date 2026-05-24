@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:jp:tokyo:tokyo",
-      "canonicalName": "Tokyo",
+      "entityId": "city:geonames:498817",
+      "canonicalName": "Saint Petersburg",
       "aliases": [
-        "Tokyo Japan",
-        "Tokyo Metropolis",
-        "Tokyo JP",
-        "Tokio"
+        "Saint Petersburg",
+        "Saint Petersburg, RU",
+        "Saint Petersburg Russia",
+        "Saint Petersburg St.-Petersburg"
       ],
-      "countryCode": "JP",
-      "country": "Japan",
-      "admin1": "Tokyo",
-      "lat": 35.6762,
-      "lon": 139.6503,
-      "population": 13960000
+      "countryCode": "RU",
+      "country": "Russia",
+      "admin1": "St.-Petersburg",
+      "lat": 59.93863,
+      "lon": 30.31413,
+      "population": 5351935
     },
-    "candidateSetId": "real-osm-city-sample-v1",
+    "candidateSetId": "world-top-100-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-city-sample-v1",
+      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
       "bbox": {
-        "left": 139.7,
-        "bottom": 35.65,
-        "right": 139.78,
-        "top": 35.71
+        "left": 30.237695,
+        "bottom": 59.900342,
+        "right": 30.390565,
+        "top": 59.976918
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/tokyo/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/saint-petersburg-ru-498817/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/tokyo/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/saint-petersburg-ru-498817/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/tokyo/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/saint-petersburg-ru-498817/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/tokyo/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/saint-petersburg-ru-498817/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,32 +71,32 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/tokyo/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/saint-petersburg-ru-498817/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/tokyo/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/saint-petersburg-ru-498817/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
       }
     ],
     "geometryMetrics": {
-      "roadLineCount": 780,
-      "roadTotalLengthMeters": 405964,
-      "intersectionCount": 500,
-      "waterGeometryCount": 120,
-      "parkGeometryCount": 140,
-      "railLineCount": 120
+      "roadLineCount": 380,
+      "roadTotalLengthMeters": 231895,
+      "intersectionCount": 217,
+      "waterGeometryCount": 70,
+      "parkGeometryCount": 80,
+      "railLineCount": 70
     },
     "clues": {
-      "continent": "Asia",
-      "country": "Japan",
-      "populationBand": "1m+",
-      "coastal": true,
+      "continent": "Europe",
+      "country": "Russia",
+      "populationBand": "5m-10m",
+      "coastal": false,
       "hasMajorRapidTransit": true
     }
   }

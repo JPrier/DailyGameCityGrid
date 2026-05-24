@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:us:ca:los-angeles",
-      "canonicalName": "Los Angeles",
+      "entityId": "city:geonames:1799397",
+      "canonicalName": "Ningbo",
       "aliases": [
-        "LA",
-        "Los Angeles, CA",
-        "Los Angeles California",
-        "L.A."
+        "Ningbo",
+        "Ningbo, CN",
+        "Ningbo China",
+        "Ningbo Zhejiang"
       ],
-      "countryCode": "US",
-      "country": "United States",
-      "admin1": "California",
-      "lat": 34.0522,
-      "lon": -118.2437,
-      "population": 3898747
+      "countryCode": "CN",
+      "country": "China",
+      "admin1": "Zhejiang",
+      "lat": 29.87819,
+      "lon": 121.54945,
+      "population": 3731203
     },
-    "candidateSetId": "real-osm-city-sample-v1",
+    "candidateSetId": "world-top-100-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-city-sample-v1",
+      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
       "bbox": {
-        "left": -118.3,
-        "bottom": 34.01,
-        "right": -118.2,
-        "top": 34.09
+        "left": 121.50789,
+        "bottom": 29.842154,
+        "right": 121.59101,
+        "top": 29.914226
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/los-angeles/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/ningbo-cn-1799397/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/los-angeles/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/ningbo-cn-1799397/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/los-angeles/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/ningbo-cn-1799397/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/los-angeles/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/ningbo-cn-1799397/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,32 +71,32 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/los-angeles/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/ningbo-cn-1799397/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/los-angeles/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/ningbo-cn-1799397/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
       }
     ],
     "geometryMetrics": {
-      "roadLineCount": 780,
-      "roadTotalLengthMeters": 498601,
-      "intersectionCount": 397,
-      "waterGeometryCount": 18,
-      "parkGeometryCount": 140,
-      "railLineCount": 120
+      "roadLineCount": 380,
+      "roadTotalLengthMeters": 350514,
+      "intersectionCount": 318,
+      "waterGeometryCount": 70,
+      "parkGeometryCount": 80,
+      "railLineCount": 70
     },
     "clues": {
-      "continent": "North America",
-      "country": "United States",
-      "populationBand": "1m+",
-      "coastal": true,
+      "continent": "Asia",
+      "country": "China",
+      "populationBand": "3m-5m",
+      "coastal": false,
       "hasMajorRapidTransit": true
     }
   }

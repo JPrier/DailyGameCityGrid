@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:us:ma:boston",
-      "canonicalName": "Boston",
+      "entityId": "city:geonames:1796236",
+      "canonicalName": "Shanghai",
       "aliases": [
-        "Boston, MA",
-        "Boston Massachusetts",
-        "Beantown",
-        "Boston MA"
+        "Shanghai",
+        "Shanghai, CN",
+        "Shanghai China",
+        "Shanghai Shanghai"
       ],
-      "countryCode": "US",
-      "country": "United States",
-      "admin1": "Massachusetts",
-      "lat": 42.3601,
-      "lon": -71.0589,
-      "population": 675647
+      "countryCode": "CN",
+      "country": "China",
+      "admin1": "Shanghai",
+      "lat": 31.22222,
+      "lon": 121.45806,
+      "population": 24874500
     },
-    "candidateSetId": "real-osm-city-sample-v1",
+    "candidateSetId": "world-top-100-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-city-sample-v1",
+      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
       "bbox": {
-        "left": -71.12,
-        "bottom": 42.32,
-        "right": -71.02,
-        "top": 42.39
+        "left": 121.410653,
+        "bottom": 31.181679,
+        "right": 121.505467,
+        "top": 31.262761
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/boston/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/shanghai-cn-1796236/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/boston/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/shanghai-cn-1796236/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/boston/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/shanghai-cn-1796236/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/boston/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/shanghai-cn-1796236/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,32 +71,32 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/boston/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/shanghai-cn-1796236/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/boston/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/shanghai-cn-1796236/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
       }
     ],
     "geometryMetrics": {
-      "roadLineCount": 780,
-      "roadTotalLengthMeters": 381425,
-      "intersectionCount": 438,
-      "waterGeometryCount": 120,
-      "parkGeometryCount": 140,
-      "railLineCount": 120
+      "roadLineCount": 380,
+      "roadTotalLengthMeters": 350203,
+      "intersectionCount": 251,
+      "waterGeometryCount": 70,
+      "parkGeometryCount": 80,
+      "railLineCount": 70
     },
     "clues": {
-      "continent": "North America",
-      "country": "United States",
-      "populationBand": "500k-1m",
-      "coastal": true,
+      "continent": "Asia",
+      "country": "China",
+      "populationBand": "10m+",
+      "coastal": false,
       "hasMajorRapidTransit": true
     }
   }

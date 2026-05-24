@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:us:il:chicago",
-      "canonicalName": "Chicago",
+      "entityId": "city:geonames:1812545",
+      "canonicalName": "Dongguan",
       "aliases": [
-        "Chicago, IL",
-        "Chicago Illinois",
-        "Windy City",
-        "Chicago IL"
+        "Dongguan",
+        "Dongguan, CN",
+        "Dongguan China",
+        "Dongguan Guangdong"
       ],
-      "countryCode": "US",
-      "country": "United States",
-      "admin1": "Illinois",
-      "lat": 41.8781,
-      "lon": -87.6298,
-      "population": 2746388
+      "countryCode": "CN",
+      "country": "China",
+      "admin1": "Guangdong",
+      "lat": 23.01797,
+      "lon": 113.74866,
+      "population": 9644871
     },
-    "candidateSetId": "real-osm-city-sample-v1",
+    "candidateSetId": "world-top-100-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-city-sample-v1",
+      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
       "bbox": {
-        "left": -87.68,
-        "bottom": 41.84,
-        "right": -87.58,
-        "top": 41.93
+        "left": 113.70706,
+        "bottom": 22.979682,
+        "right": 113.79026,
+        "top": 23.056258
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/chicago/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/dongguan-cn-1812545/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/chicago/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/dongguan-cn-1812545/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/chicago/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/dongguan-cn-1812545/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/chicago/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/dongguan-cn-1812545/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,32 +71,32 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/chicago/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/dongguan-cn-1812545/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/chicago/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/dongguan-cn-1812545/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
       }
     ],
     "geometryMetrics": {
-      "roadLineCount": 780,
-      "roadTotalLengthMeters": 401172,
-      "intersectionCount": 426,
-      "waterGeometryCount": 120,
-      "parkGeometryCount": 140,
-      "railLineCount": 120
+      "roadLineCount": 380,
+      "roadTotalLengthMeters": 367575,
+      "intersectionCount": 278,
+      "waterGeometryCount": 70,
+      "parkGeometryCount": 75,
+      "railLineCount": 50
     },
     "clues": {
-      "continent": "North America",
-      "country": "United States",
-      "populationBand": "1m+",
-      "coastal": true,
+      "continent": "Asia",
+      "country": "China",
+      "populationBand": "5m-10m",
+      "coastal": false,
       "hasMajorRapidTransit": true
     }
   }

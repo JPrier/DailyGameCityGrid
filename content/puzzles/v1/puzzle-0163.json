@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:us:ca:los-angeles",
-      "canonicalName": "Los Angeles",
+      "entityId": "city:geonames:105343",
+      "canonicalName": "Jeddah",
       "aliases": [
-        "LA",
-        "Los Angeles, CA",
-        "Los Angeles California",
-        "L.A."
+        "Jeddah",
+        "Jeddah, SA",
+        "Jeddah Saudi Arabia",
+        "Jeddah Mecca Region"
       ],
-      "countryCode": "US",
-      "country": "United States",
-      "admin1": "California",
-      "lat": 34.0522,
-      "lon": -118.2437,
-      "population": 3898747
+      "countryCode": "SA",
+      "country": "Saudi Arabia",
+      "admin1": "Mecca Region",
+      "lat": 21.49012,
+      "lon": 39.18624,
+      "population": 4697000
     },
-    "candidateSetId": "real-osm-city-sample-v1",
+    "candidateSetId": "world-top-100-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-city-sample-v1",
+      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
       "bbox": {
-        "left": -118.3,
-        "bottom": 34.01,
-        "right": -118.2,
-        "top": 34.09
+        "left": 39.147512,
+        "bottom": 21.454084,
+        "right": 39.224968,
+        "top": 21.526156
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/los-angeles/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/jeddah-sa-105343/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/los-angeles/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/jeddah-sa-105343/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/los-angeles/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/jeddah-sa-105343/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/los-angeles/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/jeddah-sa-105343/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,32 +71,32 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/los-angeles/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/jeddah-sa-105343/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/los-angeles/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/jeddah-sa-105343/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
       }
     ],
     "geometryMetrics": {
-      "roadLineCount": 780,
-      "roadTotalLengthMeters": 498601,
-      "intersectionCount": 397,
-      "waterGeometryCount": 18,
-      "parkGeometryCount": 140,
-      "railLineCount": 120
+      "roadLineCount": 380,
+      "roadTotalLengthMeters": 487827,
+      "intersectionCount": 330,
+      "waterGeometryCount": 9,
+      "parkGeometryCount": 35,
+      "railLineCount": 0
     },
     "clues": {
-      "continent": "North America",
-      "country": "United States",
-      "populationBand": "1m+",
-      "coastal": true,
+      "continent": "Asia",
+      "country": "Saudi Arabia",
+      "populationBand": "3m-5m",
+      "coastal": false,
       "hasMajorRapidTransit": true
     }
   }

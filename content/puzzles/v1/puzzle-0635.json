@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:us:ca:los-angeles",
-      "canonicalName": "Los Angeles",
+      "entityId": "city:geonames:3688689",
+      "canonicalName": "Bogota",
       "aliases": [
-        "LA",
-        "Los Angeles, CA",
-        "Los Angeles California",
-        "L.A."
+        "Bogota",
+        "Bogota, CO",
+        "Bogota Colombia",
+        "Bogota Bogota D.C."
       ],
-      "countryCode": "US",
-      "country": "United States",
-      "admin1": "California",
-      "lat": 34.0522,
-      "lon": -118.2437,
-      "population": 3898747
+      "countryCode": "CO",
+      "country": "Colombia",
+      "admin1": "Bogota D.C.",
+      "lat": 4.60971,
+      "lon": -74.08175,
+      "population": 7674366
     },
-    "candidateSetId": "real-osm-city-sample-v1",
+    "candidateSetId": "world-top-100-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-city-sample-v1",
+      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
       "bbox": {
-        "left": -118.3,
-        "bottom": 34.01,
-        "right": -118.2,
-        "top": 34.09
+        "left": -74.120163,
+        "bottom": 4.571422,
+        "right": -74.043337,
+        "top": 4.647998
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/los-angeles/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/bogota-co-3688689/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/los-angeles/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/bogota-co-3688689/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/los-angeles/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/bogota-co-3688689/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/los-angeles/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/bogota-co-3688689/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,32 +71,32 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/los-angeles/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/bogota-co-3688689/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/los-angeles/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/bogota-co-3688689/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
       }
     ],
     "geometryMetrics": {
-      "roadLineCount": 780,
-      "roadTotalLengthMeters": 498601,
-      "intersectionCount": 397,
-      "waterGeometryCount": 18,
-      "parkGeometryCount": 140,
-      "railLineCount": 120
+      "roadLineCount": 380,
+      "roadTotalLengthMeters": 285225,
+      "intersectionCount": 175,
+      "waterGeometryCount": 70,
+      "parkGeometryCount": 80,
+      "railLineCount": 21
     },
     "clues": {
-      "continent": "North America",
-      "country": "United States",
-      "populationBand": "1m+",
-      "coastal": true,
+      "continent": "South America",
+      "country": "Colombia",
+      "populationBand": "5m-10m",
+      "coastal": false,
       "hasMajorRapidTransit": true
     }
   }

@@ -7,6 +7,10 @@ import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
+const fixture = JSON.parse(fs.readFileSync(new URL('../content/puzzles/v1/puzzle-0748.json', import.meta.url), 'utf8'));
+const fixtureStage0 = fixture.extension.assetStages[0].assetPath;
+const fixtureSlug = fixtureStage0.replace(/^content\/assets\/v1\/city-grid\//, '').replace(/\/stage-0\.svg$/, '');
+const firstCandidate = JSON.parse(fs.readFileSync(new URL('../content/candidates/world-top-100-cities-geonames-v1.json', import.meta.url), 'utf8')).cities[0];
 
 test('validate-package accepts the generated package', () => {
   const result = spawnSync(process.execPath, ['tools/validate-package.mjs'], { cwd: root, encoding: 'utf8' });
@@ -26,8 +30,8 @@ test('validate-package rejects missing source provenance', () => {
 
 test('validate-package rejects SVG text leaks, missing assets, and invalid metrics', () => {
   const cases = [
-    (tmp) => fs.appendFileSync(path.join(tmp, 'content/assets/v1/city-grid/boston/stage-0.svg'), '<text>Boston</text>'),
-    (tmp) => fs.rmSync(path.join(tmp, 'content/assets/v1/city-grid/boston/stage-0.svg')),
+    (tmp) => fs.appendFileSync(path.join(tmp, fixtureStage0), `<text>${fixture.extension.answer.canonicalName}</text>`),
+    (tmp) => fs.rmSync(path.join(tmp, 'content/assets/v1/city-grid', fixtureSlug, 'stage-0.svg')),
     (tmp) => {
       const puzzlePath = path.join(tmp, 'content/puzzles/v1/puzzle-0748.json');
       const puzzle = JSON.parse(fs.readFileSync(puzzlePath, 'utf8'));
@@ -46,7 +50,7 @@ test('validate-package rejects SVG text leaks, missing assets, and invalid metri
 test('validate-package rejects candidate/runtime alias drift through runtime validation', () => {
   const tmp = copyPackage();
   const runtimePath = path.join(tmp, 'dist/runtime/candidates.generated.js');
-  fs.writeFileSync(runtimePath, fs.readFileSync(runtimePath, 'utf8').replace('city:us:ma:boston', 'city:drift:boston'));
+  fs.writeFileSync(runtimePath, fs.readFileSync(runtimePath, 'utf8').replace(firstCandidate.entityId, 'city:drift:first'));
   const result = spawnSync(process.execPath, ['tools/validate-package.mjs'], { cwd: tmp, encoding: 'utf8' });
   assert.notEqual(result.status, 0);
   assert.match(result.stderr, /runtime validation failed/);

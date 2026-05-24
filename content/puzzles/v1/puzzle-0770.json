@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:us:ny:new-york",
-      "canonicalName": "New York",
+      "entityId": "city:geonames:184745",
+      "canonicalName": "Nairobi",
       "aliases": [
-        "New York City",
-        "NYC",
-        "New York, NY",
-        "New York NY"
+        "Nairobi",
+        "Nairobi, KE",
+        "Nairobi Kenya",
+        "Nairobi Nairobi County"
       ],
-      "countryCode": "US",
-      "country": "United States",
-      "admin1": "New York",
-      "lat": 40.7128,
-      "lon": -74.006,
-      "population": 8804190
+      "countryCode": "KE",
+      "country": "Kenya",
+      "admin1": "Nairobi County",
+      "lat": -1.28333,
+      "lon": 36.81667,
+      "population": 4397073
     },
-    "candidateSetId": "real-osm-city-sample-v1",
+    "candidateSetId": "world-top-100-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-city-sample-v1",
+      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
       "bbox": {
-        "left": -74.02,
-        "bottom": 40.7,
-        "right": -73.93,
-        "top": 40.8
+        "left": 36.780625,
+        "bottom": -1.319366,
+        "right": 36.852715,
+        "top": -1.247294
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/new-york/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/nairobi-ke-184745/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/new-york/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/nairobi-ke-184745/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/new-york/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/nairobi-ke-184745/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/new-york/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/nairobi-ke-184745/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,32 +71,32 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/new-york/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/nairobi-ke-184745/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/new-york/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/nairobi-ke-184745/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
       }
     ],
     "geometryMetrics": {
-      "roadLineCount": 780,
-      "roadTotalLengthMeters": 471569,
-      "intersectionCount": 377,
-      "waterGeometryCount": 120,
-      "parkGeometryCount": 140,
-      "railLineCount": 120
+      "roadLineCount": 380,
+      "roadTotalLengthMeters": 315054,
+      "intersectionCount": 207,
+      "waterGeometryCount": 60,
+      "parkGeometryCount": 80,
+      "railLineCount": 70
     },
     "clues": {
-      "continent": "North America",
-      "country": "United States",
-      "populationBand": "1m+",
-      "coastal": true,
+      "continent": "Africa",
+      "country": "Kenya",
+      "populationBand": "3m-5m",
+      "coastal": false,
       "hasMajorRapidTransit": true
     }
   }

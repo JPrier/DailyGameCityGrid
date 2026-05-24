@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:us:ny:new-york",
-      "canonicalName": "New York",
+      "entityId": "city:geonames:323786",
+      "canonicalName": "Ankara",
       "aliases": [
-        "New York City",
-        "NYC",
-        "New York, NY",
-        "New York NY"
+        "Ankara",
+        "Ankara, TR",
+        "Ankara Turkey",
+        "Ankara Ankara"
       ],
-      "countryCode": "US",
-      "country": "United States",
-      "admin1": "New York",
-      "lat": 40.7128,
-      "lon": -74.006,
-      "population": 8804190
+      "countryCode": "TR",
+      "country": "Turkey",
+      "admin1": "Ankara",
+      "lat": 39.91987,
+      "lon": 32.85427,
+      "population": 3517182
     },
-    "candidateSetId": "real-osm-city-sample-v1",
+    "candidateSetId": "world-top-100-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-city-sample-v1",
+      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
       "bbox": {
-        "left": -74.02,
-        "bottom": 40.7,
-        "right": -73.93,
-        "top": 40.8
+        "left": 32.807283,
+        "bottom": 39.883834,
+        "right": 32.901257,
+        "top": 39.955906
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/new-york/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/ankara-tr-323786/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/new-york/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/ankara-tr-323786/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/new-york/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/ankara-tr-323786/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/new-york/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/ankara-tr-323786/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,32 +71,32 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/new-york/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/ankara-tr-323786/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/new-york/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/ankara-tr-323786/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
       }
     ],
     "geometryMetrics": {
-      "roadLineCount": 780,
-      "roadTotalLengthMeters": 471569,
-      "intersectionCount": 377,
-      "waterGeometryCount": 120,
-      "parkGeometryCount": 140,
-      "railLineCount": 120
+      "roadLineCount": 380,
+      "roadTotalLengthMeters": 378362,
+      "intersectionCount": 262,
+      "waterGeometryCount": 70,
+      "parkGeometryCount": 80,
+      "railLineCount": 70
     },
     "clues": {
-      "continent": "North America",
-      "country": "United States",
-      "populationBand": "1m+",
-      "coastal": true,
+      "continent": "Asia",
+      "country": "Turkey",
+      "populationBand": "3m-5m",
+      "coastal": false,
       "hasMajorRapidTransit": true
     }
   }

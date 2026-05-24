@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:gb:eng:london",
-      "canonicalName": "London",
+      "entityId": "city:geonames:745044",
+      "canonicalName": "Istanbul",
       "aliases": [
-        "London, UK",
-        "London England",
-        "City of London",
-        "London GB"
+        "Istanbul",
+        "Istanbul, TR",
+        "Istanbul Turkey",
+        "Istanbul Istanbul"
       ],
-      "countryCode": "GB",
-      "country": "United Kingdom",
-      "admin1": "England",
-      "lat": 51.5072,
-      "lon": -0.1276,
-      "population": 8799800
+      "countryCode": "TR",
+      "country": "Turkey",
+      "admin1": "Istanbul",
+      "lat": 41.01384,
+      "lon": 28.94966,
+      "population": 15701602
     },
-    "candidateSetId": "real-osm-city-sample-v1",
+    "candidateSetId": "world-top-100-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-city-sample-v1",
+      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
       "bbox": {
-        "left": -0.15,
-        "bottom": 51.49,
-        "right": -0.07,
-        "top": 51.53
+        "left": 28.895932,
+        "bottom": 40.973299,
+        "right": 29.003388,
+        "top": 41.054381
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/london/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/istanbul-tr-745044/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/london/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/istanbul-tr-745044/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/london/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/istanbul-tr-745044/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/london/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/istanbul-tr-745044/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,31 +71,31 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/london/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/istanbul-tr-745044/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/london/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/istanbul-tr-745044/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
       }
     ],
     "geometryMetrics": {
-      "roadLineCount": 780,
-      "roadTotalLengthMeters": 150036,
-      "intersectionCount": 352,
-      "waterGeometryCount": 80,
-      "parkGeometryCount": 140,
-      "railLineCount": 120
+      "roadLineCount": 380,
+      "roadTotalLengthMeters": 250659,
+      "intersectionCount": 253,
+      "waterGeometryCount": 70,
+      "parkGeometryCount": 80,
+      "railLineCount": 70
     },
     "clues": {
-      "continent": "Europe",
-      "country": "United Kingdom",
-      "populationBand": "1m+",
+      "continent": "Asia",
+      "country": "Turkey",
+      "populationBand": "10m+",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

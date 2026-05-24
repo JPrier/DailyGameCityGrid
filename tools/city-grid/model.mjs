@@ -2,10 +2,9 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 
-export const CANDIDATE_PATH = 'content/candidates/real-osm-city-sample-v1.json';
+export const CANDIDATE_PATH = 'content/candidates/world-top-100-cities-geonames-v1.json';
 export const SOURCE_MANIFEST_PATH = 'content/source/osm-source-manifest.json';
 export const POOL_SIZE = 1000;
-export const FIXTURE_INDICES = new Set([431, 748]);
 export const REVEALS = [
   ['roads-tight'],
   ['roads-wide'],
@@ -21,13 +20,13 @@ const OVERPASS_ENDPOINTS = [
   'https://overpass.kumi.systems/api/interpreter',
 ];
 const MAX_SOURCE_ELEMENTS = {
-  roadsMajor: 260,
-  roadsMinor: 520,
-  rail: 120,
-  water: 120,
-  parks: 140,
+  roadsMajor: 120,
+  roadsMinor: 260,
+  rail: 70,
+  water: 70,
+  parks: 80,
 };
-const MAX_POINTS_PER_ELEMENT = 32;
+const MAX_POINTS_PER_ELEMENT = 26;
 
 export function readJson(root, rel) {
   return JSON.parse(fs.readFileSync(path.join(root, rel), 'utf8'));
@@ -62,8 +61,17 @@ export function loadRealOsmSource(root, sourceManifest) {
 
 export async function refreshRealOsmSource(root, candidates, sourceManifest) {
   const source = sourceManifest.sources[0];
-  const cities = {};
+  const sourceFile = path.join(root, source.localPath);
+  const prior = fs.existsSync(sourceFile) ? readJson(root, source.localPath) : null;
+  const cities = { ...(prior?.cities ?? {}) };
+  let index = 0;
   for (const city of candidates.cities) {
+    index += 1;
+    if (cities[city.entityId]?.elements?.length && sameBbox(cities[city.entityId].bbox, city.bbox)) {
+      console.log(`[${index}/${candidates.cities.length}] ${city.canonicalName}: using cached OSM source`);
+      continue;
+    }
+    console.log(`[${index}/${candidates.cities.length}] ${city.canonicalName}: fetching OSM source`);
     const elements = selectRenderableElements(await fetchCityElements(city));
     cities[city.entityId] = {
       bbox: city.bbox,
@@ -71,6 +79,16 @@ export async function refreshRealOsmSource(root, candidates, sourceManifest) {
       elementCount: elements.length,
       elements: elements.map(trimOsmElement),
     };
+    const partialDocument = {
+      schemaVersion: 'city-grid-real-osm-source.v1',
+      generatedAt: new Date().toISOString(),
+      sourceId: source.id,
+      attribution: 'OpenStreetMap contributors',
+      license: 'ODbL-1.0',
+      queryKind: 'overpass-api-json',
+      cities,
+    };
+    writeJson(root, source.localPath, partialDocument);
   }
 
   const sourceDocument = {
@@ -224,26 +242,65 @@ export function geometryForCity(city, realOsmSource) {
 
 export function renderSvgStage(geometry, stage) {
   const layers = geometry.layers;
+  const majorRoads = stage === 0 ? layers.roadsMajor.slice(0, 72) : layers.roadsMajor;
+  const minorRoads = stage === 1 ? layers.roadsMinor.slice(0, 150) : layers.roadsMinor;
   const parts = [
     '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 320" role="img" aria-label="Unlabeled street-grid crop">',
-    '<rect width="420" height="320" fill="#efe7d2"/>',
+    '<rect width="420" height="320" fill="#f6f3e9"/>',
+    '<g opacity="0.22" stroke="#d8d0bd" stroke-width="1">',
+    ...Array.from({ length: 8 }, (_, index) => `<path d="M${index * 60} 0L${index * 60} 320" fill="none"/>`),
+    ...Array.from({ length: 7 }, (_, index) => `<path d="M0 ${index * 54}L420 ${index * 54}" fill="none"/>`),
+    '</g>',
   ];
-  if (stage >= 2) parts.push(...layers.water.map((item) => renderGeometry(item, '#9bc7d8', '#5c93a6', 0.72, 3)));
-  if (stage >= 3) parts.push(...layers.parks.map((item) => renderGeometry(item, '#83a66b', '#6f9658', 0.72, 2)));
-  if (stage >= 3) parts.push(...layers.rail.map((item) => renderGeometry(item, 'none', '#6f4f37', 0.8, 5, '12 9')));
-  parts.push(...layers.roadsMajor.map((item) => renderGeometry(item, 'none', '#263632', 0.92, stage === 0 ? 5 : 4)));
-  if (stage >= 1) parts.push(...layers.roadsMinor.map((item) => renderGeometry(item, 'none', '#69756f', 0.72, 2)));
-  if (stage >= 4) parts.push('<g fill="#bf5f45" opacity="0.88">', ...layers.landmarks.map((point) => `<circle cx="${point.x}" cy="${point.y}" r="5"/>`), '</g>');
-  if (stage >= 5) parts.push('<rect x="14" y="14" width="392" height="292" rx="18" fill="none" stroke="#183a37" stroke-width="3" opacity="0.45"/>');
+  if (stage >= 2) parts.push(...layers.water.map((item) => renderGeometry(item, '#9fcddd', '#397c94', 0.78, 4)));
+  if (stage >= 3) parts.push(...layers.parks.map((item) => renderGeometry(item, '#9fbe77', '#6d8f4b', 0.76, 2)));
+  parts.push(...majorRoads.map((item) => renderGeometry(item, 'none', '#fdfbf5', 0.95, stage === 0 ? 9 : 8)));
+  parts.push(...majorRoads.map((item) => renderGeometry(item, 'none', '#1e3432', 0.94, stage === 0 ? 4.8 : 4)));
+  if (stage >= 1) parts.push(...minorRoads.map((item) => renderGeometry(item, 'none', '#fdfbf5', 0.76, 4)));
+  if (stage >= 1) parts.push(...minorRoads.map((item) => renderGeometry(item, 'none', '#6b7770', 0.78, 1.8)));
+  if (stage >= 3) parts.push(...layers.rail.map((item) => renderGeometry(item, 'none', '#7b4a2f', 0.88, 4, '10 7')));
+  if (stage >= 4) parts.push('<g fill="#c75237" stroke="#fff8ec" stroke-width="2" opacity="0.92">', ...layers.landmarks.map((point) => `<circle cx="${point.x}" cy="${point.y}" r="5.5"/>`), '</g>');
+  if (stage >= 5) parts.push('<rect x="12" y="12" width="396" height="296" rx="18" fill="none" stroke="#172d2b" stroke-width="3.5" opacity="0.62"/>');
   parts.push('</svg>');
   return `${parts.join('\n')}\n`;
 }
 
 async function fetchCityElements(city) {
-  const bbox = `${city.bbox.bottom},${city.bbox.left},${city.bbox.top},${city.bbox.right}`;
-  const query = `[out:json][timeout:90];
+  let roads = [];
+  let usedBbox = city.bbox;
+  let lastRoadError = null;
+  for (const candidateBbox of [city.bbox, shrinkBbox(city.bbox, 0.65), shrinkBbox(city.bbox, 0.45)]) {
+    try {
+      roads = await fetchOverpassElements(city, roadQueryFor(candidateBbox));
+      usedBbox = candidateBbox;
+      break;
+    } catch (error) {
+      lastRoadError = error;
+    }
+  }
+  if (!roads.length) throw lastRoadError ?? new Error(`${city.canonicalName}: failed to refresh OSM roads`);
+  let context = [];
+  try {
+    context = await fetchOverpassElements(city, contextQueryFor(usedBbox));
+  } catch (error) {
+    console.warn(`${city.canonicalName}: optional OSM context skipped: ${error.message}`);
+  }
+  return [...roads, ...context];
+}
+
+function roadQueryFor(bboxValue) {
+  const bbox = overpassBbox(bboxValue);
+  return `[out:json][timeout:60];
 (
   way["highway"~"^(motorway|trunk|primary|secondary|tertiary|residential|unclassified|service|living_street)$"](${bbox});
+);
+out body geom;`;
+}
+
+function contextQueryFor(bboxValue) {
+  const bbox = overpassBbox(bboxValue);
+  return `[out:json][timeout:45];
+(
   way["railway"~"^(rail|subway|light_rail|tram)$"](${bbox});
   way["natural"="water"](${bbox});
   way["natural"="coastline"](${bbox});
@@ -253,6 +310,9 @@ async function fetchCityElements(city) {
   way["natural"="wood"](${bbox});
 );
 out body geom;`;
+}
+
+async function fetchOverpassElements(city, query) {
   let lastError = null;
   for (const endpoint of OVERPASS_ENDPOINTS) {
     try {
@@ -442,6 +502,27 @@ function radians(value) {
 
 function validBbox(bbox) {
   return bbox && Number.isFinite(bbox.left) && Number.isFinite(bbox.right) && Number.isFinite(bbox.bottom) && Number.isFinite(bbox.top) && bbox.left < bbox.right && bbox.bottom < bbox.top;
+}
+
+function sameBbox(a, b) {
+  return validBbox(a) && validBbox(b) && ['left', 'bottom', 'right', 'top'].every((key) => Math.abs(a[key] - b[key]) < 0.000001);
+}
+
+function shrinkBbox(bbox, factor) {
+  const centerLon = (bbox.left + bbox.right) / 2;
+  const centerLat = (bbox.bottom + bbox.top) / 2;
+  const halfWidth = ((bbox.right - bbox.left) * factor) / 2;
+  const halfHeight = ((bbox.top - bbox.bottom) * factor) / 2;
+  return {
+    left: centerLon - halfWidth,
+    bottom: centerLat - halfHeight,
+    right: centerLon + halfWidth,
+    top: centerLat + halfHeight,
+  };
+}
+
+function overpassBbox(bbox) {
+  return `${bbox.bottom},${bbox.left},${bbox.top},${bbox.right}`;
 }
 
 function round(value, decimals) {

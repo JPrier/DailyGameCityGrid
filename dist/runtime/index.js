@@ -5,6 +5,7 @@ const SPEC_VERSION = 'city-grid.spec.v1';
 const MAX_GUESSES = 6;
 
 const NORMALIZED_CANDIDATES = new Map();
+const CANDIDATE_SUGGESTIONS = CANDIDATES.map((city) => city.canonicalName).sort((a, b) => a.localeCompare(b));
 for (const city of CANDIDATES) {
   const cityKeys = new Set();
   for (const name of [city.canonicalName, city.entityId, ...city.aliases]) {
@@ -113,6 +114,7 @@ async function createInitialState({ contentManifest, puzzle, date }) {
       history: [],
       revealedStage: 0,
       message: '',
+      candidateNames: CANDIDATE_SUGGESTIONS,
     },
   };
 }
@@ -141,6 +143,7 @@ async function submitGuess({ puzzle, state, input }) {
   const nextStage = correct ? MAX_GUESSES - 1 : Math.min(MAX_GUESSES - 1, nextGuessCount);
   const status = correct ? 'won' : nextGuessCount >= state.maxGuesses ? 'lost' : 'in_progress';
   const feedback = correct ? [] : feedbackFor(guess, answer);
+  const summary = correct ? `Correct: ${answer.canonicalName} was the city.` : feedbackSummary(guess, feedback, status);
   const entry = {
     guess: guess.canonicalName,
     status: correct ? 'correct' : 'incorrect',
@@ -151,7 +154,7 @@ async function submitGuess({ puzzle, state, input }) {
     ...state.publicState,
     history: [...(state.publicState.history ?? []), entry],
     revealedStage: nextStage,
-    message: correct ? 'Correct.' : status === 'lost' ? 'Game over.' : 'Incorrect.',
+    message: summary,
   };
   if (status !== 'in_progress') {
     publicState.reveal = revealFor(answer, puzzle.extension.assetStages[MAX_GUESSES - 1]?.assetPath);
@@ -186,12 +189,39 @@ async function buildShareText({ state }) {
 
 function feedbackFor(guess, answer) {
   const distance = Math.round(distanceMiles(guess.lat, guess.lon, answer.lat, answer.lon));
+  const direction = compassDirection(guess.lat, guess.lon, answer.lat, answer.lon);
+  const sameCountry = guess.countryCode === answer.countryCode;
+  const populationComparison = answer.population > guess.population ? 'answer-larger' : 'answer-smaller';
+  const proximity = proximityForDistance(distance);
   return [
-    { key: 'distance', label: 'Distance', kind: 'distance', value: `${distance} mi`, severity: 'neutral' },
-    { key: 'direction', label: 'Direction', kind: 'direction', value: compassDirection(guess.lat, guess.lon, answer.lat, answer.lon), severity: 'neutral' },
-    { key: 'sameCountry', label: 'Same country', kind: 'boolean', value: guess.countryCode === answer.countryCode, severity: guess.countryCode === answer.countryCode ? 'good' : 'bad' },
-    { key: 'population', label: 'Population', kind: 'comparison', value: answer.population > guess.population ? 'answer-larger' : 'answer-smaller', severity: 'neutral' },
+    { key: 'proximity', label: 'Heat', kind: 'temperature', value: proximity.label, displayValue: `${proximity.label}: ${distance} mi away`, severity: proximity.severity },
+    { key: 'distance', label: 'Distance', kind: 'distance', value: distance, displayValue: `${distance} mi away`, severity: proximity.severity },
+    { key: 'direction', label: 'Direction', kind: 'direction', value: direction, displayValue: `Go ${directionName(direction)} from ${guess.canonicalName}`, severity: 'neutral' },
+    { key: 'sameCountry', label: 'Country', kind: 'boolean', value: sameCountry, displayValue: sameCountry ? `Same country: ${guess.country}` : `Different country: not ${guess.country}`, severity: sameCountry ? 'good' : 'bad' },
+    { key: 'population', label: 'Population', kind: 'comparison', value: populationComparison, displayValue: populationComparison === 'answer-larger' ? 'Answer city is more populated' : 'Answer city is less populated', severity: 'neutral' },
   ];
+}
+
+function feedbackSummary(guess, feedback, status) {
+  const distance = feedback.find((item) => item.key === 'distance')?.displayValue ?? '';
+  const direction = feedback.find((item) => item.key === 'direction')?.displayValue ?? '';
+  const heat = feedback.find((item) => item.key === 'proximity')?.value ?? 'Unknown';
+  const prefix = status === 'lost' ? 'Game over' : 'Incorrect';
+  return `${prefix}: ${guess.canonicalName} is ${heat.toLowerCase()}. ${distance}. ${direction}.`;
+}
+
+function proximityForDistance(distance) {
+  if (distance <= 100) return { label: 'Scorching', severity: 'hot-5' };
+  if (distance <= 250) return { label: 'Very hot', severity: 'hot-4' };
+  if (distance <= 600) return { label: 'Hot', severity: 'hot-3' };
+  if (distance <= 1200) return { label: 'Warm', severity: 'hot-2' };
+  if (distance <= 2400) return { label: 'Cool', severity: 'cold-1' };
+  if (distance <= 4800) return { label: 'Cold', severity: 'cold-2' };
+  return { label: 'Very cold', severity: 'cold-3' };
+}
+
+function directionName(value) {
+  return { N: 'north', NE: 'northeast', E: 'east', SE: 'southeast', S: 'south', SW: 'southwest', W: 'west', NW: 'northwest' }[value] ?? value;
 }
 
 function revealFor(answer, fullMapAssetPath) {

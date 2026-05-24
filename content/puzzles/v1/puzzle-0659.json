@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:us:ca:los-angeles",
-      "canonicalName": "Los Angeles",
+      "entityId": "city:geonames:3871336",
+      "canonicalName": "Santiago",
       "aliases": [
-        "LA",
-        "Los Angeles, CA",
-        "Los Angeles California",
-        "L.A."
+        "Santiago",
+        "Santiago, CL",
+        "Santiago Chile",
+        "Santiago Santiago Metropolitan"
       ],
-      "countryCode": "US",
-      "country": "United States",
-      "admin1": "California",
-      "lat": 34.0522,
-      "lon": -118.2437,
-      "population": 3898747
+      "countryCode": "CL",
+      "country": "Chile",
+      "admin1": "Santiago Metropolitan",
+      "lat": -33.45694,
+      "lon": -70.64827,
+      "population": 4837295
     },
-    "candidateSetId": "real-osm-city-sample-v1",
+    "candidateSetId": "world-top-100-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-city-sample-v1",
+      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
       "bbox": {
-        "left": -118.3,
-        "bottom": 34.01,
-        "right": -118.2,
-        "top": 34.09
+        "left": -70.691463,
+        "bottom": -33.492976,
+        "right": -70.605077,
+        "top": -33.420904
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/los-angeles/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/santiago-cl-3871336/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/los-angeles/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/santiago-cl-3871336/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/los-angeles/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/santiago-cl-3871336/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/los-angeles/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/santiago-cl-3871336/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,32 +71,32 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/los-angeles/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/santiago-cl-3871336/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/los-angeles/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/santiago-cl-3871336/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
       }
     ],
     "geometryMetrics": {
-      "roadLineCount": 780,
-      "roadTotalLengthMeters": 498601,
-      "intersectionCount": 397,
-      "waterGeometryCount": 18,
-      "parkGeometryCount": 140,
-      "railLineCount": 120
+      "roadLineCount": 380,
+      "roadTotalLengthMeters": 280728,
+      "intersectionCount": 122,
+      "waterGeometryCount": 54,
+      "parkGeometryCount": 80,
+      "railLineCount": 70
     },
     "clues": {
-      "continent": "North America",
-      "country": "United States",
-      "populationBand": "1m+",
-      "coastal": true,
+      "continent": "South America",
+      "country": "Chile",
+      "populationBand": "3m-5m",
+      "coastal": false,
       "hasMajorRapidTransit": true
     }
   }

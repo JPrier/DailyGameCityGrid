@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:us:ny:new-york",
-      "canonicalName": "New York",
+      "entityId": "city:geonames:1275339",
+      "canonicalName": "Mumbai",
       "aliases": [
-        "New York City",
-        "NYC",
-        "New York, NY",
-        "New York NY"
+        "Mumbai",
+        "Mumbai, IN",
+        "Mumbai India",
+        "Mumbai Maharashtra"
       ],
-      "countryCode": "US",
-      "country": "United States",
-      "admin1": "New York",
-      "lat": 40.7128,
-      "lon": -74.006,
-      "population": 8804190
+      "countryCode": "IN",
+      "country": "India",
+      "admin1": "Maharashtra",
+      "lat": 19.07283,
+      "lon": 72.88261,
+      "population": 12691836
     },
-    "candidateSetId": "real-osm-city-sample-v1",
+    "candidateSetId": "world-top-100-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-city-sample-v1",
+      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
       "bbox": {
-        "left": -74.02,
-        "bottom": 40.7,
-        "right": -73.93,
-        "top": 40.8
+        "left": 72.839715,
+        "bottom": 19.032289,
+        "right": 72.925505,
+        "top": 19.113371
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/new-york/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/mumbai-in-1275339/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/new-york/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/mumbai-in-1275339/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/new-york/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/mumbai-in-1275339/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/new-york/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/mumbai-in-1275339/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,32 +71,32 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/new-york/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/mumbai-in-1275339/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/new-york/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/mumbai-in-1275339/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
       }
     ],
     "geometryMetrics": {
-      "roadLineCount": 780,
-      "roadTotalLengthMeters": 471569,
-      "intersectionCount": 377,
-      "waterGeometryCount": 120,
-      "parkGeometryCount": 140,
-      "railLineCount": 120
+      "roadLineCount": 380,
+      "roadTotalLengthMeters": 348571,
+      "intersectionCount": 312,
+      "waterGeometryCount": 70,
+      "parkGeometryCount": 80,
+      "railLineCount": 70
     },
     "clues": {
-      "continent": "North America",
-      "country": "United States",
-      "populationBand": "1m+",
-      "coastal": true,
+      "continent": "Asia",
+      "country": "India",
+      "populationBand": "10m+",
+      "coastal": false,
       "hasMajorRapidTransit": true
     }
   }

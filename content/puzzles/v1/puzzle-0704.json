@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:us:ma:boston",
-      "canonicalName": "Boston",
+      "entityId": "city:geonames:2314302",
+      "canonicalName": "Kinshasa",
       "aliases": [
-        "Boston, MA",
-        "Boston Massachusetts",
-        "Beantown",
-        "Boston MA"
+        "Kinshasa",
+        "Kinshasa, CD",
+        "Kinshasa Democratic Republic of the Congo",
+        "Kinshasa Kinshasa"
       ],
-      "countryCode": "US",
-      "country": "United States",
-      "admin1": "Massachusetts",
-      "lat": 42.3601,
-      "lon": -71.0589,
-      "population": 675647
+      "countryCode": "CD",
+      "country": "Democratic Republic of the Congo",
+      "admin1": "Kinshasa",
+      "lat": -4.32758,
+      "lon": 15.31357,
+      "population": 16000000
     },
-    "candidateSetId": "real-osm-city-sample-v1",
+    "candidateSetId": "world-top-100-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-city-sample-v1",
+      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
       "bbox": {
-        "left": -71.12,
-        "bottom": 42.32,
-        "right": -71.02,
-        "top": 42.39
+        "left": 15.272914,
+        "bottom": -4.368121,
+        "right": 15.354226,
+        "top": -4.287039
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/boston/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/kinshasa-cd-2314302/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/boston/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/kinshasa-cd-2314302/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/boston/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/kinshasa-cd-2314302/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/boston/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/kinshasa-cd-2314302/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,32 +71,32 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/boston/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/kinshasa-cd-2314302/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/boston/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/kinshasa-cd-2314302/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
       }
     ],
     "geometryMetrics": {
-      "roadLineCount": 780,
-      "roadTotalLengthMeters": 381425,
-      "intersectionCount": 438,
-      "waterGeometryCount": 120,
-      "parkGeometryCount": 140,
-      "railLineCount": 120
+      "roadLineCount": 380,
+      "roadTotalLengthMeters": 404941,
+      "intersectionCount": 191,
+      "waterGeometryCount": 64,
+      "parkGeometryCount": 80,
+      "railLineCount": 47
     },
     "clues": {
-      "continent": "North America",
-      "country": "United States",
-      "populationBand": "500k-1m",
-      "coastal": true,
+      "continent": "Africa",
+      "country": "Democratic Republic of the Congo",
+      "populationBand": "10m+",
+      "coastal": false,
       "hasMajorRapidTransit": true
     }
   }

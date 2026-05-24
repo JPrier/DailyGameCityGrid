@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:fr:idf:paris",
-      "canonicalName": "Paris",
+      "entityId": "city:geonames:1793511",
+      "canonicalName": "Taiyuan",
       "aliases": [
-        "Paris, France",
-        "Ville de Paris",
-        "Paris FR",
-        "City of Light"
+        "Taiyuan",
+        "Taiyuan, CN",
+        "Taiyuan China",
+        "Taiyuan Shanxi"
       ],
-      "countryCode": "FR",
-      "country": "France",
-      "admin1": "Ile-de-France",
-      "lat": 48.8566,
-      "lon": 2.3522,
-      "population": 2145906
+      "countryCode": "CN",
+      "country": "China",
+      "admin1": "Shanxi",
+      "lat": 37.86944,
+      "lon": 112.56028,
+      "population": 4303673
     },
-    "candidateSetId": "real-osm-city-sample-v1",
+    "candidateSetId": "world-top-100-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-city-sample-v1",
+      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
       "bbox": {
-        "left": 2.31,
-        "bottom": 48.84,
-        "right": 2.38,
-        "top": 48.88
+        "left": 112.514631,
+        "bottom": 37.833404,
+        "right": 112.605929,
+        "top": 37.905476
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/paris/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/taiyuan-cn-1793511/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/paris/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/taiyuan-cn-1793511/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/paris/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/taiyuan-cn-1793511/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/paris/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/taiyuan-cn-1793511/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,31 +71,31 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/paris/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/taiyuan-cn-1793511/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/paris/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/taiyuan-cn-1793511/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
       }
     ],
     "geometryMetrics": {
-      "roadLineCount": 780,
-      "roadTotalLengthMeters": 203370,
-      "intersectionCount": 390,
-      "waterGeometryCount": 120,
-      "parkGeometryCount": 140,
-      "railLineCount": 120
+      "roadLineCount": 380,
+      "roadTotalLengthMeters": 494231,
+      "intersectionCount": 261,
+      "waterGeometryCount": 39,
+      "parkGeometryCount": 43,
+      "railLineCount": 70
     },
     "clues": {
-      "continent": "Europe",
-      "country": "France",
-      "populationBand": "1m+",
+      "continent": "Asia",
+      "country": "China",
+      "populationBand": "3m-5m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

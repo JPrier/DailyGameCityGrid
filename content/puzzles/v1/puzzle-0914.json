@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:us:ny:new-york",
-      "canonicalName": "New York",
+      "entityId": "city:geonames:1792947",
+      "canonicalName": "Tianjin",
       "aliases": [
-        "New York City",
-        "NYC",
-        "New York, NY",
-        "New York NY"
+        "Tianjin",
+        "Tianjin, CN",
+        "Tianjin China",
+        "Tianjin Tianjin"
       ],
-      "countryCode": "US",
-      "country": "United States",
-      "admin1": "New York",
-      "lat": 40.7128,
-      "lon": -74.006,
-      "population": 8804190
+      "countryCode": "CN",
+      "country": "China",
+      "admin1": "Tianjin",
+      "lat": 39.14222,
+      "lon": 117.17667,
+      "population": 11090314
     },
-    "candidateSetId": "real-osm-city-sample-v1",
+    "candidateSetId": "world-top-100-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-city-sample-v1",
+      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
       "bbox": {
-        "left": -74.02,
-        "bottom": 40.7,
-        "right": -73.93,
-        "top": 40.8
+        "left": 117.124399,
+        "bottom": 39.101679,
+        "right": 117.228941,
+        "top": 39.182761
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/new-york/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/tianjin-cn-1792947/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/new-york/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/tianjin-cn-1792947/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/new-york/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/tianjin-cn-1792947/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/new-york/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/tianjin-cn-1792947/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,32 +71,32 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/new-york/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/tianjin-cn-1792947/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/new-york/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/tianjin-cn-1792947/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
       }
     ],
     "geometryMetrics": {
-      "roadLineCount": 780,
-      "roadTotalLengthMeters": 471569,
-      "intersectionCount": 377,
-      "waterGeometryCount": 120,
-      "parkGeometryCount": 140,
-      "railLineCount": 120
+      "roadLineCount": 380,
+      "roadTotalLengthMeters": 396112,
+      "intersectionCount": 260,
+      "waterGeometryCount": 48,
+      "parkGeometryCount": 80,
+      "railLineCount": 70
     },
     "clues": {
-      "continent": "North America",
-      "country": "United States",
-      "populationBand": "1m+",
-      "coastal": true,
+      "continent": "Asia",
+      "country": "China",
+      "populationBand": "10m+",
+      "coastal": false,
       "hasMajorRapidTransit": true
     }
   }

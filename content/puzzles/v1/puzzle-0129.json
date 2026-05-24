@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:us:il:chicago",
-      "canonicalName": "Chicago",
+      "entityId": "city:geonames:5128581",
+      "canonicalName": "New York City",
       "aliases": [
-        "Chicago, IL",
-        "Chicago Illinois",
-        "Windy City",
-        "Chicago IL"
+        "New York City",
+        "New York City, US",
+        "New York City United States",
+        "New York City New York"
       ],
       "countryCode": "US",
       "country": "United States",
-      "admin1": "Illinois",
-      "lat": 41.8781,
-      "lon": -87.6298,
-      "population": 2746388
+      "admin1": "New York",
+      "lat": 40.71427,
+      "lon": -74.00597,
+      "population": 8804190
     },
-    "candidateSetId": "real-osm-city-sample-v1",
+    "candidateSetId": "world-top-100-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-city-sample-v1",
+      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
       "bbox": {
-        "left": -87.68,
-        "bottom": 41.84,
-        "right": -87.58,
-        "top": 41.93
+        "left": -74.056484,
+        "bottom": 40.675982,
+        "right": -73.955456,
+        "top": 40.752558
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/chicago/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/new-york-city-us-5128581/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/chicago/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/new-york-city-us-5128581/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/chicago/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/new-york-city-us-5128581/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/chicago/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/new-york-city-us-5128581/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,32 +71,32 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/chicago/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/new-york-city-us-5128581/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/chicago/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/new-york-city-us-5128581/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
       }
     ],
     "geometryMetrics": {
-      "roadLineCount": 780,
-      "roadTotalLengthMeters": 401172,
-      "intersectionCount": 426,
-      "waterGeometryCount": 120,
-      "parkGeometryCount": 140,
-      "railLineCount": 120
+      "roadLineCount": 380,
+      "roadTotalLengthMeters": 271420,
+      "intersectionCount": 160,
+      "waterGeometryCount": 70,
+      "parkGeometryCount": 80,
+      "railLineCount": 70
     },
     "clues": {
       "continent": "North America",
       "country": "United States",
-      "populationBand": "1m+",
-      "coastal": true,
+      "populationBand": "5m-10m",
+      "coastal": false,
       "hasMajorRapidTransit": true
     }
   }

@@ -2,7 +2,6 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {
   CANDIDATE_PATH,
-  FIXTURE_INDICES,
   POOL_SIZE,
   REVEALS,
   SOURCE_MANIFEST_PATH,
@@ -90,7 +89,7 @@ for (const city of candidates.cities) {
 const puzzleDir = path.join(root, 'content/puzzles/v1');
 fs.mkdirSync(puzzleDir, { recursive: true });
 for (let index = 0; index < POOL_SIZE; index += 1) {
-  const city = FIXTURE_INDICES.has(index) ? candidates.cities[0] : candidates.cities[index % candidates.cities.length];
+  const city = candidates.cities[index % candidates.cities.length];
   const geometry = geometries.get(city.entityId);
   const puzzle = {
     schemaVersion: 'daily-game-puzzle.v1',

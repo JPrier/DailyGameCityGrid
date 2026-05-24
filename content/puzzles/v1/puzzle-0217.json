@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:us:il:chicago",
-      "canonicalName": "Chicago",
+      "entityId": "city:geonames:524901",
+      "canonicalName": "Moscow",
       "aliases": [
-        "Chicago, IL",
-        "Chicago Illinois",
-        "Windy City",
-        "Chicago IL"
+        "Moscow",
+        "Moscow, RU",
+        "Moscow Russia",
+        "Moscow Moscow"
       ],
-      "countryCode": "US",
-      "country": "United States",
-      "admin1": "Illinois",
-      "lat": 41.8781,
-      "lon": -87.6298,
-      "population": 2746388
+      "countryCode": "RU",
+      "country": "Russia",
+      "admin1": "Moscow",
+      "lat": 55.75204,
+      "lon": 37.61781,
+      "population": 10381222
     },
-    "candidateSetId": "real-osm-city-sample-v1",
+    "candidateSetId": "world-top-100-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-city-sample-v1",
+      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
       "bbox": {
-        "left": -87.68,
-        "bottom": 41.84,
-        "right": -87.58,
-        "top": 41.93
+        "left": 37.545773,
+        "bottom": 55.711499,
+        "right": 37.689847,
+        "top": 55.792581
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/chicago/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/moscow-ru-524901/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/chicago/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/moscow-ru-524901/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/chicago/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/moscow-ru-524901/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/chicago/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/moscow-ru-524901/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,32 +71,32 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/chicago/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/moscow-ru-524901/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/chicago/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/moscow-ru-524901/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
       }
     ],
     "geometryMetrics": {
-      "roadLineCount": 780,
-      "roadTotalLengthMeters": 401172,
-      "intersectionCount": 426,
-      "waterGeometryCount": 120,
-      "parkGeometryCount": 140,
-      "railLineCount": 120
+      "roadLineCount": 380,
+      "roadTotalLengthMeters": 236051,
+      "intersectionCount": 179,
+      "waterGeometryCount": 70,
+      "parkGeometryCount": 80,
+      "railLineCount": 70
     },
     "clues": {
-      "continent": "North America",
-      "country": "United States",
-      "populationBand": "1m+",
-      "coastal": true,
+      "continent": "Europe",
+      "country": "Russia",
+      "populationBand": "10m+",
+      "coastal": false,
       "hasMajorRapidTransit": true
     }
   }

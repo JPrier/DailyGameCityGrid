@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:gb:eng:london",
-      "canonicalName": "London",
+      "entityId": "city:geonames:1168197",
+      "canonicalName": "Peshawar",
       "aliases": [
-        "London, UK",
-        "London England",
-        "City of London",
-        "London GB"
+        "Peshawar",
+        "Peshawar, PK",
+        "Peshawar Pakistan",
+        "Peshawar Khyber Pakhtunkhwa"
       ],
-      "countryCode": "GB",
-      "country": "United Kingdom",
-      "admin1": "England",
-      "lat": 51.5072,
-      "lon": -0.1276,
-      "population": 8799800
+      "countryCode": "PK",
+      "country": "Pakistan",
+      "admin1": "Khyber Pakhtunkhwa",
+      "lat": 34.008,
+      "lon": 71.57849,
+      "population": 4758762
     },
-    "candidateSetId": "real-osm-city-sample-v1",
+    "candidateSetId": "world-top-100-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-city-sample-v1",
+      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
       "bbox": {
-        "left": -0.15,
-        "bottom": 51.49,
-        "right": -0.07,
-        "top": 51.53
+        "left": 71.535019,
+        "bottom": 33.971964,
+        "right": 71.621961,
+        "top": 34.044036
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/london/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/peshawar-pk-1168197/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/london/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/peshawar-pk-1168197/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/london/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/peshawar-pk-1168197/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/london/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/peshawar-pk-1168197/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,31 +71,31 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/london/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/peshawar-pk-1168197/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/london/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/peshawar-pk-1168197/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
       }
     ],
     "geometryMetrics": {
-      "roadLineCount": 780,
-      "roadTotalLengthMeters": 150036,
-      "intersectionCount": 352,
-      "waterGeometryCount": 80,
-      "parkGeometryCount": 140,
-      "railLineCount": 120
+      "roadLineCount": 380,
+      "roadTotalLengthMeters": 366997,
+      "intersectionCount": 234,
+      "waterGeometryCount": 50,
+      "parkGeometryCount": 80,
+      "railLineCount": 58
     },
     "clues": {
-      "continent": "Europe",
-      "country": "United Kingdom",
-      "populationBand": "1m+",
+      "continent": "Asia",
+      "country": "Pakistan",
+      "populationBand": "3m-5m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

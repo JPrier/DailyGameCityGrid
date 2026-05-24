@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:fr:idf:paris",
-      "canonicalName": "Paris",
+      "entityId": "city:geonames:2037013",
+      "canonicalName": "Harbin",
       "aliases": [
-        "Paris, France",
-        "Ville de Paris",
-        "Paris FR",
-        "City of Light"
+        "Harbin",
+        "Harbin, CN",
+        "Harbin China",
+        "Harbin Heilongjiang"
       ],
-      "countryCode": "FR",
-      "country": "France",
-      "admin1": "Ile-de-France",
-      "lat": 48.8566,
-      "lon": 2.3522,
-      "population": 2145906
+      "countryCode": "CN",
+      "country": "China",
+      "admin1": "Heilongjiang",
+      "lat": 45.75,
+      "lon": 126.65,
+      "population": 5242897
     },
-    "candidateSetId": "real-osm-city-sample-v1",
+    "candidateSetId": "world-top-100-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-city-sample-v1",
+      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
       "bbox": {
-        "left": 2.31,
-        "bottom": 48.84,
-        "right": 2.38,
-        "top": 48.88
+        "left": 126.595129,
+        "bottom": 45.711712,
+        "right": 126.704871,
+        "top": 45.788288
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/paris/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/harbin-cn-2037013/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/paris/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/harbin-cn-2037013/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/paris/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/harbin-cn-2037013/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/paris/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/harbin-cn-2037013/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,31 +71,31 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/paris/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/harbin-cn-2037013/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/paris/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/harbin-cn-2037013/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
       }
     ],
     "geometryMetrics": {
-      "roadLineCount": 780,
-      "roadTotalLengthMeters": 203370,
-      "intersectionCount": 390,
-      "waterGeometryCount": 120,
-      "parkGeometryCount": 140,
-      "railLineCount": 120
+      "roadLineCount": 380,
+      "roadTotalLengthMeters": 458582,
+      "intersectionCount": 215,
+      "waterGeometryCount": 57,
+      "parkGeometryCount": 80,
+      "railLineCount": 70
     },
     "clues": {
-      "continent": "Europe",
-      "country": "France",
-      "populationBand": "1m+",
+      "continent": "Asia",
+      "country": "China",
+      "populationBand": "5m-10m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:fr:idf:paris",
-      "canonicalName": "Paris",
+      "entityId": "city:geonames:160263",
+      "canonicalName": "Dar es Salaam",
       "aliases": [
-        "Paris, France",
-        "Ville de Paris",
-        "Paris FR",
-        "City of Light"
+        "Dar es Salaam",
+        "Dar es Salaam, TZ",
+        "Dar es Salaam Tanzania",
+        "Dar es Salaam Dar es Salaam Region"
       ],
-      "countryCode": "FR",
-      "country": "France",
-      "admin1": "Ile-de-France",
-      "lat": 48.8566,
-      "lon": 2.3522,
-      "population": 2145906
+      "countryCode": "TZ",
+      "country": "Tanzania",
+      "admin1": "Dar es Salaam Region",
+      "lat": -6.82349,
+      "lon": 39.26951,
+      "population": 5383728
     },
-    "candidateSetId": "real-osm-city-sample-v1",
+    "candidateSetId": "world-top-100-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-city-sample-v1",
+      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
       "bbox": {
-        "left": 2.31,
-        "bottom": 48.84,
-        "right": 2.38,
-        "top": 48.88
+        "left": 39.230949,
+        "bottom": -6.861778,
+        "right": 39.308071,
+        "top": -6.785202
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/paris/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/dar-es-salaam-tz-160263/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/paris/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/dar-es-salaam-tz-160263/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/paris/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/dar-es-salaam-tz-160263/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/paris/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/dar-es-salaam-tz-160263/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,31 +71,31 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/paris/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/dar-es-salaam-tz-160263/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/paris/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/dar-es-salaam-tz-160263/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
       }
     ],
     "geometryMetrics": {
-      "roadLineCount": 780,
-      "roadTotalLengthMeters": 203370,
-      "intersectionCount": 390,
-      "waterGeometryCount": 120,
-      "parkGeometryCount": 140,
-      "railLineCount": 120
+      "roadLineCount": 380,
+      "roadTotalLengthMeters": 321469,
+      "intersectionCount": 218,
+      "waterGeometryCount": 70,
+      "parkGeometryCount": 80,
+      "railLineCount": 70
     },
     "clues": {
-      "continent": "Europe",
-      "country": "France",
-      "populationBand": "1m+",
+      "continent": "Africa",
+      "country": "Tanzania",
+      "populationBand": "5m-10m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

@@ -19,7 +19,7 @@ const root = fileURLToPath(new URL('..', import.meta.url));
 const candidates = loadCandidates(root);
 const sourceManifest = loadSourceManifest(root);
 const realOsmSource = loadRealOsmSource(root, sourceManifest);
-const boston = candidates.cities[0];
+const fixtureCity = candidates.cities[0];
 
 test('locked mode validation refuses missing source files and sha mismatches', () => {
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'city-grid-source-'));
@@ -46,16 +46,16 @@ test('candidate validation rejects duplicate entity ids and aliases', () => {
 test('renderer outputs six staged SVGs without labels or answer strings', () => {
   const sourceErrors = validateRealOsmSource(candidates, realOsmSource);
   assert.deepEqual(sourceErrors, []);
-  const geometry = geometryForCity(boston, realOsmSource);
+  const geometry = geometryForCity(fixtureCity, realOsmSource);
   const stages = Array.from({ length: 6 }, (_, stage) => renderSvgStage(geometry, stage));
   assert.equal(stages.length, 6);
   assert.match(stages[0], /<path/);
-  assert.doesNotMatch(stages[0], /#9bc7d8/);
-  assert.match(stages[2], /#9bc7d8/);
+  assert.doesNotMatch(stages[0], /#9fcddd/);
+  assert.match(stages[2], /#9fcddd/);
   assert.match(stages[3], /stroke-dasharray/);
   for (const svg of stages) {
     assert.doesNotMatch(svg, /<text[\s>]/i);
-    assert.doesNotMatch(svg.toLowerCase(), /boston|massachusetts|beantown/);
+    assert.doesNotMatch(svg.toLowerCase(), new RegExp(fixtureCity.canonicalName.toLowerCase()));
   }
 });
 
