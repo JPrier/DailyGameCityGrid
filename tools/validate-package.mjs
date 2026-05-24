@@ -5,10 +5,12 @@ import {
   CANDIDATE_PATH,
   SOURCE_MANIFEST_PATH,
   loadCandidates,
+  loadRealOsmSource,
   loadSourceManifest,
   normalizeName,
   readJson,
   validateCandidates,
+  validateRealOsmSource,
   validateSourceManifest,
 } from './city-grid/model.mjs';
 
@@ -18,6 +20,7 @@ const packageConfig = readJson(root, 'daily-game.config.json');
 const manifest = readJson(root, 'content/manifest.json');
 const candidates = loadCandidates(root);
 const sourceManifest = loadSourceManifest(root);
+const realOsmSource = loadRealOsmSource(root, sourceManifest);
 
 if (packageConfig.build?.mode !== 'command') errors.add('package build.mode must be command');
 if (manifest.extension?.candidateSet !== candidates.candidateSetId) errors.add('manifest candidateSet must match candidate file');
@@ -25,6 +28,7 @@ if (manifest.extension?.candidateFile !== CANDIDATE_PATH) errors.add('manifest c
 if (manifest.extension?.sourceManifest !== SOURCE_MANIFEST_PATH) errors.add('manifest sourceManifest must reference source manifest');
 for (const error of validateSourceManifest(root, sourceManifest, { mode: 'locked' })) errors.add(error);
 for (const error of validateCandidates(candidates, sourceManifest)) errors.add(error);
+for (const error of validateRealOsmSource(candidates, realOsmSource)) errors.add(error);
 
 const runtime = await import(pathToFileURL(path.join(root, packageConfig.runtime.entry)).href).then((mod) => mod.createRuntime());
 const contentValidation = await runtime.validateContent({ packageConfig, contentManifest: manifest, dateIndex: null });
@@ -33,6 +37,7 @@ recordRuntimeErrors(contentValidation, 'content');
 const poolSize = manifest.puzzleResolver.poolVersions[0].poolSize;
 const candidateById = new Map(candidates.cities.map((city) => [city.entityId, city]));
 const sourceIds = new Set(sourceManifest.sources.map((source) => source.id));
+const assetValidationCache = new Map();
 for (let index = 0; index < poolSize; index += 1) {
   const file = path.join(root, `content/puzzles/v1/puzzle-${String(index).padStart(4, '0')}.json`);
   if (!fs.existsSync(file)) {
@@ -76,21 +81,36 @@ function validatePuzzle(puzzle, file, candidateById, sourceIds) {
   const stageSvgs = [];
   for (const stage of ext.assetStages ?? []) {
     const assetPath = path.join(root, stage.assetPath ?? '');
-    if (!fs.existsSync(assetPath)) {
+    const result = validateSvgAsset(assetPath, stage.assetPath, answer);
+    if (result.missing) {
       errors.add(`${file}: missing asset ${stage.assetPath}`);
       continue;
     }
-    const svg = fs.readFileSync(assetPath, 'utf8');
-    stageSvgs[stage.stage] = svg;
-    if (!/<(path|polyline|polygon)[\s>]/i.test(svg)) errors.add(`${stage.assetPath}: SVG has no geometry`);
-    if (/<text[\s>]/i.test(svg)) errors.add(`${stage.assetPath}: SVG must not contain text labels`);
-    for (const forbidden of [answer?.canonicalName, answer?.admin1, answer?.country, answer?.countryCode, ...(answer?.aliases ?? [])].filter((value) => String(value).trim().length >= 3)) {
-      if (svg.toLowerCase().includes(String(forbidden).toLowerCase())) errors.add(`${stage.assetPath}: SVG leaks answer text ${forbidden}`);
-    }
-    if (/synthetic|hash\(|hsl\(/i.test(svg)) errors.add(`${stage.assetPath}: production SVG appears synthetic`);
+    stageSvgs[stage.stage] = result.svg;
   }
   if (stageSvgs[0] && stageSvgs[1] && stageSvgs[0] === stageSvgs[1]) errors.add(`${file}: stage 0 and stage 1 SVGs are identical`);
   if (stageSvgs[0] && stageSvgs[5] && geometryCount(stageSvgs[5]) <= geometryCount(stageSvgs[0])) errors.add(`${file}: final stage must include more geometry than stage 0`);
+}
+
+function validateSvgAsset(assetPath, displayPath, answer) {
+  const cacheKey = `${assetPath}:${answer?.entityId ?? ''}`;
+  const cached = assetValidationCache.get(cacheKey);
+  if (cached) return cached;
+  if (!fs.existsSync(assetPath)) {
+    const result = { missing: true, svg: '' };
+    assetValidationCache.set(cacheKey, result);
+    return result;
+  }
+  const svg = fs.readFileSync(assetPath, 'utf8');
+  if (!/<(path|polyline|polygon)[\s>]/i.test(svg)) errors.add(`${displayPath}: SVG has no geometry`);
+  if (/<text[\s>]/i.test(svg)) errors.add(`${displayPath}: SVG must not contain text labels`);
+  for (const forbidden of [answer?.canonicalName, answer?.admin1, answer?.country, answer?.countryCode, ...(answer?.aliases ?? [])].filter((value) => String(value).trim().length >= 3)) {
+    if (svg.toLowerCase().includes(String(forbidden).toLowerCase())) errors.add(`${displayPath}: SVG leaks answer text ${forbidden}`);
+  }
+  if (/synthetic|hash\(|hsl\(/i.test(svg)) errors.add(`${displayPath}: production SVG appears synthetic`);
+  const result = { missing: false, svg };
+  assetValidationCache.set(cacheKey, result);
+  return result;
 }
 
 function geometryCount(svg) {

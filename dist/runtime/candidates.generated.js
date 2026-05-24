@@ -1,4 +1,4 @@
-export const CANDIDATE_SET_ID = "fixture-famous-cities-v1";
+export const CANDIDATE_SET_ID = "real-osm-city-sample-v1";
 export const CANDIDATES = [
   {
     "entityId": "city:us:ma:boston",
@@ -20,12 +20,12 @@ export const CANDIDATES = [
     "coastal": true,
     "hasMajorRapidTransit": true,
     "bbox": {
-      "left": -71.191,
-      "bottom": 42.227,
-      "right": -70.923,
-      "top": 42.428
+      "left": -71.12,
+      "bottom": 42.32,
+      "right": -71.02,
+      "top": 42.39
     },
-    "sourceExtractId": "locked-osm-derived-fixture-v1",
+    "sourceExtractId": "overpass-real-osm-city-sample-v1",
     "assetSlug": "boston"
   },
   {
@@ -44,16 +44,16 @@ export const CANDIDATES = [
     "lat": 41.8781,
     "lon": -87.6298,
     "population": 2746388,
-    "populationBand": "1m-5m",
+    "populationBand": "1m+",
     "coastal": true,
     "hasMajorRapidTransit": true,
     "bbox": {
-      "left": -87.94,
-      "bottom": 41.64,
-      "right": -87.52,
-      "top": 42.02
+      "left": -87.68,
+      "bottom": 41.84,
+      "right": -87.58,
+      "top": 41.93
     },
-    "sourceExtractId": "locked-osm-derived-fixture-v1",
+    "sourceExtractId": "overpass-real-osm-city-sample-v1",
     "assetSlug": "chicago"
   },
   {
@@ -72,16 +72,16 @@ export const CANDIDATES = [
     "lat": 40.7128,
     "lon": -74.006,
     "population": 8804190,
-    "populationBand": "5m+",
+    "populationBand": "1m+",
     "coastal": true,
     "hasMajorRapidTransit": true,
     "bbox": {
-      "left": -74.26,
-      "bottom": 40.49,
-      "right": -73.7,
-      "top": 40.92
+      "left": -74.02,
+      "bottom": 40.7,
+      "right": -73.93,
+      "top": 40.8
     },
-    "sourceExtractId": "locked-osm-derived-fixture-v1",
+    "sourceExtractId": "overpass-real-osm-city-sample-v1",
     "assetSlug": "new-york"
   },
   {
@@ -89,9 +89,9 @@ export const CANDIDATES = [
     "canonicalName": "Los Angeles",
     "aliases": [
       "LA",
-      "L.A.",
       "Los Angeles, CA",
-      "Los Angeles California"
+      "Los Angeles California",
+      "L.A."
     ],
     "countryCode": "US",
     "country": "United States",
@@ -100,16 +100,16 @@ export const CANDIDATES = [
     "lat": 34.0522,
     "lon": -118.2437,
     "population": 3898747,
-    "populationBand": "1m-5m",
+    "populationBand": "1m+",
     "coastal": true,
     "hasMajorRapidTransit": true,
     "bbox": {
-      "left": -118.67,
-      "bottom": 33.7,
-      "right": -118.15,
-      "top": 34.34
+      "left": -118.3,
+      "bottom": 34.01,
+      "right": -118.2,
+      "top": 34.09
     },
-    "sourceExtractId": "locked-osm-derived-fixture-v1",
+    "sourceExtractId": "overpass-real-osm-city-sample-v1",
     "assetSlug": "los-angeles"
   },
   {
@@ -132,12 +132,12 @@ export const CANDIDATES = [
     "coastal": true,
     "hasMajorRapidTransit": true,
     "bbox": {
-      "left": -122.46,
-      "bottom": 47.49,
-      "right": -122.22,
-      "top": 47.73
+      "left": -122.36,
+      "bottom": 47.58,
+      "right": -122.29,
+      "top": 47.65
     },
-    "sourceExtractId": "locked-osm-derived-fixture-v1",
+    "sourceExtractId": "overpass-real-osm-city-sample-v1",
     "assetSlug": "seattle"
   },
   {
@@ -146,7 +146,7 @@ export const CANDIDATES = [
     "aliases": [
       "London, UK",
       "London England",
-      "Greater London",
+      "City of London",
       "London GB"
     ],
     "countryCode": "GB",
@@ -155,17 +155,17 @@ export const CANDIDATES = [
     "continent": "Europe",
     "lat": 51.5072,
     "lon": -0.1276,
-    "population": 8982000,
-    "populationBand": "5m+",
+    "population": 8799800,
+    "populationBand": "1m+",
     "coastal": false,
     "hasMajorRapidTransit": true,
     "bbox": {
-      "left": -0.51,
-      "bottom": 51.28,
-      "right": 0.33,
-      "top": 51.7
+      "left": -0.15,
+      "bottom": 51.49,
+      "right": -0.07,
+      "top": 51.53
     },
-    "sourceExtractId": "locked-osm-derived-fixture-v1",
+    "sourceExtractId": "overpass-real-osm-city-sample-v1",
     "assetSlug": "london"
   },
   {
@@ -183,24 +183,24 @@ export const CANDIDATES = [
     "continent": "Europe",
     "lat": 48.8566,
     "lon": 2.3522,
-    "population": 2161000,
-    "populationBand": "1m-5m",
+    "population": 2145906,
+    "populationBand": "1m+",
     "coastal": false,
     "hasMajorRapidTransit": true,
     "bbox": {
-      "left": 2.224,
-      "bottom": 48.815,
-      "right": 2.47,
-      "top": 48.902
+      "left": 2.31,
+      "bottom": 48.84,
+      "right": 2.38,
+      "top": 48.88
     },
-    "sourceExtractId": "locked-osm-derived-fixture-v1",
+    "sourceExtractId": "overpass-real-osm-city-sample-v1",
     "assetSlug": "paris"
   },
   {
     "entityId": "city:jp:tokyo:tokyo",
     "canonicalName": "Tokyo",
     "aliases": [
-      "Tokyo, Japan",
+      "Tokyo Japan",
       "Tokyo Metropolis",
       "Tokyo JP",
       "Tokio"
@@ -212,16 +212,16 @@ export const CANDIDATES = [
     "lat": 35.6762,
     "lon": 139.6503,
     "population": 13960000,
-    "populationBand": "5m+",
+    "populationBand": "1m+",
     "coastal": true,
     "hasMajorRapidTransit": true,
     "bbox": {
-      "left": 139.52,
-      "bottom": 35.52,
-      "right": 139.91,
-      "top": 35.82
+      "left": 139.7,
+      "bottom": 35.65,
+      "right": 139.78,
+      "top": 35.71
     },
-    "sourceExtractId": "locked-osm-derived-fixture-v1",
+    "sourceExtractId": "overpass-real-osm-city-sample-v1",
     "assetSlug": "tokyo"
   }
 ];

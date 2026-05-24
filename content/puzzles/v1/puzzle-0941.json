@@ -15,7 +15,7 @@
       "aliases": [
         "London, UK",
         "London England",
-        "Greater London",
+        "City of London",
         "London GB"
       ],
       "countryCode": "GB",
@@ -23,18 +23,18 @@
       "admin1": "England",
       "lat": 51.5072,
       "lon": -0.1276,
-      "population": 8982000
+      "population": 8799800
     },
-    "candidateSetId": "fixture-famous-cities-v1",
+    "candidateSetId": "real-osm-city-sample-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "locked-osm-derived-fixture-v1",
+      "sourceExtractId": "overpass-real-osm-city-sample-v1",
       "bbox": {
-        "left": -0.51,
-        "bottom": 51.28,
-        "right": 0.33,
-        "top": 51.7
+        "left": -0.15,
+        "bottom": 51.49,
+        "right": -0.07,
+        "top": 51.53
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
@@ -85,17 +85,17 @@
       }
     ],
     "geometryMetrics": {
-      "roadLineCount": 204,
-      "roadTotalLengthMeters": 108000,
-      "intersectionCount": 296,
-      "waterGeometryCount": 2,
-      "parkGeometryCount": 2,
-      "railLineCount": 1
+      "roadLineCount": 780,
+      "roadTotalLengthMeters": 150036,
+      "intersectionCount": 352,
+      "waterGeometryCount": 80,
+      "parkGeometryCount": 140,
+      "railLineCount": 120
     },
     "clues": {
       "continent": "Europe",
       "country": "United Kingdom",
-      "populationBand": "5m+",
+      "populationBand": "1m+",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

@@ -8,11 +8,12 @@ import {
   SOURCE_MANIFEST_PATH,
   geometryForCity,
   loadCandidates,
-  loadFixtureSource,
+  loadRealOsmSource,
   loadSourceManifest,
+  refreshRealOsmSource,
   renderSvgStage,
-  sha256,
   validateCandidates,
+  validateRealOsmSource,
   validateSourceManifest,
   writeJson,
 } from './city-grid/model.mjs';
@@ -23,23 +24,19 @@ if (!['locked', 'online-refresh'].includes(mode)) throw new Error(`Unsupported m
 
 const candidates = loadCandidates(root);
 const sourceManifest = loadSourceManifest(root);
+let realOsmSource;
 if (mode === 'online-refresh') {
-  for (const source of sourceManifest.sources) {
-    const local = path.join(root, source.localPath);
-    if (!fs.existsSync(local)) throw new Error(`Cannot refresh missing local fixture source ${source.localPath}`);
-    source.sha256 = sha256(local);
-  }
-  sourceManifest.mode = 'online-refresh';
-  sourceManifest.generatedAt = new Date().toISOString();
-  writeJson(root, SOURCE_MANIFEST_PATH, sourceManifest);
+  realOsmSource = await refreshRealOsmSource(root, candidates, sourceManifest);
 } else {
   const sourceErrors = validateSourceManifest(root, sourceManifest, { mode });
   if (sourceErrors.length) throw new Error(sourceErrors.join('\n'));
+  realOsmSource = loadRealOsmSource(root, sourceManifest);
 }
 const candidateErrors = validateCandidates(candidates, sourceManifest);
 if (candidateErrors.length) throw new Error(candidateErrors.join('\n'));
+const sourceDataErrors = validateRealOsmSource(candidates, realOsmSource);
+if (sourceDataErrors.length) throw new Error(sourceDataErrors.join('\n'));
 
-const fixture = loadFixtureSource(root, sourceManifest);
 const manifest = {
   schemaVersion: 'daily-game-content-manifest.v1',
   gameId: 'city-grid',
@@ -81,7 +78,7 @@ writeJson(root, 'content/manifest.json', manifest);
 
 const geometries = new Map();
 for (const city of candidates.cities) {
-  const geometry = geometryForCity(city, fixture);
+  const geometry = geometryForCity(city, realOsmSource);
   geometries.set(city.entityId, geometry);
   const assetDir = path.join(root, 'content/assets/v1/city-grid', city.assetSlug);
   fs.mkdirSync(assetDir, { recursive: true });

@@ -25,16 +25,16 @@
       "lon": -71.0589,
       "population": 675647
     },
-    "candidateSetId": "fixture-famous-cities-v1",
+    "candidateSetId": "real-osm-city-sample-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "locked-osm-derived-fixture-v1",
+      "sourceExtractId": "overpass-real-osm-city-sample-v1",
       "bbox": {
-        "left": -71.191,
-        "bottom": 42.227,
-        "right": -70.923,
-        "top": 42.428
+        "left": -71.12,
+        "bottom": 42.32,
+        "right": -71.02,
+        "top": 42.39
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
@@ -85,12 +85,12 @@
       }
     ],
     "geometryMetrics": {
-      "roadLineCount": 204,
-      "roadTotalLengthMeters": 90000,
-      "intersectionCount": 296,
-      "waterGeometryCount": 2,
-      "parkGeometryCount": 2,
-      "railLineCount": 1
+      "roadLineCount": 780,
+      "roadTotalLengthMeters": 381425,
+      "intersectionCount": 438,
+      "waterGeometryCount": 120,
+      "parkGeometryCount": 140,
+      "railLineCount": 120
     },
     "clues": {
       "continent": "North America",

@@ -5,17 +5,20 @@ import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
-  buildGeometry,
+  geometryForCity,
   loadCandidates,
+  loadRealOsmSource,
   loadSourceManifest,
   renderSvgStage,
   validateCandidates,
+  validateRealOsmSource,
   validateSourceManifest,
 } from '../tools/city-grid/model.mjs';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 const candidates = loadCandidates(root);
 const sourceManifest = loadSourceManifest(root);
+const realOsmSource = loadRealOsmSource(root, sourceManifest);
 const boston = candidates.cities[0];
 
 test('locked mode validation refuses missing source files and sha mismatches', () => {
@@ -41,7 +44,9 @@ test('candidate validation rejects duplicate entity ids and aliases', () => {
 });
 
 test('renderer outputs six staged SVGs without labels or answer strings', () => {
-  const geometry = buildGeometry(boston, { water: true, park: true, rail: true, offset: 0 });
+  const sourceErrors = validateRealOsmSource(candidates, realOsmSource);
+  assert.deepEqual(sourceErrors, []);
+  const geometry = geometryForCity(boston, realOsmSource);
   const stages = Array.from({ length: 6 }, (_, stage) => renderSvgStage(geometry, stage));
   assert.equal(stages.length, 6);
   assert.match(stages[0], /<path/);

@@ -1,15 +1,15 @@
 {
   "schemaVersion": "city-grid-osm-source-manifest.v1",
-  "generatedAt": "2026-05-23T00:00:00.000Z",
+  "generatedAt": "2026-05-24T18:14:27.474Z",
   "mode": "locked",
   "sources": [
     {
-      "id": "locked-osm-derived-fixture-v1",
-      "kind": "committed-osm-derived-fixture",
-      "displayName": "Locked OSM-derived City Grid Fixture",
-      "url": "https://www.openstreetmap.org/copyright",
-      "localPath": ".cache/osm/city-grid-osm-derived-fixture-v1.json",
-      "sha256": "54021a8d052a628387ee0e8e3aeb733a07217e82f36b982d3ba1d485bc87c564",
+      "id": "overpass-real-osm-city-sample-v1",
+      "kind": "overpass-api-json",
+      "displayName": "Locked real OSM city sample from Overpass",
+      "url": "https://overpass-api.de/api/interpreter",
+      "localPath": ".cache/osm/city-grid-real-osm-source-v1.json",
+      "sha256": "d2a753106f1e981c4b440de00c0913f6550828676a72bdd22124a877c208e748",
       "license": "ODbL-1.0",
       "attribution": "OpenStreetMap contributors"
     }

@@ -2,7 +2,7 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 
-export const CANDIDATE_PATH = 'content/candidates/fixture-famous-cities-v1.json';
+export const CANDIDATE_PATH = 'content/candidates/real-osm-city-sample-v1.json';
 export const SOURCE_MANIFEST_PATH = 'content/source/osm-source-manifest.json';
 export const POOL_SIZE = 1000;
 export const FIXTURE_INDICES = new Set([431, 748]);
@@ -14,6 +14,20 @@ export const REVEALS = [
   ['anonymous-landmarks'],
   ['full-map-geometry'],
 ];
+
+const VIEWBOX = { width: 420, height: 320, pad: 10 };
+const OVERPASS_ENDPOINTS = [
+  'https://overpass-api.de/api/interpreter',
+  'https://overpass.kumi.systems/api/interpreter',
+];
+const MAX_SOURCE_ELEMENTS = {
+  roadsMajor: 260,
+  roadsMinor: 520,
+  rail: 120,
+  water: 120,
+  parks: 140,
+};
+const MAX_POINTS_PER_ELEMENT = 32;
 
 export function readJson(root, rel) {
   return JSON.parse(fs.readFileSync(path.join(root, rel), 'utf8'));
@@ -35,6 +49,45 @@ export function loadCandidates(root) {
 
 export function loadSourceManifest(root) {
   return readJson(root, SOURCE_MANIFEST_PATH);
+}
+
+export function loadRealOsmSource(root, sourceManifest) {
+  const source = sourceManifest.sources[0];
+  const data = readJson(root, source.localPath);
+  if (data.schemaVersion !== 'city-grid-real-osm-source.v1') {
+    throw new Error(`${source.localPath}: schemaVersion must be city-grid-real-osm-source.v1`);
+  }
+  return data;
+}
+
+export async function refreshRealOsmSource(root, candidates, sourceManifest) {
+  const source = sourceManifest.sources[0];
+  const cities = {};
+  for (const city of candidates.cities) {
+    const elements = selectRenderableElements(await fetchCityElements(city));
+    cities[city.entityId] = {
+      bbox: city.bbox,
+      fetchedAt: new Date().toISOString(),
+      elementCount: elements.length,
+      elements: elements.map(trimOsmElement),
+    };
+  }
+
+  const sourceDocument = {
+    schemaVersion: 'city-grid-real-osm-source.v1',
+    generatedAt: new Date().toISOString(),
+    sourceId: source.id,
+    attribution: 'OpenStreetMap contributors',
+    license: 'ODbL-1.0',
+    queryKind: 'overpass-api-json',
+    cities,
+  };
+  writeJson(root, source.localPath, sourceDocument);
+  source.sha256 = sha256(path.join(root, source.localPath));
+  sourceManifest.mode = 'locked';
+  sourceManifest.generatedAt = sourceDocument.generatedAt;
+  writeJson(root, SOURCE_MANIFEST_PATH, sourceManifest);
+  return sourceDocument;
 }
 
 export function normalizeName(value) {
@@ -60,6 +113,7 @@ export function validateCandidates(candidates, sourceManifest) {
   for (const city of candidates.cities ?? []) {
     if (!city.entityId || entityIds.has(city.entityId)) errors.push(`duplicate or missing entityId ${city.entityId ?? ''}`);
     entityIds.add(city.entityId);
+    if (!city.assetSlug) errors.push(`${city.entityId}: assetSlug is required`);
     if (!city.canonicalName) errors.push(`${city.entityId}: canonicalName is required`);
     if (!Array.isArray(city.aliases) || city.aliases.length < 3) errors.push(`${city.entityId}: at least three aliases are required`);
     if (!Number.isFinite(city.lat) || !Number.isFinite(city.lon)) errors.push(`${city.entityId}: finite lat/lon required`);
@@ -83,6 +137,7 @@ export function validateSourceManifest(root, sourceManifest, { mode = 'locked' }
   for (const source of sourceManifest.sources ?? []) {
     if (!source.id) errors.push('source id is required');
     if (!source.localPath) errors.push(`${source.id}: localPath is required`);
+    if (source.kind !== 'overpass-api-json') errors.push(`${source.id}: kind must be overpass-api-json`);
     if (source.localPath && (path.isAbsolute(source.localPath) || source.localPath.includes('..'))) errors.push(`${source.id}: localPath must stay inside package root`);
     const local = source.localPath ? path.join(root, source.localPath) : '';
     if (mode === 'locked') {
@@ -96,69 +151,73 @@ export function validateSourceManifest(root, sourceManifest, { mode = 'locked' }
   return errors;
 }
 
-export function loadFixtureSource(root, sourceManifest) {
-  const source = sourceManifest.sources[0];
-  return readJson(root, source.localPath);
+export function validateRealOsmSource(candidates, source) {
+  const errors = [];
+  for (const city of candidates.cities) {
+    const entry = source.cities?.[city.entityId];
+    if (!entry) {
+      errors.push(`${city.entityId}: missing real OSM source entry`);
+      continue;
+    }
+    const highwayCount = entry.elements.filter((element) => element.tags?.highway).length;
+    if (highwayCount < 20) errors.push(`${city.entityId}: real OSM source has too few highway ways`);
+    if (!entry.elements.some((element) => Array.isArray(element.geometry) && element.geometry.length >= 2)) {
+      errors.push(`${city.entityId}: real OSM source contains no renderable geometry`);
+    }
+  }
+  return errors;
 }
 
-export function geometryForCity(city, fixture) {
-  const profileName = fixture.cityProfiles?.[city.entityId];
-  const profile = fixture.profiles?.[profileName];
-  if (!profile) throw new Error(`missing fixture geometry profile for ${city.entityId}`);
-  return buildGeometry(city, profile);
-}
+export function geometryForCity(city, realOsmSource) {
+  const entry = realOsmSource.cities?.[city.entityId];
+  if (!entry) throw new Error(`missing real OSM geometry for ${city.entityId}`);
 
-export function buildGeometry(city, profile) {
-  const offset = profile.offset ?? 0;
-  const roadsMajor = [];
-  const roadsMinor = [];
-  for (let i = 0; i < 12; i += 1) {
-    const y = 22 + i * 22 + (offset % 9);
-    roadsMajor.push(line([[18, y], [95, y + wave(i, offset)], [205, y - wave(i + 1, offset)], [402, y + wave(i + 2, offset)]]));
+  const layers = {
+    roadsMajor: [],
+    roadsMinor: [],
+    rail: [],
+    water: [],
+    parks: [],
+    landmarks: [],
+  };
+  const roadPoints = [];
+  let roadTotalLengthMeters = 0;
+
+  for (const element of entry.elements) {
+    const points = projectGeometry(element.geometry ?? [], city.bbox);
+    if (points.length < 2) continue;
+    const simplified = simplifyPoints(points, 1.2);
+    const kind = layerForTags(element.tags ?? {});
+    if (!kind) continue;
+    const geometry = {
+      type: polygonLike(element.tags ?? {}, element.geometry ?? []) ? 'polygon' : 'line',
+      points: simplified,
+    };
+    layers[kind].push(geometry);
+    if (kind === 'roadsMajor' || kind === 'roadsMinor') {
+      roadTotalLengthMeters += lengthMeters(element.geometry ?? []);
+      for (const point of simplified) roadPoints.push(point);
+    }
   }
-  for (let i = 0; i < 12; i += 1) {
-    const x = 24 + i * 32 + (offset % 11);
-    roadsMajor.push(line([[x, 18], [x + wave(i, offset), 82], [x - wave(i + 2, offset), 186], [x + wave(i + 4, offset), 302]]));
-  }
-  for (let i = 0; i < 22; i += 1) {
-    const y = 18 + ((i * 13 + offset) % 286);
-    roadsMinor.push(line([[8, y], [130, y + wave(i, offset)], [256, y - wave(i + 3, offset)], [412, y + wave(i + 5, offset)]]));
-  }
-  for (let i = 0; i < 22; i += 1) {
-    const x = 10 + ((i * 19 + offset) % 392);
-    roadsMinor.push(line([[x, 8], [x + wave(i + 1, offset), 118], [x - wave(i + 4, offset), 224], [x + wave(i + 6, offset), 312]]));
-  }
-  const water = profile.water
-    ? [
-        polygon([[0, 230 + (offset % 19)], [74, 214], [142, 238], [228, 226], [320, 202], [420, 224], [420, 320], [0, 320]]),
-        line([[12, 248], [118, 230], [215, 238], [316, 216], [408, 236]]),
-      ]
-    : [];
-  const parks = profile.park
-    ? [
-        polygon([[42, 164], [112, 148], [142, 204], [96, 258], [32, 238]]),
-        polygon([[254, 50], [326, 80], [300, 148], [224, 154], [198, 96]]),
-      ]
-    : [];
-  const rail = profile.rail ? [line([[28, 286], [104, 244], [184, 214], [254, 168], [326, 92], [398, 42]])] : [];
-  const landmarks = [[144, 119], [247, 204], [333, 108], [92, 72]].map(([x, y]) => ({ x, y }));
-  const roadLineCount = roadsMajor.reduce((sum, item) => sum + item.points.length - 1, 0) + roadsMinor.reduce((sum, item) => sum + item.points.length - 1, 0);
-  const roadTotalLengthMeters = Math.round((roadsMajor.length * 2100 + roadsMinor.length * 900) * (1 + (offset % 7) / 20));
-  const intersectionCount = Math.round(roadsMajor.length * roadsMinor.length * 0.28);
+
+  layers.landmarks = landmarkPoints(layers);
+  const roadLineCount = layers.roadsMajor.length + layers.roadsMinor.length;
+  const intersectionCount = estimateIntersections(roadPoints);
+
   return {
     schemaVersion: 'city-grid-geometry.v1',
     cityEntityId: city.entityId,
     sourceExtractId: city.sourceExtractId,
     bbox: city.bbox,
     projection: 'local-web-mercator',
-    layers: { roadsMajor, roadsMinor, rail, water, parks, landmarks },
+    layers,
     metrics: {
       roadLineCount,
-      roadTotalLengthMeters,
+      roadTotalLengthMeters: Math.round(roadTotalLengthMeters),
       intersectionCount,
-      waterGeometryCount: water.length,
-      parkGeometryCount: parks.length,
-      railLineCount: rail.length,
+      waterGeometryCount: layers.water.length,
+      parkGeometryCount: layers.parks.length,
+      railLineCount: layers.rail.length,
     },
   };
 }
@@ -174,10 +233,171 @@ export function renderSvgStage(geometry, stage) {
   if (stage >= 3) parts.push(...layers.rail.map((item) => renderGeometry(item, 'none', '#6f4f37', 0.8, 5, '12 9')));
   parts.push(...layers.roadsMajor.map((item) => renderGeometry(item, 'none', '#263632', 0.92, stage === 0 ? 5 : 4)));
   if (stage >= 1) parts.push(...layers.roadsMinor.map((item) => renderGeometry(item, 'none', '#69756f', 0.72, 2)));
-  if (stage >= 4) parts.push('<g fill="#bf5f45" opacity="0.88">', ...layers.landmarks.map((point) => `<circle cx="${point.x}" cy="${point.y}" r="6"/>`), '</g>');
+  if (stage >= 4) parts.push('<g fill="#bf5f45" opacity="0.88">', ...layers.landmarks.map((point) => `<circle cx="${point.x}" cy="${point.y}" r="5"/>`), '</g>');
   if (stage >= 5) parts.push('<rect x="14" y="14" width="392" height="292" rx="18" fill="none" stroke="#183a37" stroke-width="3" opacity="0.45"/>');
   parts.push('</svg>');
   return `${parts.join('\n')}\n`;
+}
+
+async function fetchCityElements(city) {
+  const bbox = `${city.bbox.bottom},${city.bbox.left},${city.bbox.top},${city.bbox.right}`;
+  const query = `[out:json][timeout:90];
+(
+  way["highway"~"^(motorway|trunk|primary|secondary|tertiary|residential|unclassified|service|living_street)$"](${bbox});
+  way["railway"~"^(rail|subway|light_rail|tram)$"](${bbox});
+  way["natural"="water"](${bbox});
+  way["natural"="coastline"](${bbox});
+  way["waterway"~"^(river|canal)$"](${bbox});
+  way["leisure"="park"](${bbox});
+  way["landuse"~"^(grass|recreation_ground)$"](${bbox});
+  way["natural"="wood"](${bbox});
+);
+out body geom;`;
+  let lastError = null;
+  for (const endpoint of OVERPASS_ENDPOINTS) {
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
+          'user-agent': 'DailyGameCityGrid/0.1 github.com/JPrier/DailyGameCityGrid',
+        },
+        body: `data=${encodeURIComponent(query)}`,
+      });
+      if (!response.ok) throw new Error(`${endpoint} returned ${response.status} ${response.statusText}`);
+      const payload = await response.json();
+      return (payload.elements ?? []).filter((element) => element.type === 'way' && Array.isArray(element.geometry));
+    } catch (error) {
+      lastError = error;
+    }
+  }
+  throw new Error(`${city.canonicalName}: failed to refresh OSM source: ${lastError?.message ?? 'unknown error'}`);
+}
+
+function trimOsmElement(element) {
+  return {
+    type: element.type,
+    id: element.id,
+    tags: Object.fromEntries(Object.entries(element.tags ?? {}).filter(([key]) => ['highway', 'railway', 'natural', 'waterway', 'leisure', 'landuse'].includes(key))),
+    geometry: capPoints(simplifyLatLon(element.geometry, 0.00008), MAX_POINTS_PER_ELEMENT).map(({ lat, lon }) => ({ lat: round(lat, 7), lon: round(lon, 7) })),
+  };
+}
+
+function selectRenderableElements(elements) {
+  const groups = new Map();
+  for (const element of elements) {
+    const layer = layerForTags(element.tags ?? {});
+    if (!layer) continue;
+    if (!groups.has(layer)) groups.set(layer, []);
+    groups.get(layer).push(element);
+  }
+  const selected = [];
+  for (const [layer, items] of groups) {
+    items.sort((a, b) => lengthMeters(b.geometry ?? []) - lengthMeters(a.geometry ?? []));
+    selected.push(...items.slice(0, MAX_SOURCE_ELEMENTS[layer] ?? 100));
+  }
+  return selected.sort((a, b) => a.id - b.id);
+}
+
+function layerForTags(tags) {
+  if (['motorway', 'trunk', 'primary', 'secondary'].includes(tags.highway)) return 'roadsMajor';
+  if (['tertiary', 'residential', 'unclassified', 'service', 'living_street'].includes(tags.highway)) return 'roadsMinor';
+  if (['rail', 'subway', 'light_rail', 'tram'].includes(tags.railway)) return 'rail';
+  if (tags.natural === 'water' || tags.natural === 'coastline' || ['river', 'canal'].includes(tags.waterway)) return 'water';
+  if (tags.leisure === 'park' || ['grass', 'recreation_ground'].includes(tags.landuse) || tags.natural === 'wood') return 'parks';
+  return null;
+}
+
+function polygonLike(tags, geometry) {
+  if (!(tags.natural === 'water' || tags.leisure === 'park' || tags.landuse || tags.natural === 'wood')) return false;
+  const first = geometry[0];
+  const last = geometry.at(-1);
+  return first && last && Math.abs(first.lat - last.lat) < 0.000001 && Math.abs(first.lon - last.lon) < 0.000001;
+}
+
+function projectGeometry(geometry, bbox) {
+  return geometry.map(({ lat, lon }) => projectPoint(lat, lon, bbox)).filter(Boolean);
+}
+
+function projectPoint(lat, lon, bbox) {
+  if (!Number.isFinite(lat) || !Number.isFinite(lon)) return null;
+  const left = mercatorX(bbox.left);
+  const right = mercatorX(bbox.right);
+  const bottom = mercatorY(bbox.bottom);
+  const top = mercatorY(bbox.top);
+  const x = VIEWBOX.pad + ((mercatorX(lon) - left) / (right - left)) * (VIEWBOX.width - VIEWBOX.pad * 2);
+  const y = VIEWBOX.pad + ((top - mercatorY(lat)) / (top - bottom)) * (VIEWBOX.height - VIEWBOX.pad * 2);
+  return {
+    x: clamp(Math.round(x * 10) / 10, 0, VIEWBOX.width),
+    y: clamp(Math.round(y * 10) / 10, 0, VIEWBOX.height),
+  };
+}
+
+function simplifyPoints(points, tolerance) {
+  if (points.length <= 2) return points;
+  const keep = new Array(points.length).fill(false);
+  keep[0] = true;
+  keep[points.length - 1] = true;
+  simplifySection(points, 0, points.length - 1, tolerance, keep);
+  return points.filter((_, index) => keep[index]);
+}
+
+function simplifyLatLon(points, tolerance) {
+  if (points.length <= 2) return points;
+  const projected = points.map(({ lat, lon }) => ({ x: lon, y: lat, lat, lon }));
+  const keep = new Array(projected.length).fill(false);
+  keep[0] = true;
+  keep[projected.length - 1] = true;
+  simplifySection(projected, 0, projected.length - 1, tolerance, keep);
+  return points.filter((_, index) => keep[index]);
+}
+
+function capPoints(points, maxPoints) {
+  if (points.length <= maxPoints) return points;
+  const capped = [];
+  for (let index = 0; index < maxPoints; index += 1) {
+    capped.push(points[Math.round((index / (maxPoints - 1)) * (points.length - 1))]);
+  }
+  return capped;
+}
+
+function simplifySection(points, first, last, tolerance, keep) {
+  let maxDistance = 0;
+  let index = first;
+  for (let i = first + 1; i < last; i += 1) {
+    const distance = perpendicularDistance(points[i], points[first], points[last]);
+    if (distance > maxDistance) {
+      maxDistance = distance;
+      index = i;
+    }
+  }
+  if (maxDistance > tolerance) {
+    keep[index] = true;
+    simplifySection(points, first, index, tolerance, keep);
+    simplifySection(points, index, last, tolerance, keep);
+  }
+}
+
+function perpendicularDistance(point, start, end) {
+  const dx = end.x - start.x;
+  const dy = end.y - start.y;
+  if (dx === 0 && dy === 0) return Math.hypot(point.x - start.x, point.y - start.y);
+  return Math.abs(dy * point.x - dx * point.y + end.x * start.y - end.y * start.x) / Math.hypot(dx, dy);
+}
+
+function estimateIntersections(points) {
+  const buckets = new Map();
+  for (const point of points) {
+    const key = `${Math.round(point.x / 5)}:${Math.round(point.y / 5)}`;
+    buckets.set(key, (buckets.get(key) ?? 0) + 1);
+  }
+  return [...buckets.values()].filter((count) => count > 1).length;
+}
+
+function landmarkPoints(layers) {
+  const seeds = [...layers.rail, ...layers.water, ...layers.parks, ...layers.roadsMajor].flatMap((item) => item.points);
+  const points = seeds.filter((_, index) => index % Math.max(1, Math.floor(seeds.length / 4)) === 0).slice(0, 4);
+  return points.length >= 4 ? points : [{ x: 105, y: 80 }, { x: 210, y: 160 }, { x: 315, y: 240 }, { x: 315, y: 80 }];
 }
 
 function renderGeometry(item, fill, stroke, opacity, strokeWidth, dash = '') {
@@ -188,25 +408,47 @@ function renderGeometry(item, fill, stroke, opacity, strokeWidth, dash = '') {
 
 function pathData(points, close) {
   const [first, ...rest] = points;
-  return [`M${first[0]} ${first[1]}`, ...rest.map(([x, y]) => `L${x} ${y}`), close ? 'Z' : ''].filter(Boolean).join(' ');
+  return [`M${first.x} ${first.y}`, ...rest.map(({ x, y }) => `L${x} ${y}`), close ? 'Z' : ''].filter(Boolean).join(' ');
 }
 
-function line(points) {
-  return { type: 'line', points: points.map(clampPoint) };
+function lengthMeters(geometry) {
+  let total = 0;
+  for (let index = 1; index < geometry.length; index += 1) {
+    total += distanceMeters(geometry[index - 1], geometry[index]);
+  }
+  return total;
 }
 
-function polygon(points) {
-  return { type: 'polygon', points: points.map(clampPoint) };
+function distanceMeters(a, b) {
+  const radius = 6371000;
+  const dLat = radians(b.lat - a.lat);
+  const dLon = radians(b.lon - a.lon);
+  const aa = Math.sin(dLat / 2) ** 2 + Math.cos(radians(a.lat)) * Math.cos(radians(b.lat)) * Math.sin(dLon / 2) ** 2;
+  return 2 * radius * Math.atan2(Math.sqrt(aa), Math.sqrt(1 - aa));
 }
 
-function clampPoint([x, y]) {
-  return [Math.max(0, Math.min(420, Math.round(x))), Math.max(0, Math.min(320, Math.round(y)))];
+function mercatorX(lon) {
+  return lon;
 }
 
-function wave(index, offset) {
-  return ((index * 17 + offset) % 31) - 15;
+function mercatorY(lat) {
+  const capped = clamp(lat, -85.0511, 85.0511);
+  return Math.log(Math.tan(Math.PI / 4 + radians(capped) / 2));
+}
+
+function radians(value) {
+  return (value * Math.PI) / 180;
 }
 
 function validBbox(bbox) {
   return bbox && Number.isFinite(bbox.left) && Number.isFinite(bbox.right) && Number.isFinite(bbox.bottom) && Number.isFinite(bbox.top) && bbox.left < bbox.right && bbox.bottom < bbox.top;
+}
+
+function round(value, decimals) {
+  const factor = 10 ** decimals;
+  return Math.round(value * factor) / factor;
+}
+
+function clamp(value, min, max) {
+  return Math.max(min, Math.min(max, value));
 }
