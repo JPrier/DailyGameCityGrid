@@ -53,7 +53,10 @@ test('renderer outputs six staged SVGs without labels or answer strings', () => 
   assert.doesNotMatch(stages[0], /data-layer="water"/);
   assert.match(stages[2], /data-layer="water"/);
   assert.match(stages[3], /stroke-dasharray/);
-  assert.match(stages[5], /data-layer="final-detail-frame"/);
+  assert.match(stages[5], /data-orientation="north-up"/);
+  assert.match(stages[5], /data-layer="north-up-compass"/);
+  assert.match(stages[5], /data-layer="final-detail-network"/);
+  assert.ok((stages[5].match(/<path/g) ?? []).length > (stages[4].match(/<path/g) ?? []).length);
   for (const svg of stages) {
     assert.doesNotMatch(svg, /<text[\s>]/i);
     assert.doesNotMatch(svg.toLowerCase(), new RegExp(fixtureCity.canonicalName.toLowerCase()));

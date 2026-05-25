@@ -20,13 +20,14 @@ const OVERPASS_ENDPOINTS = [
   'https://overpass.kumi.systems/api/interpreter',
 ];
 const MAX_SOURCE_ELEMENTS = {
-  roadsMajor: 120,
-  roadsMinor: 260,
-  rail: 70,
-  water: 70,
-  parks: 80,
+  roadsMajor: 260,
+  roadsMinor: 900,
+  rail: 100,
+  water: 160,
+  parks: 140,
 };
-const MAX_POINTS_PER_ELEMENT = 26;
+const MAX_POINTS_PER_ELEMENT = 40;
+const SOURCE_SELECTION_VERSION = 'coverage-roads-v2';
 
 export function readJson(root, rel) {
   return JSON.parse(fs.readFileSync(path.join(root, rel), 'utf8'));
@@ -67,14 +68,16 @@ export async function refreshRealOsmSource(root, candidates, sourceManifest) {
   let index = 0;
   for (const city of candidates.cities) {
     index += 1;
-    if (cities[city.entityId]?.elements?.length && sameBbox(cities[city.entityId].bbox, city.bbox)) {
+    if (cities[city.entityId]?.elements?.length && cities[city.entityId].selectionVersion === SOURCE_SELECTION_VERSION && compatibleSourceBbox(city, cities[city.entityId].bbox)) {
       console.log(`[${index}/${candidates.cities.length}] ${city.canonicalName}: using cached OSM source`);
       continue;
     }
     console.log(`[${index}/${candidates.cities.length}] ${city.canonicalName}: fetching OSM source`);
-    const elements = selectRenderableElements(await fetchCityElements(city));
+    const fetched = await fetchCityElements(city);
+    const elements = selectRenderableElements(fetched.elements);
     cities[city.entityId] = {
-      bbox: city.bbox,
+      bbox: fetched.bbox,
+      selectionVersion: SOURCE_SELECTION_VERSION,
       fetchedAt: new Date().toISOString(),
       elementCount: elements.length,
       elements: elements.map(trimOsmElement),
@@ -189,6 +192,7 @@ export function validateRealOsmSource(candidates, source) {
 export function geometryForCity(city, realOsmSource) {
   const entry = realOsmSource.cities?.[city.entityId];
   if (!entry) throw new Error(`missing real OSM geometry for ${city.entityId}`);
+  const projectionBbox = validBbox(entry.bbox) ? entry.bbox : city.bbox;
 
   const layers = {
     roadsMajor: [],
@@ -202,7 +206,7 @@ export function geometryForCity(city, realOsmSource) {
   let roadTotalLengthMeters = 0;
 
   for (const element of entry.elements) {
-    const points = projectGeometry(element.geometry ?? [], city.bbox);
+    const points = projectGeometry(element.geometry ?? [], projectionBbox);
     if (points.length < 2) continue;
     const simplified = simplifyPoints(points, 1.2);
     const kind = layerForTags(element.tags ?? {});
@@ -229,8 +233,9 @@ export function geometryForCity(city, realOsmSource) {
     schemaVersion: 'city-grid-geometry.v1',
     cityEntityId: city.entityId,
     sourceExtractId: city.sourceExtractId,
-    bbox: city.bbox,
-    projection: 'local-web-mercator',
+    bbox: projectionBbox,
+    projection: 'local-web-mercator-north-up',
+    orientation: 'north-up',
     layers,
     metrics: {
       roadLineCount,
@@ -250,10 +255,11 @@ export function renderSvgStage(geometry, stage) {
   const rail = importantLines(layers.rail);
   const water = importantLines(layers.water);
   const parks = importantLines(layers.parks);
-  const visibleMajorRoads = majorRoads.slice(0, [42, 72, 96, 112, 120, 120][stage] ?? majorRoads.length);
-  const visibleMinorRoads = minorRoads.slice(0, [0, 58, 92, 132, 190, minorRoads.length][stage] ?? minorRoads.length);
+  const visibleMajorRoads = majorRoads.slice(0, stage >= 5 ? majorRoads.length : ([42, 72, 96, 112, 160][stage] ?? majorRoads.length));
+  const visibleMinorRoads = minorRoads.slice(0, stage >= 5 ? minorRoads.length : ([0, 70, 120, 160, 240][stage] ?? minorRoads.length));
   const parts = [
-    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 320" role="img" aria-label="Unlabeled street-grid crop">',
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 320" role="img" aria-label="Unlabeled north-up street-grid crop" data-orientation="north-up">',
+    '<metadata>{"orientation":"north-up","projection":"local-web-mercator"}</metadata>',
     '<defs>',
     '<clipPath id="mapCrop"><rect x="8" y="8" width="404" height="304" rx="16"/></clipPath>',
     '</defs>',
@@ -280,12 +286,16 @@ export function renderSvgStage(geometry, stage) {
     parts.push('<g data-layer="anonymous-feature-points" fill="#bf5b3e" stroke="#fff8ec" stroke-width="1.6" opacity="0.78">', ...layers.landmarks.map((point) => `<circle cx="${point.x}" cy="${point.y}" r="${stage >= 5 ? 3.8 : 4.8}"/>`), '</g>');
   }
   if (stage >= 5) {
-    parts.push('<g data-layer="final-detail-frame" fill="none" stroke="#273f3a" stroke-width="1.5" opacity="0.44">');
-    parts.push('<path d="M24 24H396V296H24Z"/>');
+    parts.push('<g data-layer="final-detail-network">');
     parts.push(...majorRoads.slice(visibleMajorRoads.length).map((item) => renderFeature(item, 'major-road', stage)));
     parts.push(...minorRoads.slice(visibleMinorRoads.length).map((item) => renderFeature(item, 'minor-road', stage)));
     parts.push('</g>');
   }
+  parts.push('</g>');
+  parts.push('<g data-layer="north-up-compass" fill="none" stroke="#233934" stroke-linecap="round" stroke-linejoin="round" opacity="0.62">');
+  parts.push('<path d="M382 48L382 23" stroke-width="1.8"/>');
+  parts.push('<path d="M382 23L373 39M382 23L391 39" stroke-width="1.8"/>');
+  parts.push('<circle cx="382" cy="48" r="13" stroke-width="1.1" opacity="0.38"/>');
   parts.push('</g>');
   parts.push('<rect x="8" y="8" width="404" height="304" rx="16" fill="none" stroke="#233934" stroke-width="1.4" opacity="0.44"/>');
   parts.push('</svg>');
@@ -312,14 +322,14 @@ async function fetchCityElements(city) {
   } catch (error) {
     console.warn(`${city.canonicalName}: optional OSM context skipped: ${error.message}`);
   }
-  return [...roads, ...context];
+  return { bbox: usedBbox, elements: [...roads, ...context] };
 }
 
 function roadQueryFor(bboxValue) {
   const bbox = overpassBbox(bboxValue);
   return `[out:json][timeout:60];
 (
-  way["highway"~"^(motorway|trunk|primary|secondary|tertiary|residential|unclassified|service|living_street)$"](${bbox});
+  way["highway"~"^(motorway|trunk|primary|secondary|tertiary|residential|unclassified|service|living_street|pedestrian|road)$"](${bbox});
 );
 out body geom;`;
 }
@@ -380,19 +390,58 @@ function selectRenderableElements(elements) {
   }
   const selected = [];
   for (const [layer, items] of groups) {
-    items.sort((a, b) => lengthMeters(b.geometry ?? []) - lengthMeters(a.geometry ?? []));
-    selected.push(...items.slice(0, MAX_SOURCE_ELEMENTS[layer] ?? 100));
+    selected.push(...selectLayerElements(layer, items, MAX_SOURCE_ELEMENTS[layer] ?? 100));
   }
   return selected.sort((a, b) => a.id - b.id);
 }
 
 function layerForTags(tags) {
   if (['motorway', 'trunk', 'primary', 'secondary'].includes(tags.highway)) return 'roadsMajor';
-  if (['tertiary', 'residential', 'unclassified', 'service', 'living_street'].includes(tags.highway)) return 'roadsMinor';
+  if (['tertiary', 'residential', 'unclassified', 'service', 'living_street', 'pedestrian', 'road'].includes(tags.highway)) return 'roadsMinor';
   if (['rail', 'subway', 'light_rail', 'tram'].includes(tags.railway)) return 'rail';
   if (tags.natural === 'water' || tags.natural === 'coastline' || ['river', 'canal'].includes(tags.waterway)) return 'water';
   if (tags.leisure === 'park' || ['grass', 'recreation_ground'].includes(tags.landuse) || tags.natural === 'wood') return 'parks';
   return null;
+}
+
+function selectLayerElements(layer, items, limit) {
+  const sorted = [...items].sort((a, b) => elementImportance(b) - elementImportance(a));
+  if (!layer.startsWith('roads') || sorted.length <= limit) return sorted.slice(0, limit);
+
+  const selected = [];
+  const seen = new Set();
+  const bins = new Set();
+  const targetCoverage = Math.min(limit, Math.ceil(limit * 0.72));
+  for (const item of sorted) {
+    if (selected.length >= targetCoverage) break;
+    const itemBins = geometryBins(item.geometry ?? []);
+    if (!itemBins.some((bin) => !bins.has(bin))) continue;
+    selected.push(item);
+    seen.add(item.id);
+    for (const bin of itemBins) bins.add(bin);
+  }
+
+  for (const item of sorted) {
+    if (selected.length >= limit) break;
+    if (seen.has(item.id)) continue;
+    selected.push(item);
+  }
+  return selected;
+}
+
+function elementImportance(element) {
+  return featureImportance({ tags: element.tags ?? {}, lengthMeters: lengthMeters(element.geometry ?? []) }) * 1000000 + lengthMeters(element.geometry ?? []);
+}
+
+function geometryBins(geometry) {
+  if (!geometry.length) return [];
+  const bins = new Set();
+  for (const point of geometry) {
+    const latBin = Math.floor(point.lat * 800);
+    const lonBin = Math.floor(point.lon * 800);
+    bins.add(`${latBin}:${lonBin}`);
+  }
+  return [...bins];
 }
 
 function polygonLike(tags, geometry) {
@@ -609,6 +658,10 @@ function validBbox(bbox) {
 
 function sameBbox(a, b) {
   return validBbox(a) && validBbox(b) && ['left', 'bottom', 'right', 'top'].every((key) => Math.abs(a[key] - b[key]) < 0.000001);
+}
+
+function compatibleSourceBbox(city, bbox) {
+  return [city.bbox, shrinkBbox(city.bbox, 0.65), shrinkBbox(city.bbox, 0.45)].some((candidate) => sameBbox(candidate, bbox));
 }
 
 function shrinkBbox(bbox, factor) {

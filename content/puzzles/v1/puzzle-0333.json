@@ -31,12 +31,13 @@
       "sourceManifest": "content/source/osm-source-manifest.json",
       "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": -79.451606,
-        "bottom": 43.668142,
-        "right": -79.345674,
-        "top": 43.744718
+        "left": -79.4330679,
+        "bottom": 43.681542799999995,
+        "right": -79.3642121,
+        "top": 43.7313172
       },
-      "geometryVersion": "city-grid-geometry.v1"
+      "geometryVersion": "city-grid-geometry.v1",
+      "orientation": "north-up"
     },
     "assetStages": [
       {
@@ -88,12 +89,12 @@
       }
     ],
     "geometryMetrics": {
-      "roadLineCount": 380,
-      "roadTotalLengthMeters": 239791,
-      "intersectionCount": 170,
-      "waterGeometryCount": 70,
-      "parkGeometryCount": 80,
-      "railLineCount": 70
+      "roadLineCount": 1160,
+      "roadTotalLengthMeters": 282818,
+      "intersectionCount": 682,
+      "waterGeometryCount": 35,
+      "parkGeometryCount": 140,
+      "railLineCount": 100
     },
     "clues": {
       "continent": "North America",

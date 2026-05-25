@@ -8,12 +8,12 @@
   let guess = '';
 
   const stageLabels = [
-    'Stage 0: tight roads',
-    'Stage 1: wider road graph',
-    'Stage 2: water and coastline',
-    'Stage 3: parks and rail',
-    'Stage 4: landmark dots',
-    'Stage 5: full reveal map',
+    'Stage 0: Core roads',
+    'Stage 1: Street grid',
+    'Stage 2: Water and coastline',
+    'Stage 3: Parks and rail',
+    'Stage 4: Landmarks and neighborhoods',
+    'Stage 5: Full reveal',
   ];
 
   $: extension = puzzle?.extension ?? {};
@@ -59,13 +59,13 @@
   <header class="city-grid__header">
     <h2 data-testid="puzzle-title">{puzzle.display.title}</h2>
     <p data-testid="initial-prompt">{puzzle.display.initialPrompt}</p>
-    <p data-testid="clue-stage">{revealedStage}</p>
+    <p class="city-grid__sr-only" data-testid="clue-stage">{revealedStage}</p>
   </header>
 
   <figure class="city-grid__map" data-testid="city-grid-map">
     <figcaption data-testid="city-grid-map-stage">{stageLabels[revealedStage] ?? `Stage ${revealedStage}`}</figcaption>
     {#if assetUrl}
-      <img data-testid="city-grid-stage-asset" src={assetUrl} alt={`Unlabeled city grid ${stageLabels[revealedStage] ?? revealedStage}`} />
+      <img data-testid="city-grid-stage-asset" src={assetUrl} alt={`North-up unlabeled city grid, ${stageLabels[revealedStage] ?? `Stage ${revealedStage}`}`} />
     {/if}
   </figure>
 
@@ -129,7 +129,7 @@
       <h3>{reveal.canonicalName}</h3>
       <p>{reveal.admin1}, {reveal.country}</p>
       <p>Population: {reveal.population.toLocaleString()}</p>
-      <p>Final stage explains the full map: roads, water, rail, parks, and landmarks.</p>
+      <p>The full north-up map is now visible: street network, water, rail, parks, and landmarks.</p>
     </aside>
   {/if}
 </section>

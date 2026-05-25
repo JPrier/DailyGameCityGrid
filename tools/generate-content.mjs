@@ -108,8 +108,9 @@ for (let index = 0; index < POOL_SIZE; index += 1) {
         kind: 'osm-derived',
         sourceManifest: SOURCE_MANIFEST_PATH,
         sourceExtractId: city.sourceExtractId,
-        bbox: city.bbox,
+        bbox: geometry.bbox,
         geometryVersion: geometry.schemaVersion,
+        orientation: geometry.orientation,
       },
       assetStages: Array.from({ length: 6 }, (_, stage) => ({
         stage,
