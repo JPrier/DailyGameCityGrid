@@ -50,7 +50,8 @@
         "stage": 1,
         "assetPath": "content/assets/v1/city-grid/seoul-kr-1835848/stage-1.svg",
         "reveals": [
-          "roads-wide"
+          "roads-wide",
+          "arterials"
         ]
       },
       {
@@ -73,6 +74,7 @@
         "stage": 4,
         "assetPath": "content/assets/v1/city-grid/seoul-kr-1835848/stage-4.svg",
         "reveals": [
+          "neighborhood-streets",
           "anonymous-landmarks"
         ]
       },
@@ -80,6 +82,7 @@
         "stage": 5,
         "assetPath": "content/assets/v1/city-grid/seoul-kr-1835848/stage-5.svg",
         "reveals": [
+          "full-street-network",
           "full-map-geometry"
         ]
       }

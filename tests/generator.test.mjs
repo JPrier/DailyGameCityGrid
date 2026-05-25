@@ -50,9 +50,10 @@ test('renderer outputs six staged SVGs without labels or answer strings', () => 
   const stages = Array.from({ length: 6 }, (_, stage) => renderSvgStage(geometry, stage));
   assert.equal(stages.length, 6);
   assert.match(stages[0], /<path/);
-  assert.doesNotMatch(stages[0], /#9fcddd/);
-  assert.match(stages[2], /#9fcddd/);
+  assert.doesNotMatch(stages[0], /data-layer="water"/);
+  assert.match(stages[2], /data-layer="water"/);
   assert.match(stages[3], /stroke-dasharray/);
+  assert.match(stages[5], /data-layer="final-detail-frame"/);
   for (const svg of stages) {
     assert.doesNotMatch(svg, /<text[\s>]/i);
     assert.doesNotMatch(svg.toLowerCase(), new RegExp(fixtureCity.canonicalName.toLowerCase()));

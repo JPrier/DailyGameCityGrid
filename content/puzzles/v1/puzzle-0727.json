@@ -51,7 +51,8 @@
         "stage": 1,
         "assetPath": "content/assets/v1/city-grid/washington-d-c-us-4140963/stage-1.svg",
         "reveals": [
-          "roads-wide"
+          "roads-wide",
+          "arterials"
         ]
       },
       {
@@ -74,6 +75,7 @@
         "stage": 4,
         "assetPath": "content/assets/v1/city-grid/washington-d-c-us-4140963/stage-4.svg",
         "reveals": [
+          "neighborhood-streets",
           "anonymous-landmarks"
         ]
       },
@@ -81,6 +83,7 @@
         "stage": 5,
         "assetPath": "content/assets/v1/city-grid/washington-d-c-us-4140963/stage-5.svg",
         "reveals": [
+          "full-street-network",
           "full-map-geometry"
         ]
       }

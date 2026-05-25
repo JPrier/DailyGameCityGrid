@@ -7,11 +7,11 @@ export const SOURCE_MANIFEST_PATH = 'content/source/osm-source-manifest.json';
 export const POOL_SIZE = 1000;
 export const REVEALS = [
   ['roads-tight'],
-  ['roads-wide'],
+  ['roads-wide', 'arterials'],
   ['water', 'coastline'],
   ['parks', 'rail'],
-  ['anonymous-landmarks'],
-  ['full-map-geometry'],
+  ['neighborhood-streets', 'anonymous-landmarks'],
+  ['full-street-network', 'full-map-geometry'],
 ];
 
 const VIEWBOX = { width: 420, height: 320, pad: 10 };
@@ -207,13 +207,16 @@ export function geometryForCity(city, realOsmSource) {
     const simplified = simplifyPoints(points, 1.2);
     const kind = layerForTags(element.tags ?? {});
     if (!kind) continue;
+    const sourceLengthMeters = lengthMeters(element.geometry ?? []);
     const geometry = {
       type: polygonLike(element.tags ?? {}, element.geometry ?? []) ? 'polygon' : 'line',
       points: simplified,
+      tags: element.tags ?? {},
+      lengthMeters: Math.round(sourceLengthMeters),
     };
     layers[kind].push(geometry);
     if (kind === 'roadsMajor' || kind === 'roadsMinor') {
-      roadTotalLengthMeters += lengthMeters(element.geometry ?? []);
+      roadTotalLengthMeters += sourceLengthMeters;
       for (const point of simplified) roadPoints.push(point);
     }
   }
@@ -242,25 +245,49 @@ export function geometryForCity(city, realOsmSource) {
 
 export function renderSvgStage(geometry, stage) {
   const layers = geometry.layers;
-  const majorRoads = stage === 0 ? layers.roadsMajor.slice(0, 72) : layers.roadsMajor;
-  const minorRoads = stage === 1 ? layers.roadsMinor.slice(0, 150) : layers.roadsMinor;
+  const majorRoads = importantLines(layers.roadsMajor);
+  const minorRoads = importantLines(layers.roadsMinor);
+  const rail = importantLines(layers.rail);
+  const water = importantLines(layers.water);
+  const parks = importantLines(layers.parks);
+  const visibleMajorRoads = majorRoads.slice(0, [42, 72, 96, 112, 120, 120][stage] ?? majorRoads.length);
+  const visibleMinorRoads = minorRoads.slice(0, [0, 58, 92, 132, 190, minorRoads.length][stage] ?? minorRoads.length);
   const parts = [
     '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 320" role="img" aria-label="Unlabeled street-grid crop">',
-    '<rect width="420" height="320" fill="#f6f3e9"/>',
-    '<g opacity="0.22" stroke="#d8d0bd" stroke-width="1">',
-    ...Array.from({ length: 8 }, (_, index) => `<path d="M${index * 60} 0L${index * 60} 320" fill="none"/>`),
-    ...Array.from({ length: 7 }, (_, index) => `<path d="M0 ${index * 54}L420 ${index * 54}" fill="none"/>`),
-    '</g>',
+    '<defs>',
+    '<clipPath id="mapCrop"><rect x="8" y="8" width="404" height="304" rx="16"/></clipPath>',
+    '</defs>',
+    '<rect width="420" height="320" fill="#ede7d8"/>',
+    '<rect x="8" y="8" width="404" height="304" rx="16" fill="#f7f1e3" stroke="#d8cbb2" stroke-width="1.25"/>',
+    '<g clip-path="url(#mapCrop)">',
   ];
-  if (stage >= 2) parts.push(...layers.water.map((item) => renderGeometry(item, '#9fcddd', '#397c94', 0.78, 4)));
-  if (stage >= 3) parts.push(...layers.parks.map((item) => renderGeometry(item, '#9fbe77', '#6d8f4b', 0.76, 2)));
-  parts.push(...majorRoads.map((item) => renderGeometry(item, 'none', '#fdfbf5', 0.95, stage === 0 ? 9 : 8)));
-  parts.push(...majorRoads.map((item) => renderGeometry(item, 'none', '#1e3432', 0.94, stage === 0 ? 4.8 : 4)));
-  if (stage >= 1) parts.push(...minorRoads.map((item) => renderGeometry(item, 'none', '#fdfbf5', 0.76, 4)));
-  if (stage >= 1) parts.push(...minorRoads.map((item) => renderGeometry(item, 'none', '#6b7770', 0.78, 1.8)));
-  if (stage >= 3) parts.push(...layers.rail.map((item) => renderGeometry(item, 'none', '#7b4a2f', 0.88, 4, '10 7')));
-  if (stage >= 4) parts.push('<g fill="#c75237" stroke="#fff8ec" stroke-width="2" opacity="0.92">', ...layers.landmarks.map((point) => `<circle cx="${point.x}" cy="${point.y}" r="5.5"/>`), '</g>');
-  if (stage >= 5) parts.push('<rect x="12" y="12" width="396" height="296" rx="18" fill="none" stroke="#172d2b" stroke-width="3.5" opacity="0.62"/>');
+  if (stage >= 2) {
+    parts.push('<g data-layer="water">', ...water.map((item) => renderFeature(item, 'water', stage)), '</g>');
+  }
+  if (stage >= 3) {
+    parts.push('<g data-layer="parks">', ...parks.map((item) => renderFeature(item, 'park', stage)), '</g>');
+  }
+  parts.push('<g data-layer="major-road-casing">', ...visibleMajorRoads.map((item) => renderFeature(item, 'major-casing', stage)), '</g>');
+  parts.push('<g data-layer="major-road">', ...visibleMajorRoads.map((item) => renderFeature(item, 'major-road', stage)), '</g>');
+  if (visibleMinorRoads.length > 0) {
+    parts.push('<g data-layer="minor-road-casing">', ...visibleMinorRoads.map((item) => renderFeature(item, 'minor-casing', stage)), '</g>');
+    parts.push('<g data-layer="minor-road">', ...visibleMinorRoads.map((item) => renderFeature(item, 'minor-road', stage)), '</g>');
+  }
+  if (stage >= 3) {
+    parts.push('<g data-layer="rail">', ...rail.map((item) => renderFeature(item, 'rail', stage)), '</g>');
+  }
+  if (stage >= 4) {
+    parts.push('<g data-layer="anonymous-feature-points" fill="#bf5b3e" stroke="#fff8ec" stroke-width="1.6" opacity="0.78">', ...layers.landmarks.map((point) => `<circle cx="${point.x}" cy="${point.y}" r="${stage >= 5 ? 3.8 : 4.8}"/>`), '</g>');
+  }
+  if (stage >= 5) {
+    parts.push('<g data-layer="final-detail-frame" fill="none" stroke="#273f3a" stroke-width="1.5" opacity="0.44">');
+    parts.push('<path d="M24 24H396V296H24Z"/>');
+    parts.push(...majorRoads.slice(visibleMajorRoads.length).map((item) => renderFeature(item, 'major-road', stage)));
+    parts.push(...minorRoads.slice(visibleMinorRoads.length).map((item) => renderFeature(item, 'minor-road', stage)));
+    parts.push('</g>');
+  }
+  parts.push('</g>');
+  parts.push('<rect x="8" y="8" width="404" height="304" rx="16" fill="none" stroke="#233934" stroke-width="1.4" opacity="0.44"/>');
   parts.push('</svg>');
   return `${parts.join('\n')}\n`;
 }
@@ -460,10 +487,86 @@ function landmarkPoints(layers) {
   return points.length >= 4 ? points : [{ x: 105, y: 80 }, { x: 210, y: 160 }, { x: 315, y: 240 }, { x: 315, y: 80 }];
 }
 
-function renderGeometry(item, fill, stroke, opacity, strokeWidth, dash = '') {
+function importantLines(items) {
+  return [...items].sort((left, right) => {
+    const leftImportance = featureImportance(left);
+    const rightImportance = featureImportance(right);
+    if (rightImportance !== leftImportance) return rightImportance - leftImportance;
+    return (right.lengthMeters ?? 0) - (left.lengthMeters ?? 0);
+  });
+}
+
+function featureImportance(item) {
+  const highway = item.tags?.highway;
+  const railway = item.tags?.railway;
+  const natural = item.tags?.natural;
+  const waterway = item.tags?.waterway;
+  if (highway === 'motorway') return 900;
+  if (highway === 'trunk') return 820;
+  if (highway === 'primary') return 740;
+  if (highway === 'secondary') return 660;
+  if (highway === 'tertiary') return 560;
+  if (railway === 'subway' || railway === 'light_rail') return 520;
+  if (railway === 'rail') return 500;
+  if (natural === 'coastline') return 480;
+  if (natural === 'water') return 460;
+  if (waterway === 'river') return 450;
+  if (waterway === 'canal') return 430;
+  if (highway === 'residential') return 360;
+  if (highway === 'unclassified') return 340;
+  if (highway === 'living_street') return 320;
+  if (highway === 'service') return 260;
+  return 100;
+}
+
+function renderFeature(item, style, stage) {
   const d = pathData(item.points, item.type === 'polygon');
-  const dashAttr = dash ? ` stroke-dasharray="${dash}"` : '';
-  return `<path d="${d}" fill="${fill}" stroke="${stroke}" stroke-width="${strokeWidth}"${dashAttr} stroke-linecap="round" stroke-linejoin="round" opacity="${opacity}"/>`;
+  const attrs = styleAttrs(item, style, stage);
+  return `<path d="${d}" ${attrs}/>`;
+}
+
+function styleAttrs(item, style, stage) {
+  const attrs = {
+    fill: 'none',
+    stroke: '#203632',
+    'stroke-width': '1',
+    opacity: '1',
+    'stroke-linecap': 'round',
+    'stroke-linejoin': 'round',
+  };
+  if (style === 'water') {
+    attrs.fill = item.type === 'polygon' ? '#b7d5dd' : 'none';
+    attrs.stroke = '#5e93a3';
+    attrs['stroke-width'] = item.type === 'polygon' ? '1.15' : stage >= 5 ? '2.6' : '2';
+    attrs.opacity = stage >= 5 ? '0.86' : '0.74';
+  } else if (style === 'park') {
+    attrs.fill = item.type === 'polygon' ? '#c4d5a3' : 'none';
+    attrs.stroke = '#7c9860';
+    attrs['stroke-width'] = item.type === 'polygon' ? '0.95' : '1.35';
+    attrs.opacity = stage >= 5 ? '0.72' : '0.55';
+  } else if (style === 'major-casing') {
+    attrs.stroke = '#fcf7e8';
+    attrs['stroke-width'] = stage >= 5 ? '5.4' : '6.4';
+    attrs.opacity = '0.92';
+  } else if (style === 'major-road') {
+    attrs.stroke = stage >= 5 ? '#263e38' : '#1f3733';
+    attrs['stroke-width'] = stage >= 5 ? '2.15' : '2.7';
+    attrs.opacity = '0.9';
+  } else if (style === 'minor-casing') {
+    attrs.stroke = '#fbf7eb';
+    attrs['stroke-width'] = stage >= 5 ? '2.8' : '3.4';
+    attrs.opacity = stage >= 5 ? '0.72' : '0.62';
+  } else if (style === 'minor-road') {
+    attrs.stroke = stage >= 5 ? '#78847a' : '#69776e';
+    attrs['stroke-width'] = stage >= 5 ? '0.95' : '1.25';
+    attrs.opacity = stage >= 5 ? '0.68' : '0.58';
+  } else if (style === 'rail') {
+    attrs.stroke = '#815739';
+    attrs['stroke-width'] = stage >= 5 ? '1.85' : '2.3';
+    attrs['stroke-dasharray'] = '7 5';
+    attrs.opacity = '0.76';
+  }
+  return Object.entries(attrs).map(([key, value]) => `${key}="${value}"`).join(' ');
 }
 
 function pathData(points, close) {
