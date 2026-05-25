@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1255364",
-      "canonicalName": "Surat",
+      "entityId": "city:geonames:293397",
+      "canonicalName": "Tel Aviv",
       "aliases": [
-        "Surat",
-        "Surat, IN",
-        "Surat India",
-        "Surat Gujarat"
+        "Tel Aviv",
+        "Tel Aviv, IL",
+        "Tel Aviv Israel",
+        "Tel Aviv Tel Aviv"
       ],
-      "countryCode": "IN",
-      "country": "India",
-      "admin1": "Gujarat",
-      "lat": 21.19594,
-      "lon": 72.83023,
-      "population": 4591246
+      "countryCode": "IL",
+      "country": "Israel",
+      "admin1": "Tel Aviv",
+      "lat": 32.08088,
+      "lon": 34.78057,
+      "population": 432892
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 72.791579,
-        "bottom": 21.159904,
-        "right": 72.868881,
-        "top": 21.231976
+        "left": 34.740698,
+        "bottom": 32.047096,
+        "right": 34.820442,
+        "top": 32.114664
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/surat-in-1255364/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/tel-aviv-il-293397/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/surat-in-1255364/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/tel-aviv-il-293397/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/surat-in-1255364/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/tel-aviv-il-293397/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/surat-in-1255364/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/tel-aviv-il-293397/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/surat-in-1255364/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/tel-aviv-il-293397/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/surat-in-1255364/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/tel-aviv-il-293397/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,18 +86,18 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 350285,
-      "intersectionCount": 294,
-      "waterGeometryCount": 70,
+      "roadTotalLengthMeters": 152738,
+      "intersectionCount": 198,
+      "waterGeometryCount": 60,
       "parkGeometryCount": 80,
-      "railLineCount": 70
+      "railLineCount": 67
     },
     "clues": {
       "continent": "Asia",
-      "country": "India",
-      "populationBand": "3m-5m",
+      "country": "Israel",
+      "populationBand": "100k-1m",
       "coastal": false,
-      "hasMajorRapidTransit": true
+      "hasMajorRapidTransit": false
     }
   }
 }

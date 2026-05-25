@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1791247",
-      "canonicalName": "Wuhan",
+      "entityId": "city:geonames:1816670",
+      "canonicalName": "Beijing",
       "aliases": [
-        "Wuhan",
-        "Wuhan, CN",
-        "Wuhan China",
-        "Wuhan Hubei"
+        "Beijing",
+        "Beijing, CN",
+        "Beijing China",
+        "Beijing Beijing"
       ],
       "countryCode": "CN",
       "country": "China",
-      "admin1": "Hubei",
-      "lat": 30.58333,
-      "lon": 114.26667,
-      "population": 10392693
+      "admin1": "Beijing",
+      "lat": 39.9075,
+      "lon": 116.39723,
+      "population": 18960744
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 114.219579,
-        "bottom": 30.542789,
-        "right": 114.313761,
-        "top": 30.623871
+        "left": 116.34438,
+        "bottom": 39.866959,
+        "right": 116.45008,
+        "top": 39.948041
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/wuhan-cn-1791247/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/beijing-cn-1816670/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/wuhan-cn-1791247/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/beijing-cn-1816670/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/wuhan-cn-1791247/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/beijing-cn-1816670/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/wuhan-cn-1791247/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/beijing-cn-1816670/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/wuhan-cn-1791247/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/beijing-cn-1816670/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/wuhan-cn-1791247/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/beijing-cn-1816670/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,9 +86,9 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 508183,
-      "intersectionCount": 282,
-      "waterGeometryCount": 52,
+      "roadTotalLengthMeters": 333153,
+      "intersectionCount": 198,
+      "waterGeometryCount": 70,
       "parkGeometryCount": 80,
       "railLineCount": 70
     },

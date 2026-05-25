@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:2314302",
-      "canonicalName": "Kinshasa",
+      "entityId": "city:geonames:3169070",
+      "canonicalName": "Rome",
       "aliases": [
-        "Kinshasa",
-        "Kinshasa, CD",
-        "Kinshasa Democratic Republic of the Congo",
-        "Kinshasa Kinshasa"
+        "Rome",
+        "Rome, IT",
+        "Rome Italy",
+        "Rome Lazio"
       ],
-      "countryCode": "CD",
-      "country": "Democratic Republic of the Congo",
-      "admin1": "Kinshasa",
-      "lat": -4.32758,
-      "lon": 15.31357,
-      "population": 16000000
+      "countryCode": "IT",
+      "country": "Italy",
+      "admin1": "Lazio",
+      "lat": 41.89193,
+      "lon": 12.51133,
+      "population": 2318895
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 15.272914,
-        "bottom": -4.368121,
-        "right": 15.354226,
-        "top": -4.287039
+        "left": 12.459895,
+        "bottom": 41.853642,
+        "right": 12.562765,
+        "top": 41.930218
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/kinshasa-cd-2314302/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/rome-it-3169070/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/kinshasa-cd-2314302/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/rome-it-3169070/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/kinshasa-cd-2314302/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/rome-it-3169070/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/kinshasa-cd-2314302/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/rome-it-3169070/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/kinshasa-cd-2314302/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/rome-it-3169070/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/kinshasa-cd-2314302/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/rome-it-3169070/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,16 +86,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 404941,
-      "intersectionCount": 191,
-      "waterGeometryCount": 64,
+      "roadTotalLengthMeters": 204222,
+      "intersectionCount": 202,
+      "waterGeometryCount": 70,
       "parkGeometryCount": 80,
-      "railLineCount": 47
+      "railLineCount": 70
     },
     "clues": {
-      "continent": "Africa",
-      "country": "Democratic Republic of the Congo",
-      "populationBand": "10m+",
+      "continent": "Europe",
+      "country": "Italy",
+      "populationBand": "1m-3m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

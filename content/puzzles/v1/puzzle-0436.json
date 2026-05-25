@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1814906",
-      "canonicalName": "Chongqing",
+      "entityId": "city:geonames:3530597",
+      "canonicalName": "Mexico City",
       "aliases": [
-        "Chongqing",
-        "Chongqing, CN",
-        "Chongqing China",
-        "Chongqing Chongqing"
+        "Mexico City",
+        "Mexico City, MX",
+        "Mexico City Mexico",
+        "Mexico City Mexico City"
       ],
-      "countryCode": "CN",
-      "country": "China",
-      "admin1": "Chongqing",
-      "lat": 29.56026,
-      "lon": 106.55771,
-      "population": 7457599
+      "countryCode": "MX",
+      "country": "Mexico",
+      "admin1": "Mexico City",
+      "lat": 19.42847,
+      "lon": -99.12766,
+      "population": 12294193
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 106.513692,
-        "bottom": 29.521972,
-        "right": 106.601728,
-        "top": 29.598548
+        "left": -99.170648,
+        "bottom": 19.387929,
+        "right": -99.084672,
+        "top": 19.469011
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/chongqing-cn-1814906/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/mexico-city-mx-3530597/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/chongqing-cn-1814906/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/mexico-city-mx-3530597/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/chongqing-cn-1814906/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/mexico-city-mx-3530597/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/chongqing-cn-1814906/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/mexico-city-mx-3530597/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/chongqing-cn-1814906/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/mexico-city-mx-3530597/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/chongqing-cn-1814906/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/mexico-city-mx-3530597/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,16 +86,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 444655,
-      "intersectionCount": 425,
-      "waterGeometryCount": 20,
+      "roadTotalLengthMeters": 428903,
+      "intersectionCount": 184,
+      "waterGeometryCount": 70,
       "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
-      "continent": "Asia",
-      "country": "China",
-      "populationBand": "5m-10m",
+      "continent": "North America",
+      "country": "Mexico",
+      "populationBand": "10m+",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

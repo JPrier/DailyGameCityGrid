@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:2293538",
-      "canonicalName": "Abidjan",
+      "entityId": "city:geonames:3143244",
+      "canonicalName": "Oslo",
       "aliases": [
-        "Abidjan",
-        "Abidjan, CI",
-        "Abidjan Ivory Coast",
-        "Abidjan Abidjan Autonomous District"
+        "Oslo",
+        "Oslo, NO",
+        "Oslo Norway",
+        "Oslo Oslo"
       ],
-      "countryCode": "CI",
-      "country": "Ivory Coast",
-      "admin1": "Abidjan Autonomous District",
-      "lat": 5.35444,
-      "lon": -4.00167,
-      "population": 6321017
+      "countryCode": "NO",
+      "country": "Norway",
+      "admin1": "Oslo",
+      "lat": 59.91273,
+      "lon": 10.74609,
+      "population": 1082575
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": -4.040126,
-        "bottom": 5.316152,
-        "right": -3.963214,
-        "top": 5.392728
+        "left": 10.669715,
+        "bottom": 59.874442,
+        "right": 10.822465,
+        "top": 59.951018
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/abidjan-ci-2293538/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/oslo-no-3143244/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/abidjan-ci-2293538/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/oslo-no-3143244/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/abidjan-ci-2293538/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/oslo-no-3143244/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/abidjan-ci-2293538/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/oslo-no-3143244/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/abidjan-ci-2293538/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/oslo-no-3143244/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/abidjan-ci-2293538/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/oslo-no-3143244/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,16 +86,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 277470,
-      "intersectionCount": 231,
-      "waterGeometryCount": 36,
+      "roadTotalLengthMeters": 228420,
+      "intersectionCount": 219,
+      "waterGeometryCount": 70,
       "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
-      "continent": "Africa",
-      "country": "Ivory Coast",
-      "populationBand": "5m-10m",
+      "continent": "Europe",
+      "country": "Norway",
+      "populationBand": "1m-3m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

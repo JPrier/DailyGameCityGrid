@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:3688689",
-      "canonicalName": "Bogota",
+      "entityId": "city:geonames:6077243",
+      "canonicalName": "Montreal",
       "aliases": [
-        "Bogota",
-        "Bogota, CO",
-        "Bogota Colombia",
-        "Bogota Bogota D.C."
+        "Montreal",
+        "Montreal, CA",
+        "Montreal Canada",
+        "Montreal Quebec"
       ],
-      "countryCode": "CO",
-      "country": "Colombia",
-      "admin1": "Bogota D.C.",
-      "lat": 4.60971,
-      "lon": -74.08175,
-      "population": 7674366
+      "countryCode": "CA",
+      "country": "Canada",
+      "admin1": "Quebec",
+      "lat": 45.50884,
+      "lon": -73.58781,
+      "population": 1762949
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": -74.120163,
-        "bottom": 4.571422,
-        "right": -74.043337,
-        "top": 4.647998
+        "left": -73.642445,
+        "bottom": 45.470552,
+        "right": -73.533175,
+        "top": 45.547128
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/bogota-co-3688689/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/montreal-ca-6077243/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/bogota-co-3688689/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/montreal-ca-6077243/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/bogota-co-3688689/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/montreal-ca-6077243/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/bogota-co-3688689/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/montreal-ca-6077243/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/bogota-co-3688689/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/montreal-ca-6077243/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/bogota-co-3688689/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/montreal-ca-6077243/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,16 +86,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 285225,
-      "intersectionCount": 175,
-      "waterGeometryCount": 70,
+      "roadTotalLengthMeters": 267980,
+      "intersectionCount": 155,
+      "waterGeometryCount": 47,
       "parkGeometryCount": 80,
-      "railLineCount": 21
+      "railLineCount": 70
     },
     "clues": {
-      "continent": "South America",
-      "country": "Colombia",
-      "populationBand": "5m-10m",
+      "continent": "North America",
+      "country": "Canada",
+      "populationBand": "1m-3m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

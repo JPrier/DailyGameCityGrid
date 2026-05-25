@@ -10,52 +10,53 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1811103",
-      "canonicalName": "Foshan",
+      "entityId": "city:geonames:4140963",
+      "canonicalName": "Washington, D.C.",
       "aliases": [
-        "Foshan",
-        "Foshan, CN",
-        "Foshan China",
-        "Foshan Guangdong"
+        "Washington, D.C.",
+        "Washington",
+        "Washington, D.C., US",
+        "Washington, D.C. United States",
+        "Washington, D.C. District of Columbia"
       ],
-      "countryCode": "CN",
-      "country": "China",
-      "admin1": "Guangdong",
-      "lat": 23.02677,
-      "lon": 113.13148,
-      "population": 9042509
+      "countryCode": "US",
+      "country": "United States",
+      "admin1": "District of Columbia",
+      "lat": 38.89511,
+      "lon": -77.03637,
+      "population": 689545
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 113.089877,
-        "bottom": 22.988482,
-        "right": 113.173083,
-        "top": 23.065058
+        "left": -77.079777,
+        "bottom": 38.861326,
+        "right": -76.992963,
+        "top": 38.928894
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/foshan-cn-1811103/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/washington-d-c-us-4140963/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/foshan-cn-1811103/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/washington-d-c-us-4140963/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/foshan-cn-1811103/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/washington-d-c-us-4140963/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +64,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/foshan-cn-1811103/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/washington-d-c-us-4140963/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +72,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/foshan-cn-1811103/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/washington-d-c-us-4140963/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/foshan-cn-1811103/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/washington-d-c-us-4140963/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,18 +87,18 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 360584,
-      "intersectionCount": 217,
+      "roadTotalLengthMeters": 228985,
+      "intersectionCount": 178,
       "waterGeometryCount": 70,
       "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
-      "continent": "Asia",
-      "country": "China",
-      "populationBand": "5m-10m",
+      "continent": "North America",
+      "country": "United States",
+      "populationBand": "100k-1m",
       "coastal": false,
-      "hasMajorRapidTransit": true
+      "hasMajorRapidTransit": false
     }
   }
 }

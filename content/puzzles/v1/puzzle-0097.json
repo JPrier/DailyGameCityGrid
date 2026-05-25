@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1793346",
-      "canonicalName": "Tangshan",
+      "entityId": "city:geonames:2158177",
+      "canonicalName": "Melbourne",
       "aliases": [
-        "Tangshan",
-        "Tangshan, CN",
-        "Tangshan China",
-        "Tangshan Hebei"
+        "Melbourne",
+        "Melbourne, AU",
+        "Melbourne Australia",
+        "Melbourne Victoria"
       ],
-      "countryCode": "CN",
-      "country": "China",
-      "admin1": "Hebei",
-      "lat": 39.64381,
-      "lon": 118.18319,
-      "population": 3372102
+      "countryCode": "AU",
+      "country": "Australia",
+      "admin1": "Victoria",
+      "lat": -37.814,
+      "lon": 144.96332,
+      "population": 5350705
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 118.136392,
-        "bottom": 39.607774,
-        "right": 118.229988,
-        "top": 39.679846
+        "left": 144.912003,
+        "bottom": -37.854541,
+        "right": 145.014637,
+        "top": -37.773459
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/tangshan-cn-1793346/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/melbourne-au-2158177/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/tangshan-cn-1793346/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/melbourne-au-2158177/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/tangshan-cn-1793346/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/melbourne-au-2158177/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/tangshan-cn-1793346/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/melbourne-au-2158177/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/tangshan-cn-1793346/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/melbourne-au-2158177/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/tangshan-cn-1793346/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/melbourne-au-2158177/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,16 +86,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 347876,
-      "intersectionCount": 274,
-      "waterGeometryCount": 44,
+      "roadTotalLengthMeters": 228207,
+      "intersectionCount": 189,
+      "waterGeometryCount": 70,
       "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
-      "continent": "Asia",
-      "country": "China",
-      "populationBand": "3m-5m",
+      "continent": "Oceania",
+      "country": "Australia",
+      "populationBand": "5m-10m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

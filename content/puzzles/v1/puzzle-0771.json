@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1790923",
-      "canonicalName": "Wuxi",
+      "entityId": "city:geonames:2553604",
+      "canonicalName": "Casablanca",
       "aliases": [
-        "Wuxi",
-        "Wuxi, CN",
-        "Wuxi China",
-        "Wuxi Jiangsu"
+        "Casablanca",
+        "Casablanca, MA",
+        "Casablanca Morocco",
+        "Casablanca Casablanca-Settat"
       ],
-      "countryCode": "CN",
-      "country": "China",
-      "admin1": "Jiangsu",
-      "lat": 31.56887,
-      "lon": 120.28857,
-      "population": 4396835
+      "countryCode": "MA",
+      "country": "Morocco",
+      "admin1": "Casablanca-Settat",
+      "lat": 33.58831,
+      "lon": -7.61138,
+      "population": 3665954
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 120.246275,
-        "bottom": 31.532834,
-        "right": 120.330865,
-        "top": 31.604906
+        "left": -7.657342,
+        "bottom": 33.550022,
+        "right": -7.565418,
+        "top": 33.626598
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/wuxi-cn-1790923/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/casablanca-ma-2553604/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/wuxi-cn-1790923/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/casablanca-ma-2553604/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/wuxi-cn-1790923/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/casablanca-ma-2553604/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/wuxi-cn-1790923/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/casablanca-ma-2553604/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/wuxi-cn-1790923/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/casablanca-ma-2553604/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/wuxi-cn-1790923/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/casablanca-ma-2553604/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,15 +86,15 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 407545,
-      "intersectionCount": 263,
-      "waterGeometryCount": 70,
-      "parkGeometryCount": 62,
+      "roadTotalLengthMeters": 299579,
+      "intersectionCount": 215,
+      "waterGeometryCount": 15,
+      "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
-      "continent": "Asia",
-      "country": "China",
+      "continent": "Africa",
+      "country": "Morocco",
       "populationBand": "3m-5m",
       "coastal": false,
       "hasMajorRapidTransit": true

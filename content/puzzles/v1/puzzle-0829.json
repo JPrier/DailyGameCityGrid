@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:5128581",
-      "canonicalName": "New York City",
+      "entityId": "city:geonames:5506956",
+      "canonicalName": "Las Vegas",
       "aliases": [
-        "New York City",
-        "New York City, US",
-        "New York City United States",
-        "New York City New York"
+        "Las Vegas",
+        "Las Vegas, US",
+        "Las Vegas United States",
+        "Las Vegas Nevada"
       ],
       "countryCode": "US",
       "country": "United States",
-      "admin1": "New York",
-      "lat": 40.71427,
-      "lon": -74.00597,
-      "population": 8804190
+      "admin1": "Nevada",
+      "lat": 36.17497,
+      "lon": -115.13722,
+      "population": 641903
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": -74.056484,
-        "bottom": 40.675982,
-        "right": -73.955456,
-        "top": 40.752558
+        "left": -115.179072,
+        "bottom": 36.141186,
+        "right": -115.095368,
+        "top": 36.208754
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/new-york-city-us-5128581/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/las-vegas-us-5506956/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/new-york-city-us-5128581/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/las-vegas-us-5506956/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/new-york-city-us-5128581/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/las-vegas-us-5506956/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/new-york-city-us-5128581/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/las-vegas-us-5506956/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/new-york-city-us-5128581/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/las-vegas-us-5506956/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/new-york-city-us-5128581/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/las-vegas-us-5506956/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,18 +86,18 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 271420,
-      "intersectionCount": 160,
-      "waterGeometryCount": 70,
+      "roadTotalLengthMeters": 282192,
+      "intersectionCount": 202,
+      "waterGeometryCount": 8,
       "parkGeometryCount": 80,
-      "railLineCount": 70
+      "railLineCount": 45
     },
     "clues": {
       "continent": "North America",
       "country": "United States",
-      "populationBand": "5m-10m",
+      "populationBand": "100k-1m",
       "coastal": false,
-      "hasMajorRapidTransit": true
+      "hasMajorRapidTransit": false
     }
   }
 }

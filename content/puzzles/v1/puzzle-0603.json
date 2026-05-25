@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1809858",
-      "canonicalName": "Guangzhou",
+      "entityId": "city:geonames:1850147",
+      "canonicalName": "Tokyo",
       "aliases": [
-        "Guangzhou",
-        "Guangzhou, CN",
-        "Guangzhou China",
-        "Guangzhou Guangdong"
+        "Tokyo",
+        "Tokyo, JP",
+        "Tokyo Japan",
+        "Tokyo Tokyo"
       ],
-      "countryCode": "CN",
-      "country": "China",
-      "admin1": "Guangdong",
-      "lat": 23.11667,
-      "lon": 113.25,
-      "population": 16096724
+      "countryCode": "JP",
+      "country": "Japan",
+      "admin1": "Tokyo",
+      "lat": 35.6895,
+      "lon": 139.69171,
+      "population": 9733276
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 113.20592,
-        "bottom": 23.076129,
-        "right": 113.29408,
-        "top": 23.157211
+        "left": 139.641795,
+        "bottom": 35.648959,
+        "right": 139.741625,
+        "top": 35.730041
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/guangzhou-cn-1809858/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/tokyo-jp-1850147/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/guangzhou-cn-1809858/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/tokyo-jp-1850147/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/guangzhou-cn-1809858/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/tokyo-jp-1850147/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/guangzhou-cn-1809858/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/tokyo-jp-1850147/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/guangzhou-cn-1809858/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/tokyo-jp-1850147/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/guangzhou-cn-1809858/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/tokyo-jp-1850147/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,16 +86,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 282553,
-      "intersectionCount": 237,
+      "roadTotalLengthMeters": 301198,
+      "intersectionCount": 205,
       "waterGeometryCount": 70,
       "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
       "continent": "Asia",
-      "country": "China",
-      "populationBand": "10m+",
+      "country": "Japan",
+      "populationBand": "5m-10m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

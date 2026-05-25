@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1784658",
-      "canonicalName": "Zhengzhou",
+      "entityId": "city:geonames:2332459",
+      "canonicalName": "Lagos",
       "aliases": [
-        "Zhengzhou",
-        "Zhengzhou, CN",
-        "Zhengzhou China",
-        "Zhengzhou Henan"
+        "Lagos",
+        "Lagos, NG",
+        "Lagos Nigeria",
+        "Lagos Lagos"
       ],
-      "countryCode": "CN",
-      "country": "China",
-      "admin1": "Henan",
-      "lat": 34.75778,
-      "lon": 113.64861,
-      "population": 4253913
+      "countryCode": "NG",
+      "country": "Nigeria",
+      "admin1": "Lagos",
+      "lat": 6.45407,
+      "lon": 3.39467,
+      "population": 15388000
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 113.604748,
-        "bottom": 34.721744,
-        "right": 113.692472,
-        "top": 34.793816
+        "left": 3.353871,
+        "bottom": 6.413529,
+        "right": 3.435469,
+        "top": 6.494611
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/zhengzhou-cn-1784658/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/lagos-ng-2332459/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/zhengzhou-cn-1784658/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/lagos-ng-2332459/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/zhengzhou-cn-1784658/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/lagos-ng-2332459/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/zhengzhou-cn-1784658/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/lagos-ng-2332459/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/zhengzhou-cn-1784658/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/lagos-ng-2332459/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/zhengzhou-cn-1784658/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/lagos-ng-2332459/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,16 +86,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 600147,
-      "intersectionCount": 211,
-      "waterGeometryCount": 40,
+      "roadTotalLengthMeters": 375929,
+      "intersectionCount": 259,
+      "waterGeometryCount": 70,
       "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
-      "continent": "Asia",
-      "country": "China",
-      "populationBand": "3m-5m",
+      "continent": "Africa",
+      "country": "Nigeria",
+      "populationBand": "10m+",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

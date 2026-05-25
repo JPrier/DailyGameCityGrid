@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1174872",
-      "canonicalName": "Karachi",
+      "entityId": "city:geonames:2950159",
+      "canonicalName": "Berlin",
       "aliases": [
-        "Karachi",
-        "Karachi, PK",
-        "Karachi Pakistan",
-        "Karachi Sindh"
+        "Berlin",
+        "Berlin, DE",
+        "Berlin Germany",
+        "Berlin State of Berlin"
       ],
-      "countryCode": "PK",
-      "country": "Pakistan",
-      "admin1": "Sindh",
-      "lat": 24.8608,
-      "lon": 67.0104,
-      "population": 11624219
+      "countryCode": "DE",
+      "country": "Germany",
+      "admin1": "State of Berlin",
+      "lat": 52.52437,
+      "lon": 13.41053,
+      "population": 3426354
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 66.965719,
-        "bottom": 24.820259,
-        "right": 67.055081,
-        "top": 24.901341
+        "left": 13.3476,
+        "bottom": 52.486082,
+        "right": 13.47346,
+        "top": 52.562658
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/karachi-pk-1174872/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/berlin-de-2950159/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/karachi-pk-1174872/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/berlin-de-2950159/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/karachi-pk-1174872/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/berlin-de-2950159/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/karachi-pk-1174872/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/berlin-de-2950159/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/karachi-pk-1174872/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/berlin-de-2950159/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/karachi-pk-1174872/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/berlin-de-2950159/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,16 +86,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 409968,
-      "intersectionCount": 228,
-      "waterGeometryCount": 59,
+      "roadTotalLengthMeters": 130739,
+      "intersectionCount": 156,
+      "waterGeometryCount": 70,
       "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
-      "continent": "Asia",
-      "country": "Pakistan",
-      "populationBand": "10m+",
+      "continent": "Europe",
+      "country": "Germany",
+      "populationBand": "3m-5m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

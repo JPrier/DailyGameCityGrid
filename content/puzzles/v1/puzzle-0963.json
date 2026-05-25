@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:105343",
-      "canonicalName": "Jeddah",
+      "entityId": "city:geonames:3413829",
+      "canonicalName": "Reykjavik",
       "aliases": [
-        "Jeddah",
-        "Jeddah, SA",
-        "Jeddah Saudi Arabia",
-        "Jeddah Mecca Region"
+        "Reykjavik",
+        "Reykjavik, IS",
+        "Reykjavik Iceland",
+        "Reykjavik Capital Region"
       ],
-      "countryCode": "SA",
-      "country": "Saudi Arabia",
-      "admin1": "Mecca Region",
-      "lat": 21.49012,
-      "lon": 39.18624,
-      "population": 4697000
+      "countryCode": "IS",
+      "country": "Iceland",
+      "admin1": "Capital Region",
+      "lat": 64.13548,
+      "lon": -21.89541,
+      "population": 118918
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 39.147512,
-        "bottom": 21.454084,
-        "right": 39.224968,
-        "top": 21.526156
+        "left": -21.972852,
+        "bottom": 64.101696,
+        "right": -21.817968,
+        "top": 64.169264
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/jeddah-sa-105343/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/reykjavik-is-3413829/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/jeddah-sa-105343/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/reykjavik-is-3413829/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/jeddah-sa-105343/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/reykjavik-is-3413829/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/jeddah-sa-105343/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/reykjavik-is-3413829/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/jeddah-sa-105343/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/reykjavik-is-3413829/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/jeddah-sa-105343/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/reykjavik-is-3413829/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,18 +86,18 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 487827,
-      "intersectionCount": 330,
-      "waterGeometryCount": 9,
-      "parkGeometryCount": 35,
+      "roadTotalLengthMeters": 172429,
+      "intersectionCount": 203,
+      "waterGeometryCount": 70,
+      "parkGeometryCount": 80,
       "railLineCount": 0
     },
     "clues": {
-      "continent": "Asia",
-      "country": "Saudi Arabia",
-      "populationBand": "3m-5m",
+      "continent": "Europe",
+      "country": "Iceland",
+      "populationBand": "100k-1m",
       "coastal": false,
-      "hasMajorRapidTransit": true
+      "hasMajorRapidTransit": false
     }
   }
 }

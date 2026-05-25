@@ -10,51 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1819729",
-      "canonicalName": "Hong Kong",
+      "entityId": "city:geonames:3435910",
+      "canonicalName": "Buenos Aires",
       "aliases": [
-        "Hong Kong",
-        "Hong Kong, HK",
-        "Hong Kong Hong Kong"
+        "Buenos Aires",
+        "Buenos Aires, AR",
+        "Buenos Aires Argentina",
+        "Buenos Aires Buenos Aires F.D."
       ],
-      "countryCode": "HK",
-      "country": "Hong Kong",
-      "admin1": "",
-      "lat": 22.27832,
-      "lon": 114.17469,
-      "population": 7396076
+      "countryCode": "AR",
+      "country": "Argentina",
+      "admin1": "Buenos Aires F.D.",
+      "lat": -34.61315,
+      "lon": -58.37723,
+      "population": 2891082
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 114.133313,
-        "bottom": 22.240032,
-        "right": 114.216067,
-        "top": 22.316608
+        "left": -58.423752,
+        "bottom": -34.651438,
+        "right": -58.330708,
+        "top": -34.574862
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/hong-kong-hk-1819729/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/buenos-aires-ar-3435910/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/hong-kong-hk-1819729/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/buenos-aires-ar-3435910/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/hong-kong-hk-1819729/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/buenos-aires-ar-3435910/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -62,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/hong-kong-hk-1819729/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/buenos-aires-ar-3435910/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -70,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/hong-kong-hk-1819729/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/buenos-aires-ar-3435910/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/hong-kong-hk-1819729/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/buenos-aires-ar-3435910/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -85,16 +86,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 180464,
-      "intersectionCount": 275,
+      "roadTotalLengthMeters": 280033,
+      "intersectionCount": 156,
       "waterGeometryCount": 70,
       "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
-      "continent": "Asia",
-      "country": "Hong Kong",
-      "populationBand": "5m-10m",
+      "continent": "South America",
+      "country": "Argentina",
+      "populationBand": "1m-3m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

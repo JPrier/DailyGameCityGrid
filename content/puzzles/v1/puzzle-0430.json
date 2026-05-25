@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1642911",
-      "canonicalName": "Jakarta",
+      "entityId": "city:geonames:4164138",
+      "canonicalName": "Miami",
       "aliases": [
-        "Jakarta",
-        "Jakarta, ID",
-        "Jakarta Indonesia",
-        "Jakarta Jakarta"
+        "Miami",
+        "Miami, US",
+        "Miami United States",
+        "Miami Florida"
       ],
-      "countryCode": "ID",
-      "country": "Indonesia",
-      "admin1": "Jakarta",
-      "lat": -6.21462,
-      "lon": 106.84513,
-      "population": 8540121
+      "countryCode": "US",
+      "country": "United States",
+      "admin1": "Florida",
+      "lat": 25.77427,
+      "lon": -80.19366,
+      "population": 487014
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 106.806615,
-        "bottom": -6.252908,
-        "right": 106.883645,
-        "top": -6.176332
+        "left": -80.231176,
+        "bottom": 25.740486,
+        "right": -80.156144,
+        "top": 25.808054
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/jakarta-id-1642911/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/miami-us-4164138/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/jakarta-id-1642911/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/miami-us-4164138/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/jakarta-id-1642911/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/miami-us-4164138/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/jakarta-id-1642911/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/miami-us-4164138/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/jakarta-id-1642911/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/miami-us-4164138/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/jakarta-id-1642911/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/miami-us-4164138/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,18 +86,18 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 254184,
-      "intersectionCount": 219,
+      "roadTotalLengthMeters": 224621,
+      "intersectionCount": 185,
       "waterGeometryCount": 70,
       "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
-      "continent": "Asia",
-      "country": "Indonesia",
-      "populationBand": "5m-10m",
+      "continent": "North America",
+      "country": "United States",
+      "populationBand": "100k-1m",
       "coastal": false,
-      "hasMajorRapidTransit": true
+      "hasMajorRapidTransit": false
     }
   }
 }

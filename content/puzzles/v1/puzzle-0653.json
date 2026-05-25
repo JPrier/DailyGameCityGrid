@@ -10,52 +10,53 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:361058",
-      "canonicalName": "Alexandria",
+      "entityId": "city:geonames:2925533",
+      "canonicalName": "Frankfurt",
       "aliases": [
-        "Alexandria",
-        "Alexandria, EG",
-        "Alexandria Egypt",
-        "Alexandria Alexandria"
+        "Frankfurt",
+        "Frankfurt am Main",
+        "Frankfurt, DE",
+        "Frankfurt Germany",
+        "Frankfurt Hesse"
       ],
-      "countryCode": "EG",
-      "country": "Egypt",
-      "admin1": "Alexandria",
-      "lat": 31.20176,
-      "lon": 29.91582,
-      "population": 5263542
+      "countryCode": "DE",
+      "country": "Germany",
+      "admin1": "Hesse",
+      "lat": 50.11552,
+      "lon": 8.68417,
+      "population": 650000
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 29.871057,
-        "bottom": 31.163472,
-        "right": 29.960583,
-        "top": 31.240048
+        "left": 8.631485,
+        "bottom": 50.081736,
+        "right": 8.736855,
+        "top": 50.149304
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/alexandria-eg-361058/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/frankfurt-de-2925533/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/alexandria-eg-361058/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/frankfurt-de-2925533/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/alexandria-eg-361058/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/frankfurt-de-2925533/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +64,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/alexandria-eg-361058/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/frankfurt-de-2925533/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +72,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/alexandria-eg-361058/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/frankfurt-de-2925533/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/alexandria-eg-361058/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/frankfurt-de-2925533/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,18 +87,18 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 443407,
-      "intersectionCount": 310,
-      "waterGeometryCount": 57,
+      "roadTotalLengthMeters": 172243,
+      "intersectionCount": 169,
+      "waterGeometryCount": 70,
       "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
-      "continent": "Africa",
-      "country": "Egypt",
-      "populationBand": "5m-10m",
+      "continent": "Europe",
+      "country": "Germany",
+      "populationBand": "100k-1m",
       "coastal": false,
-      "hasMajorRapidTransit": true
+      "hasMajorRapidTransit": false
     }
   }
 }

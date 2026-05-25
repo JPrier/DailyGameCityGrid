@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1848354",
-      "canonicalName": "Yokohama",
+      "entityId": "city:geonames:1701668",
+      "canonicalName": "Manila",
       "aliases": [
-        "Yokohama",
-        "Yokohama, JP",
-        "Yokohama Japan",
-        "Yokohama Kanagawa"
+        "Manila",
+        "Manila, PH",
+        "Manila Philippines",
+        "Manila National Capital Region"
       ],
-      "countryCode": "JP",
-      "country": "Japan",
-      "admin1": "Kanagawa",
-      "lat": 35.43333,
-      "lon": 139.65,
-      "population": 3777491
+      "countryCode": "PH",
+      "country": "Philippines",
+      "admin1": "National Capital Region",
+      "lat": 14.6042,
+      "lon": 120.9822,
+      "population": 1600000
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 139.605773,
-        "bottom": 35.397294,
-        "right": 139.694227,
-        "top": 35.469366
+        "left": 120.942633,
+        "bottom": 14.565912,
+        "right": 121.021767,
+        "top": 14.642488
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/yokohama-jp-1848354/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/manila-ph-1701668/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/yokohama-jp-1848354/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/manila-ph-1701668/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/yokohama-jp-1848354/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/manila-ph-1701668/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/yokohama-jp-1848354/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/manila-ph-1701668/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/yokohama-jp-1848354/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/manila-ph-1701668/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/yokohama-jp-1848354/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/manila-ph-1701668/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,16 +86,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 329906,
-      "intersectionCount": 281,
+      "roadTotalLengthMeters": 268313,
+      "intersectionCount": 209,
       "waterGeometryCount": 70,
       "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
       "continent": "Asia",
-      "country": "Japan",
-      "populationBand": "3m-5m",
+      "country": "Philippines",
+      "populationBand": "1m-3m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

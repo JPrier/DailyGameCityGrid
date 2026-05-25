@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:292223",
-      "canonicalName": "Dubai",
+      "entityId": "city:geonames:1642911",
+      "canonicalName": "Jakarta",
       "aliases": [
-        "Dubai",
-        "Dubai, AE",
-        "Dubai United Arab Emirates",
-        "Dubai Dubai"
+        "Jakarta",
+        "Jakarta, ID",
+        "Jakarta Indonesia",
+        "Jakarta Jakarta"
       ],
-      "countryCode": "AE",
-      "country": "United Arab Emirates",
-      "admin1": "Dubai",
-      "lat": 25.07725,
-      "lon": 55.30927,
-      "population": 3790000
+      "countryCode": "ID",
+      "country": "Indonesia",
+      "admin1": "Jakarta",
+      "lat": -6.21462,
+      "lon": 106.84513,
+      "population": 8540121
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 55.269484,
-        "bottom": 25.041214,
-        "right": 55.349056,
-        "top": 25.113286
+        "left": 106.80435,
+        "bottom": -6.255161,
+        "right": 106.88591,
+        "top": -6.174079
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/dubai-ae-292223/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/jakarta-id-1642911/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/dubai-ae-292223/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/jakarta-id-1642911/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/dubai-ae-292223/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/jakarta-id-1642911/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/dubai-ae-292223/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/jakarta-id-1642911/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,31 +71,31 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/dubai-ae-292223/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/jakarta-id-1642911/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/dubai-ae-292223/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/jakarta-id-1642911/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
       }
     ],
     "geometryMetrics": {
-      "roadLineCount": 298,
-      "roadTotalLengthMeters": 377670,
-      "intersectionCount": 289,
-      "waterGeometryCount": 46,
+      "roadLineCount": 380,
+      "roadTotalLengthMeters": 266169,
+      "intersectionCount": 202,
+      "waterGeometryCount": 70,
       "parkGeometryCount": 80,
-      "railLineCount": 7
+      "railLineCount": 70
     },
     "clues": {
       "continent": "Asia",
-      "country": "United Arab Emirates",
-      "populationBand": "3m-5m",
+      "country": "Indonesia",
+      "populationBand": "5m-10m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

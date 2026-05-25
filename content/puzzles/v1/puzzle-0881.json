@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:344979",
-      "canonicalName": "Addis Ababa",
+      "entityId": "city:geonames:1269515",
+      "canonicalName": "Jaipur",
       "aliases": [
-        "Addis Ababa",
-        "Addis Ababa, ET",
-        "Addis Ababa Ethiopia",
-        "Addis Ababa Addis Ababa"
+        "Jaipur",
+        "Jaipur, IN",
+        "Jaipur India",
+        "Jaipur Rajasthan"
       ],
-      "countryCode": "ET",
-      "country": "Ethiopia",
-      "admin1": "Addis Ababa",
-      "lat": 9.02497,
-      "lon": 38.74689,
-      "population": 3860000
+      "countryCode": "IN",
+      "country": "India",
+      "admin1": "Rajasthan",
+      "lat": 26.91962,
+      "lon": 75.78781,
+      "population": 3046163
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 38.710402,
-        "bottom": 8.988934,
-        "right": 38.783378,
-        "top": 9.061006
+        "left": 75.744869,
+        "bottom": 26.881332,
+        "right": 75.830751,
+        "top": 26.957908
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/addis-ababa-et-344979/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/jaipur-in-1269515/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/addis-ababa-et-344979/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/jaipur-in-1269515/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/addis-ababa-et-344979/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/jaipur-in-1269515/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/addis-ababa-et-344979/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/jaipur-in-1269515/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/addis-ababa-et-344979/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/jaipur-in-1269515/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/addis-ababa-et-344979/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/jaipur-in-1269515/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,15 +86,15 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 299787,
-      "intersectionCount": 254,
-      "waterGeometryCount": 54,
+      "roadTotalLengthMeters": 349876,
+      "intersectionCount": 225,
+      "waterGeometryCount": 39,
       "parkGeometryCount": 80,
-      "railLineCount": 62
+      "railLineCount": 70
     },
     "clues": {
-      "continent": "Africa",
-      "country": "Ethiopia",
+      "continent": "Asia",
+      "country": "India",
       "populationBand": "3m-5m",
       "coastal": false,
       "hasMajorRapidTransit": true

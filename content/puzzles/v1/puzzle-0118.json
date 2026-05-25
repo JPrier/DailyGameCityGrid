@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1185241",
-      "canonicalName": "Dhaka",
+      "entityId": "city:geonames:1835848",
+      "canonicalName": "Seoul",
       "aliases": [
-        "Dhaka",
-        "Dhaka, BD",
-        "Dhaka Bangladesh",
-        "Dhaka Dhaka Division"
+        "Seoul",
+        "Seoul, KR",
+        "Seoul South Korea",
+        "Seoul Seoul"
       ],
-      "countryCode": "BD",
-      "country": "Bangladesh",
-      "admin1": "Dhaka Division",
-      "lat": 23.7104,
-      "lon": 90.40744,
-      "population": 10356500
+      "countryCode": "KR",
+      "country": "South Korea",
+      "admin1": "Seoul",
+      "lat": 37.566,
+      "lon": 126.9784,
+      "population": 10349312
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 90.363162,
-        "bottom": 23.669859,
-        "right": 90.451718,
-        "top": 23.750941
+        "left": 126.927255,
+        "bottom": 37.525459,
+        "right": 127.029545,
+        "top": 37.606541
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/dhaka-bd-1185241/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/seoul-kr-1835848/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/dhaka-bd-1185241/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/seoul-kr-1835848/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/dhaka-bd-1185241/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/seoul-kr-1835848/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/dhaka-bd-1185241/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/seoul-kr-1835848/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/dhaka-bd-1185241/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/seoul-kr-1835848/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/dhaka-bd-1185241/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/seoul-kr-1835848/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,15 +86,15 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 410542,
-      "intersectionCount": 269,
+      "roadTotalLengthMeters": 303006,
+      "intersectionCount": 282,
       "waterGeometryCount": 70,
       "parkGeometryCount": 80,
-      "railLineCount": 68
+      "railLineCount": 70
     },
     "clues": {
       "continent": "Asia",
-      "country": "Bangladesh",
+      "country": "South Korea",
       "populationBand": "10m+",
       "coastal": false,
       "hasMajorRapidTransit": true

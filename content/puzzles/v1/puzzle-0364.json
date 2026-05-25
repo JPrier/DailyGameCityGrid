@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1264527",
-      "canonicalName": "Chennai",
+      "entityId": "city:geonames:290030",
+      "canonicalName": "Doha",
       "aliases": [
-        "Chennai",
-        "Chennai, IN",
-        "Chennai India",
-        "Chennai Tamil Nadu"
+        "Doha",
+        "Doha, QA",
+        "Doha Qatar",
+        "Doha Baladiyat ad Dawhah"
       ],
-      "countryCode": "IN",
-      "country": "India",
-      "admin1": "Tamil Nadu",
-      "lat": 13.08784,
-      "lon": 80.27847,
-      "population": 4681087
+      "countryCode": "QA",
+      "country": "Qatar",
+      "admin1": "Baladiyat ad Dawhah",
+      "lat": 25.28545,
+      "lon": 51.53096,
+      "population": 344939
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 80.241473,
-        "bottom": 13.051804,
-        "right": 80.315467,
-        "top": 13.123876
+        "left": 51.493596,
+        "bottom": 25.251666,
+        "right": 51.568324,
+        "top": 25.319234
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/chennai-in-1264527/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/doha-qa-290030/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/chennai-in-1264527/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/doha-qa-290030/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/chennai-in-1264527/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/doha-qa-290030/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/chennai-in-1264527/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/doha-qa-290030/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/chennai-in-1264527/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/doha-qa-290030/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/chennai-in-1264527/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/doha-qa-290030/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,18 +86,18 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 255554,
-      "intersectionCount": 217,
+      "roadTotalLengthMeters": 254516,
+      "intersectionCount": 227,
       "waterGeometryCount": 70,
       "parkGeometryCount": 80,
-      "railLineCount": 70
+      "railLineCount": 22
     },
     "clues": {
       "continent": "Asia",
-      "country": "India",
-      "populationBand": "3m-5m",
+      "country": "Qatar",
+      "populationBand": "100k-1m",
       "coastal": false,
-      "hasMajorRapidTransit": true
+      "hasMajorRapidTransit": false
     }
   }
 }

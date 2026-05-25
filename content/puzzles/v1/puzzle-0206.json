@@ -10,52 +10,51 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:2332459",
-      "canonicalName": "Lagos",
+      "entityId": "city:geonames:1819729",
+      "canonicalName": "Hong Kong",
       "aliases": [
-        "Lagos",
-        "Lagos, NG",
-        "Lagos Nigeria",
-        "Lagos Lagos"
+        "Hong Kong",
+        "Hong Kong, HK",
+        "Hong Kong Hong Kong"
       ],
-      "countryCode": "NG",
-      "country": "Nigeria",
-      "admin1": "Lagos",
-      "lat": 6.45407,
-      "lon": 3.39467,
-      "population": 15388000
+      "countryCode": "HK",
+      "country": "Hong Kong",
+      "admin1": "",
+      "lat": 22.27832,
+      "lon": 114.17469,
+      "population": 7396076
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 3.353871,
-        "bottom": 6.413529,
-        "right": 3.435469,
-        "top": 6.494611
+        "left": 114.130879,
+        "bottom": 22.237779,
+        "right": 114.218501,
+        "top": 22.318861
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/lagos-ng-2332459/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/hong-kong-hk-1819729/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/lagos-ng-2332459/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/hong-kong-hk-1819729/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/lagos-ng-2332459/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/hong-kong-hk-1819729/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +62,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/lagos-ng-2332459/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/hong-kong-hk-1819729/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +70,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/lagos-ng-2332459/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/hong-kong-hk-1819729/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/lagos-ng-2332459/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/hong-kong-hk-1819729/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,16 +85,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 375929,
-      "intersectionCount": 259,
+      "roadTotalLengthMeters": 188019,
+      "intersectionCount": 285,
       "waterGeometryCount": 70,
       "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
-      "continent": "Africa",
-      "country": "Nigeria",
-      "populationBand": "10m+",
+      "continent": "Asia",
+      "country": "Hong Kong",
+      "populationBand": "5m-10m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

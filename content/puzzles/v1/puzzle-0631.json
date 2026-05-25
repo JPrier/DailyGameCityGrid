@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1277333",
-      "canonicalName": "Bengaluru",
+      "entityId": "city:geonames:4887398",
+      "canonicalName": "Chicago",
       "aliases": [
-        "Bengaluru",
-        "Bengaluru, IN",
-        "Bengaluru India",
-        "Bengaluru Karnataka"
+        "Chicago",
+        "Chicago, US",
+        "Chicago United States",
+        "Chicago Illinois"
       ],
-      "countryCode": "IN",
-      "country": "India",
-      "admin1": "Karnataka",
-      "lat": 12.97194,
-      "lon": 77.59369,
-      "population": 8495492
+      "countryCode": "US",
+      "country": "United States",
+      "admin1": "Illinois",
+      "lat": 41.85003,
+      "lon": -87.65005,
+      "population": 2664452
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 77.554399,
-        "bottom": 12.933652,
-        "right": 77.632981,
-        "top": 13.010228
+        "left": -87.701451,
+        "bottom": 41.811742,
+        "right": -87.598649,
+        "top": 41.888318
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/bengaluru-in-1277333/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/chicago-us-4887398/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/bengaluru-in-1277333/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/chicago-us-4887398/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/bengaluru-in-1277333/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/chicago-us-4887398/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/bengaluru-in-1277333/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/chicago-us-4887398/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/bengaluru-in-1277333/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/chicago-us-4887398/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/bengaluru-in-1277333/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/chicago-us-4887398/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,16 +86,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 291821,
-      "intersectionCount": 211,
+      "roadTotalLengthMeters": 288929,
+      "intersectionCount": 174,
       "waterGeometryCount": 70,
       "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
-      "continent": "Asia",
-      "country": "India",
-      "populationBand": "5m-10m",
+      "continent": "North America",
+      "country": "United States",
+      "populationBand": "1m-3m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

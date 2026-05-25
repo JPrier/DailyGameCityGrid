@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1795565",
-      "canonicalName": "Shenzhen",
+      "entityId": "city:geonames:2988507",
+      "canonicalName": "Paris",
       "aliases": [
-        "Shenzhen",
-        "Shenzhen, CN",
-        "Shenzhen China",
-        "Shenzhen Guangdong"
+        "Paris",
+        "Paris, FR",
+        "Paris France",
+        "Paris Ile-de-France"
       ],
-      "countryCode": "CN",
-      "country": "China",
-      "admin1": "Guangdong",
-      "lat": 22.54554,
-      "lon": 114.0683,
-      "population": 17494398
+      "countryCode": "FR",
+      "country": "France",
+      "admin1": "Ile-de-France",
+      "lat": 48.85341,
+      "lon": 2.3488,
+      "population": 2138551
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 114.024405,
-        "bottom": 22.504999,
-        "right": 114.112195,
-        "top": 22.586081
+        "left": 2.29061,
+        "bottom": 48.815122,
+        "right": 2.40699,
+        "top": 48.891698
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/shenzhen-cn-1795565/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/paris-fr-2988507/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/shenzhen-cn-1795565/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/paris-fr-2988507/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/shenzhen-cn-1795565/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/paris-fr-2988507/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/shenzhen-cn-1795565/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/paris-fr-2988507/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/shenzhen-cn-1795565/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/paris-fr-2988507/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/shenzhen-cn-1795565/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/paris-fr-2988507/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,16 +86,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 385545,
-      "intersectionCount": 274,
+      "roadTotalLengthMeters": 182165,
+      "intersectionCount": 147,
       "waterGeometryCount": 70,
       "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
-      "continent": "Asia",
-      "country": "China",
-      "populationBand": "10m+",
+      "continent": "Europe",
+      "country": "France",
+      "populationBand": "1m-3m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:360630",
-      "canonicalName": "Cairo",
+      "entityId": "city:geonames:3067696",
+      "canonicalName": "Prague",
       "aliases": [
-        "Cairo",
-        "Cairo, EG",
-        "Cairo Egypt",
-        "Cairo Cairo"
+        "Prague",
+        "Prague, CZ",
+        "Prague Czechia",
+        "Prague Prague"
       ],
-      "countryCode": "EG",
-      "country": "Egypt",
-      "admin1": "Cairo",
-      "lat": 30.06263,
-      "lon": 31.24967,
-      "population": 9606916
+      "countryCode": "CZ",
+      "country": "Czechia",
+      "admin1": "Prague",
+      "lat": 50.08804,
+      "lon": 14.42076,
+      "population": 1165581
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 31.205431,
-        "bottom": 30.024342,
-        "right": 31.293909,
-        "top": 30.100918
+        "left": 14.361085,
+        "bottom": 50.049752,
+        "right": 14.480435,
+        "top": 50.126328
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/cairo-eg-360630/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/prague-cz-3067696/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/cairo-eg-360630/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/prague-cz-3067696/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/cairo-eg-360630/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/prague-cz-3067696/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/cairo-eg-360630/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/prague-cz-3067696/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/cairo-eg-360630/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/prague-cz-3067696/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/cairo-eg-360630/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/prague-cz-3067696/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,16 +86,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 437331,
-      "intersectionCount": 252,
-      "waterGeometryCount": 24,
+      "roadTotalLengthMeters": 190658,
+      "intersectionCount": 200,
+      "waterGeometryCount": 70,
       "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
-      "continent": "Africa",
-      "country": "Egypt",
-      "populationBand": "5m-10m",
+      "continent": "Europe",
+      "country": "Czechia",
+      "populationBand": "1m-3m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

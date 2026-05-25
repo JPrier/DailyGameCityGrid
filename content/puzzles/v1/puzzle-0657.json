@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1814087",
-      "canonicalName": "Dalian",
+      "entityId": "city:geonames:3094802",
+      "canonicalName": "Krakow",
       "aliases": [
-        "Dalian",
-        "Dalian, CN",
-        "Dalian China",
-        "Dalian Liaoning"
+        "Krakow",
+        "Krakow, PL",
+        "Krakow Poland",
+        "Krakow Lesser Poland"
       ],
-      "countryCode": "CN",
-      "country": "China",
-      "admin1": "Liaoning",
-      "lat": 38.91222,
-      "lon": 121.60222,
-      "population": 4913879
+      "countryCode": "PL",
+      "country": "Poland",
+      "admin1": "Lesser Poland",
+      "lat": 50.06143,
+      "lon": 19.93658,
+      "population": 804237
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 121.555908,
-        "bottom": 38.876184,
-        "right": 121.648532,
-        "top": 38.948256
+        "left": 19.883954,
+        "bottom": 50.027646,
+        "right": 19.989206,
+        "top": 50.095214
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/dalian-cn-1814087/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/krakow-pl-3094802/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/dalian-cn-1814087/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/krakow-pl-3094802/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/dalian-cn-1814087/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/krakow-pl-3094802/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/dalian-cn-1814087/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/krakow-pl-3094802/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/dalian-cn-1814087/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/krakow-pl-3094802/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/dalian-cn-1814087/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/krakow-pl-3094802/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,18 +86,18 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 345324,
-      "intersectionCount": 268,
-      "waterGeometryCount": 36,
+      "roadTotalLengthMeters": 152374,
+      "intersectionCount": 183,
+      "waterGeometryCount": 70,
       "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
-      "continent": "Asia",
-      "country": "China",
-      "populationBand": "3m-5m",
+      "continent": "Europe",
+      "country": "Poland",
+      "populationBand": "100k-1m",
       "coastal": false,
-      "hasMajorRapidTransit": true
+      "hasMajorRapidTransit": false
     }
   }
 }

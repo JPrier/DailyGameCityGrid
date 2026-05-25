@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1298824",
-      "canonicalName": "Yangon",
+      "entityId": "city:geonames:276781",
+      "canonicalName": "Beirut",
       "aliases": [
-        "Yangon",
-        "Yangon, MM",
-        "Yangon Myanmar",
-        "Yangon Yangon"
+        "Beirut",
+        "Beirut, LB",
+        "Beirut Lebanon",
+        "Beirut Beirut"
       ],
-      "countryCode": "MM",
-      "country": "Myanmar",
-      "admin1": "Yangon",
-      "lat": 16.80528,
-      "lon": 96.15611,
-      "population": 4477638
+      "countryCode": "LB",
+      "country": "Lebanon",
+      "admin1": "Beirut",
+      "lat": 33.89332,
+      "lon": 35.50157,
+      "population": 1916100
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 96.118466,
-        "bottom": 16.769244,
-        "right": 96.193754,
-        "top": 16.841316
+        "left": 35.455444,
+        "bottom": 33.855032,
+        "right": 35.547696,
+        "top": 33.931608
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/yangon-mm-1298824/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/beirut-lb-276781/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/yangon-mm-1298824/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/beirut-lb-276781/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/yangon-mm-1298824/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/beirut-lb-276781/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/yangon-mm-1298824/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/beirut-lb-276781/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/yangon-mm-1298824/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/beirut-lb-276781/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/yangon-mm-1298824/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/beirut-lb-276781/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,16 +86,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 255647,
-      "intersectionCount": 202,
-      "waterGeometryCount": 70,
-      "parkGeometryCount": 53,
-      "railLineCount": 70
+      "roadTotalLengthMeters": 237936,
+      "intersectionCount": 234,
+      "waterGeometryCount": 53,
+      "parkGeometryCount": 80,
+      "railLineCount": 0
     },
     "clues": {
       "continent": "Asia",
-      "country": "Myanmar",
-      "populationBand": "3m-5m",
+      "country": "Lebanon",
+      "populationBand": "1m-3m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

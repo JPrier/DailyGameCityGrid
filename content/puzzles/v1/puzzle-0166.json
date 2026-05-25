@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1790645",
-      "canonicalName": "Xiamen",
+      "entityId": "city:geonames:108410",
+      "canonicalName": "Riyadh",
       "aliases": [
-        "Xiamen",
-        "Xiamen, CN",
-        "Xiamen China",
-        "Xiamen Fujian"
+        "Riyadh",
+        "Riyadh, SA",
+        "Riyadh Saudi Arabia",
+        "Riyadh Riyadh Region"
       ],
-      "countryCode": "CN",
-      "country": "China",
-      "admin1": "Fujian",
-      "lat": 24.47979,
-      "lon": 118.08187,
-      "population": 4617251
+      "countryCode": "SA",
+      "country": "Saudi Arabia",
+      "admin1": "Riyadh Region",
+      "lat": 24.68773,
+      "lon": 46.72185,
+      "population": 4205961
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 118.042275,
-        "bottom": 24.443754,
-        "right": 118.121465,
-        "top": 24.515826
+        "left": 46.67971,
+        "bottom": 24.649442,
+        "right": 46.76399,
+        "top": 24.726018
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/xiamen-cn-1790645/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/riyadh-sa-108410/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/xiamen-cn-1790645/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/riyadh-sa-108410/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/xiamen-cn-1790645/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/riyadh-sa-108410/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/xiamen-cn-1790645/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/riyadh-sa-108410/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/xiamen-cn-1790645/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/riyadh-sa-108410/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/xiamen-cn-1790645/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/riyadh-sa-108410/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,15 +86,15 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 392084,
-      "intersectionCount": 303,
-      "waterGeometryCount": 66,
-      "parkGeometryCount": 70,
-      "railLineCount": 63
+      "roadTotalLengthMeters": 510482,
+      "intersectionCount": 256,
+      "waterGeometryCount": 42,
+      "parkGeometryCount": 53,
+      "railLineCount": 70
     },
     "clues": {
       "continent": "Asia",
-      "country": "China",
+      "country": "Saudi Arabia",
       "populationBand": "3m-5m",
       "coastal": false,
       "hasMajorRapidTransit": true

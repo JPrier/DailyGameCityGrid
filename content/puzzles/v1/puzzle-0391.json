@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1799397",
-      "canonicalName": "Ningbo",
+      "entityId": "city:geonames:1566083",
+      "canonicalName": "Ho Chi Minh City",
       "aliases": [
-        "Ningbo",
-        "Ningbo, CN",
-        "Ningbo China",
-        "Ningbo Zhejiang"
+        "Ho Chi Minh City",
+        "Ho Chi Minh City, VN",
+        "Ho Chi Minh City Vietnam",
+        "Ho Chi Minh City Ho Chi Minh City (HCMC)"
       ],
-      "countryCode": "CN",
-      "country": "China",
-      "admin1": "Zhejiang",
-      "lat": 29.87819,
-      "lon": 121.54945,
-      "population": 3731203
+      "countryCode": "VN",
+      "country": "Vietnam",
+      "admin1": "Ho Chi Minh City (HCMC)",
+      "lat": 10.82302,
+      "lon": 106.62965,
+      "population": 14002598
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 121.50789,
-        "bottom": 29.842154,
-        "right": 121.59101,
-        "top": 29.914226
+        "left": 106.588375,
+        "bottom": 10.782479,
+        "right": 106.670925,
+        "top": 10.863561
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/ningbo-cn-1799397/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/ho-chi-minh-city-vn-1566083/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/ningbo-cn-1799397/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/ho-chi-minh-city-vn-1566083/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/ningbo-cn-1799397/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/ho-chi-minh-city-vn-1566083/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/ningbo-cn-1799397/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/ho-chi-minh-city-vn-1566083/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/ningbo-cn-1799397/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/ho-chi-minh-city-vn-1566083/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/ningbo-cn-1799397/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/ho-chi-minh-city-vn-1566083/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,16 +86,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 350514,
-      "intersectionCount": 318,
+      "roadTotalLengthMeters": 345440,
+      "intersectionCount": 202,
       "waterGeometryCount": 70,
       "parkGeometryCount": 80,
-      "railLineCount": 70
+      "railLineCount": 38
     },
     "clues": {
       "continent": "Asia",
-      "country": "China",
-      "populationBand": "3m-5m",
+      "country": "Vietnam",
+      "populationBand": "10m+",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:98182",
-      "canonicalName": "Baghdad",
+      "entityId": "city:geonames:3871336",
+      "canonicalName": "Santiago",
       "aliases": [
-        "Baghdad",
-        "Baghdad, IQ",
-        "Baghdad Iraq",
-        "Baghdad Baghdad"
+        "Santiago",
+        "Santiago, CL",
+        "Santiago Chile",
+        "Santiago Santiago Metropolitan"
       ],
-      "countryCode": "IQ",
-      "country": "Iraq",
-      "admin1": "Baghdad",
-      "lat": 33.34058,
-      "lon": 44.40088,
-      "population": 7216000
+      "countryCode": "CL",
+      "country": "Chile",
+      "admin1": "Santiago Metropolitan",
+      "lat": -33.45694,
+      "lon": -70.64827,
+      "population": 4837295
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 44.355049,
-        "bottom": 33.302292,
-        "right": 44.446711,
-        "top": 33.378868
+        "left": -70.694163,
+        "bottom": -33.495228,
+        "right": -70.602377,
+        "top": -33.418652
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/baghdad-iq-98182/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/santiago-cl-3871336/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/baghdad-iq-98182/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/santiago-cl-3871336/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/baghdad-iq-98182/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/santiago-cl-3871336/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/baghdad-iq-98182/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/santiago-cl-3871336/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/baghdad-iq-98182/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/santiago-cl-3871336/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/baghdad-iq-98182/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/santiago-cl-3871336/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,16 +86,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 439071,
-      "intersectionCount": 244,
-      "waterGeometryCount": 70,
+      "roadTotalLengthMeters": 291204,
+      "intersectionCount": 133,
+      "waterGeometryCount": 61,
       "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
-      "continent": "Asia",
-      "country": "Iraq",
-      "populationBand": "5m-10m",
+      "continent": "South America",
+      "country": "Chile",
+      "populationBand": "3m-5m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

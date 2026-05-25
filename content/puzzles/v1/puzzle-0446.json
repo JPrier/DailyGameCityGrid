@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1279233",
-      "canonicalName": "Ahmedabad",
+      "entityId": "city:geonames:2618425",
+      "canonicalName": "Copenhagen",
       "aliases": [
-        "Ahmedabad",
-        "Ahmedabad, IN",
-        "Ahmedabad India",
-        "Ahmedabad Gujarat"
+        "Copenhagen",
+        "Copenhagen, DK",
+        "Copenhagen Denmark",
+        "Copenhagen Capital Region"
       ],
-      "countryCode": "IN",
-      "country": "India",
-      "admin1": "Gujarat",
-      "lat": 23.02579,
-      "lon": 72.58727,
-      "population": 6357693
+      "countryCode": "DK",
+      "country": "Denmark",
+      "admin1": "Capital Region",
+      "lat": 55.67594,
+      "lon": 12.56553,
+      "population": 1153615
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 72.545667,
-        "bottom": 22.987502,
-        "right": 72.628873,
-        "top": 23.064078
+        "left": 12.497628,
+        "bottom": 55.637652,
+        "right": 12.633432,
+        "top": 55.714228
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/ahmedabad-in-1279233/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/copenhagen-dk-2618425/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/ahmedabad-in-1279233/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/copenhagen-dk-2618425/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/ahmedabad-in-1279233/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/copenhagen-dk-2618425/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/ahmedabad-in-1279233/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/copenhagen-dk-2618425/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/ahmedabad-in-1279233/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/copenhagen-dk-2618425/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/ahmedabad-in-1279233/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/copenhagen-dk-2618425/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,16 +86,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 396091,
-      "intersectionCount": 308,
-      "waterGeometryCount": 21,
-      "parkGeometryCount": 64,
+      "roadTotalLengthMeters": 198646,
+      "intersectionCount": 196,
+      "waterGeometryCount": 70,
+      "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
-      "continent": "Asia",
-      "country": "India",
-      "populationBand": "5m-10m",
+      "continent": "Europe",
+      "country": "Denmark",
+      "populationBand": "1m-3m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

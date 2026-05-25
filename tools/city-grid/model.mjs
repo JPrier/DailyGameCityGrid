@@ -2,7 +2,7 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 
-export const CANDIDATE_PATH = 'content/candidates/world-top-100-cities-geonames-v1.json';
+export const CANDIDATE_PATH = 'content/candidates/world-famous-cities-geonames-v1.json';
 export const SOURCE_MANIFEST_PATH = 'content/source/osm-source-manifest.json';
 export const POOL_SIZE = 1000;
 export const REVEALS = [

@@ -10,52 +10,53 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:498817",
-      "canonicalName": "Saint Petersburg",
+      "entityId": "city:geonames:2660646",
+      "canonicalName": "Geneva",
       "aliases": [
-        "Saint Petersburg",
-        "Saint Petersburg, RU",
-        "Saint Petersburg Russia",
-        "Saint Petersburg St.-Petersburg"
+        "Geneva",
+        "Genève",
+        "Geneva, CH",
+        "Geneva Switzerland",
+        "Geneva Geneva"
       ],
-      "countryCode": "RU",
-      "country": "Russia",
-      "admin1": "St.-Petersburg",
-      "lat": 59.93863,
-      "lon": 30.31413,
-      "population": 5351935
+      "countryCode": "CH",
+      "country": "Switzerland",
+      "admin1": "Geneva",
+      "lat": 46.20222,
+      "lon": 6.14569,
+      "population": 201741
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 30.237695,
-        "bottom": 59.900342,
-        "right": 30.390565,
-        "top": 59.976918
+        "left": 6.096878,
+        "bottom": 46.168436,
+        "right": 6.194502,
+        "top": 46.236004
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/saint-petersburg-ru-498817/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/geneva-ch-2660646/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/saint-petersburg-ru-498817/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/geneva-ch-2660646/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/saint-petersburg-ru-498817/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/geneva-ch-2660646/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +64,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/saint-petersburg-ru-498817/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/geneva-ch-2660646/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +72,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/saint-petersburg-ru-498817/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/geneva-ch-2660646/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/saint-petersburg-ru-498817/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/geneva-ch-2660646/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,18 +87,18 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 231895,
-      "intersectionCount": 217,
+      "roadTotalLengthMeters": 170983,
+      "intersectionCount": 187,
       "waterGeometryCount": 70,
       "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
       "continent": "Europe",
-      "country": "Russia",
-      "populationBand": "5m-10m",
+      "country": "Switzerland",
+      "populationBand": "100k-1m",
       "coastal": false,
-      "hasMajorRapidTransit": true
+      "hasMajorRapidTransit": false
     }
   }
 }

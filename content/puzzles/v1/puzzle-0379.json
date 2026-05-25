@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1795270",
-      "canonicalName": "Shijiazhuang",
+      "entityId": "city:geonames:1261481",
+      "canonicalName": "New Delhi",
       "aliases": [
-        "Shijiazhuang",
-        "Shijiazhuang, CN",
-        "Shijiazhuang China",
-        "Shijiazhuang Hebei"
+        "New Delhi",
+        "New Delhi, IN",
+        "New Delhi India",
+        "New Delhi Delhi"
       ],
-      "countryCode": "CN",
-      "country": "China",
-      "admin1": "Hebei",
-      "lat": 38.04139,
-      "lon": 114.47861,
-      "population": 3938513
+      "countryCode": "IN",
+      "country": "India",
+      "admin1": "Delhi",
+      "lat": 28.62137,
+      "lon": 77.2148,
+      "population": 317797
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 114.432854,
-        "bottom": 38.005354,
-        "right": 114.524366,
-        "top": 38.077426
+        "left": 77.176313,
+        "bottom": 28.587586,
+        "right": 77.253287,
+        "top": 28.655154
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/shijiazhuang-cn-1795270/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/new-delhi-in-1261481/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/shijiazhuang-cn-1795270/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/new-delhi-in-1261481/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/shijiazhuang-cn-1795270/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/new-delhi-in-1261481/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/shijiazhuang-cn-1795270/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/new-delhi-in-1261481/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/shijiazhuang-cn-1795270/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/new-delhi-in-1261481/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/shijiazhuang-cn-1795270/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/new-delhi-in-1261481/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,18 +86,18 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 518167,
-      "intersectionCount": 213,
-      "waterGeometryCount": 18,
-      "parkGeometryCount": 57,
+      "roadTotalLengthMeters": 312875,
+      "intersectionCount": 246,
+      "waterGeometryCount": 70,
+      "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
       "continent": "Asia",
-      "country": "China",
-      "populationBand": "3m-5m",
+      "country": "India",
+      "populationBand": "100k-1m",
       "coastal": false,
-      "hasMajorRapidTransit": true
+      "hasMajorRapidTransit": false
     }
   }
 }

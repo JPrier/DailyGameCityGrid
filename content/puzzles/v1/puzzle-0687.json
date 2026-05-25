@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1179400",
-      "canonicalName": "Faisalabad",
+      "entityId": "city:geonames:1735161",
+      "canonicalName": "Kuala Lumpur",
       "aliases": [
-        "Faisalabad",
-        "Faisalabad, PK",
-        "Faisalabad Pakistan",
-        "Faisalabad Punjab"
+        "Kuala Lumpur",
+        "Kuala Lumpur, MY",
+        "Kuala Lumpur Malaysia",
+        "Kuala Lumpur Kuala Lumpur"
       ],
-      "countryCode": "PK",
-      "country": "Pakistan",
-      "admin1": "Punjab",
-      "lat": 31.41554,
-      "lon": 73.08969,
-      "population": 3800193
+      "countryCode": "MY",
+      "country": "Malaysia",
+      "admin1": "Kuala Lumpur",
+      "lat": 3.1412,
+      "lon": 101.68653,
+      "population": 1453975
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 73.047464,
-        "bottom": 31.379504,
-        "right": 73.131916,
-        "top": 31.451576
+        "left": 101.648184,
+        "bottom": 3.102912,
+        "right": 101.724876,
+        "top": 3.179488
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/faisalabad-pk-1179400/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/kuala-lumpur-my-1735161/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/faisalabad-pk-1179400/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/kuala-lumpur-my-1735161/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/faisalabad-pk-1179400/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/kuala-lumpur-my-1735161/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/faisalabad-pk-1179400/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/kuala-lumpur-my-1735161/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/faisalabad-pk-1179400/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/kuala-lumpur-my-1735161/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/faisalabad-pk-1179400/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/kuala-lumpur-my-1735161/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,16 +86,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 492631,
-      "intersectionCount": 215,
-      "waterGeometryCount": 51,
+      "roadTotalLengthMeters": 288456,
+      "intersectionCount": 314,
+      "waterGeometryCount": 70,
       "parkGeometryCount": 80,
-      "railLineCount": 24
+      "railLineCount": 70
     },
     "clues": {
       "continent": "Asia",
-      "country": "Pakistan",
-      "populationBand": "3m-5m",
+      "country": "Malaysia",
+      "populationBand": "1m-3m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

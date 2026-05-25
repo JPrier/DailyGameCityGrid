@@ -10,52 +10,51 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:745044",
-      "canonicalName": "Istanbul",
+      "entityId": "city:geonames:1880252",
+      "canonicalName": "Singapore",
       "aliases": [
-        "Istanbul",
-        "Istanbul, TR",
-        "Istanbul Turkey",
-        "Istanbul Istanbul"
+        "Singapore",
+        "Singapore, SG",
+        "Singapore Singapore"
       ],
-      "countryCode": "TR",
-      "country": "Turkey",
-      "admin1": "Istanbul",
-      "lat": 41.01384,
-      "lon": 28.94966,
-      "population": 15701602
+      "countryCode": "SG",
+      "country": "Singapore",
+      "admin1": "",
+      "lat": 1.28967,
+      "lon": 103.85007,
+      "population": 5638700
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 28.895932,
-        "bottom": 40.973299,
-        "right": 29.003388,
-        "top": 41.054381
+        "left": 103.809519,
+        "bottom": 1.249129,
+        "right": 103.890621,
+        "top": 1.330211
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/istanbul-tr-745044/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/singapore-sg-1880252/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/istanbul-tr-745044/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/singapore-sg-1880252/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/istanbul-tr-745044/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/singapore-sg-1880252/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +62,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/istanbul-tr-745044/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/singapore-sg-1880252/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +70,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/istanbul-tr-745044/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/singapore-sg-1880252/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/istanbul-tr-745044/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/singapore-sg-1880252/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,16 +85,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 250659,
-      "intersectionCount": 253,
+      "roadTotalLengthMeters": 147361,
+      "intersectionCount": 246,
       "waterGeometryCount": 70,
       "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
       "continent": "Asia",
-      "country": "Turkey",
-      "populationBand": "10m+",
+      "country": "Singapore",
+      "populationBand": "5m-10m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

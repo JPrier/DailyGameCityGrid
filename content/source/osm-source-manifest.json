@@ -1,16 +1,16 @@
 {
   "schemaVersion": "city-grid-osm-source-manifest.v1",
   "mode": "locked",
-  "generatedAt": "2026-05-24T22:57:27.815Z",
+  "generatedAt": "2026-05-25T00:54:05.166Z",
   "sources": [
     {
-      "id": "overpass-real-osm-world-top-100-geonames-v1",
+      "id": "overpass-real-osm-world-famous-geonames-v1",
       "kind": "overpass-api-json",
-      "localPath": ".cache/osm/city-grid-real-osm-world-top-100-geonames-v1.json",
+      "localPath": ".cache/osm/city-grid-real-osm-world-famous-geonames-v1.json",
       "attribution": "OpenStreetMap contributors",
       "license": "ODbL-1.0",
       "upstream": "https://overpass-api.de/api/interpreter",
-      "sha256": "ee84828aa0dc7f8ca1527c218d95241744e4e699312077e4cf2314e31c930203"
+      "sha256": "548a4aaacee23b379dd879e5db20a926e13176374cd657e44c834d20591d4672"
     }
   ]
 }

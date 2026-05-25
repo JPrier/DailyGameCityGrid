@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:112931",
-      "canonicalName": "Tehran",
+      "entityId": "city:geonames:3448439",
+      "canonicalName": "São Paulo",
       "aliases": [
-        "Tehran",
-        "Tehran, IR",
-        "Tehran Iran",
-        "Tehran Tehran"
+        "São Paulo",
+        "São Paulo, BR",
+        "São Paulo Brazil",
+        "São Paulo Sao Paulo"
       ],
-      "countryCode": "IR",
-      "country": "Iran",
-      "admin1": "Tehran",
-      "lat": 35.69439,
-      "lon": 51.42151,
-      "population": 7153309
+      "countryCode": "BR",
+      "country": "Brazil",
+      "admin1": "Sao Paulo",
+      "lat": -23.5475,
+      "lon": -46.63611,
+      "population": 12400232
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 51.374365,
-        "bottom": 35.656102,
-        "right": 51.468655,
-        "top": 35.732678
+        "left": -46.680333,
+        "bottom": -23.588041,
+        "right": -46.591887,
+        "top": -23.506959
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/tehran-ir-112931/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/sao-paulo-br-3448439/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/tehran-ir-112931/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/sao-paulo-br-3448439/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/tehran-ir-112931/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/sao-paulo-br-3448439/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/tehran-ir-112931/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/sao-paulo-br-3448439/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/tehran-ir-112931/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/sao-paulo-br-3448439/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/tehran-ir-112931/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/sao-paulo-br-3448439/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,16 +86,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 354501,
-      "intersectionCount": 194,
+      "roadTotalLengthMeters": 267528,
+      "intersectionCount": 146,
       "waterGeometryCount": 70,
       "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
-      "continent": "Asia",
-      "country": "Iran",
-      "populationBand": "5m-10m",
+      "continent": "South America",
+      "country": "Brazil",
+      "populationBand": "10m+",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

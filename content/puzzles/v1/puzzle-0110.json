@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1275339",
-      "canonicalName": "Mumbai",
+      "entityId": "city:geonames:1609350",
+      "canonicalName": "Bangkok",
       "aliases": [
-        "Mumbai",
-        "Mumbai, IN",
-        "Mumbai India",
-        "Mumbai Maharashtra"
+        "Bangkok",
+        "Bangkok, TH",
+        "Bangkok Thailand",
+        "Bangkok Bangkok"
       ],
-      "countryCode": "IN",
-      "country": "India",
-      "admin1": "Maharashtra",
-      "lat": 19.07283,
-      "lon": 72.88261,
-      "population": 12691836
+      "countryCode": "TH",
+      "country": "Thailand",
+      "admin1": "Bangkok",
+      "lat": 13.75398,
+      "lon": 100.50144,
+      "population": 5104476
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 72.839715,
-        "bottom": 19.032289,
-        "right": 72.925505,
-        "top": 19.113371
+        "left": 100.459703,
+        "bottom": 13.713439,
+        "right": 100.543177,
+        "top": 13.794521
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/mumbai-in-1275339/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/bangkok-th-1609350/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/mumbai-in-1275339/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/bangkok-th-1609350/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/mumbai-in-1275339/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/bangkok-th-1609350/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/mumbai-in-1275339/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/bangkok-th-1609350/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/mumbai-in-1275339/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/bangkok-th-1609350/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/mumbai-in-1275339/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/bangkok-th-1609350/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,16 +86,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 348571,
-      "intersectionCount": 312,
+      "roadTotalLengthMeters": 278093,
+      "intersectionCount": 192,
       "waterGeometryCount": 70,
       "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
       "continent": "Asia",
-      "country": "India",
-      "populationBand": "10m+",
+      "country": "Thailand",
+      "populationBand": "5m-10m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

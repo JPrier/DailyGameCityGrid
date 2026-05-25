@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1810821",
-      "canonicalName": "Fuzhou",
+      "entityId": "city:geonames:1581130",
+      "canonicalName": "Hanoi",
       "aliases": [
-        "Fuzhou",
-        "Fuzhou, CN",
-        "Fuzhou China",
-        "Fuzhou Fujian"
+        "Hanoi",
+        "Hanoi, VN",
+        "Hanoi Vietnam",
+        "Hanoi Hanoi"
       ],
-      "countryCode": "CN",
-      "country": "China",
-      "admin1": "Fujian",
-      "lat": 26.06139,
-      "lon": 119.30611,
-      "population": 3740000
+      "countryCode": "VN",
+      "country": "Vietnam",
+      "admin1": "Hanoi",
+      "lat": 21.0245,
+      "lon": 105.84117,
+      "population": 8053663
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 119.265995,
-        "bottom": 26.025354,
-        "right": 119.346225,
-        "top": 26.097426
+        "left": 105.797738,
+        "bottom": 20.983959,
+        "right": 105.884602,
+        "top": 21.065041
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/fuzhou-cn-1810821/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/hanoi-vn-1581130/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/fuzhou-cn-1810821/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/hanoi-vn-1581130/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/fuzhou-cn-1810821/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/hanoi-vn-1581130/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/fuzhou-cn-1810821/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/hanoi-vn-1581130/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/fuzhou-cn-1810821/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/hanoi-vn-1581130/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/fuzhou-cn-1810821/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/hanoi-vn-1581130/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,16 +86,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 340129,
-      "intersectionCount": 245,
+      "roadTotalLengthMeters": 288663,
+      "intersectionCount": 227,
       "waterGeometryCount": 70,
       "parkGeometryCount": 80,
-      "railLineCount": 40
+      "railLineCount": 70
     },
     "clues": {
       "continent": "Asia",
-      "country": "China",
-      "populationBand": "3m-5m",
+      "country": "Vietnam",
+      "populationBand": "5m-10m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

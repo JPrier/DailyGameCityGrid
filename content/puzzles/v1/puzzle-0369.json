@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1138958",
-      "canonicalName": "Kabul",
+      "entityId": "city:geonames:250441",
+      "canonicalName": "Amman",
       "aliases": [
-        "Kabul",
-        "Kabul, AF",
-        "Kabul Afghanistan",
-        "Kabul Kabul"
+        "Amman",
+        "Amman, JO",
+        "Amman Jordan",
+        "Amman Amman"
       ],
-      "countryCode": "AF",
-      "country": "Afghanistan",
-      "admin1": "Kabul",
-      "lat": 34.52813,
-      "lon": 69.17233,
-      "population": 4434550
+      "countryCode": "JO",
+      "country": "Jordan",
+      "admin1": "Amman",
+      "lat": 31.95522,
+      "lon": 35.94503,
+      "population": 1275857
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 69.128589,
-        "bottom": 34.492094,
-        "right": 69.216071,
-        "top": 34.564166
+        "left": 35.899903,
+        "bottom": 31.916932,
+        "right": 35.990157,
+        "top": 31.993508
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/kabul-af-1138958/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/amman-jo-250441/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/kabul-af-1138958/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/amman-jo-250441/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/kabul-af-1138958/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/amman-jo-250441/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/kabul-af-1138958/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/amman-jo-250441/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/kabul-af-1138958/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/amman-jo-250441/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/kabul-af-1138958/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/amman-jo-250441/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,16 +86,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 408931,
-      "intersectionCount": 222,
-      "waterGeometryCount": 63,
+      "roadTotalLengthMeters": 407442,
+      "intersectionCount": 314,
+      "waterGeometryCount": 4,
       "parkGeometryCount": 80,
-      "railLineCount": 0
+      "railLineCount": 1
     },
     "clues": {
       "continent": "Asia",
-      "country": "Afghanistan",
-      "populationBand": "3m-5m",
+      "country": "Jordan",
+      "populationBand": "1m-3m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

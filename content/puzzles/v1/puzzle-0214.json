@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1792947",
-      "canonicalName": "Tianjin",
+      "entityId": "city:geonames:3117735",
+      "canonicalName": "Madrid",
       "aliases": [
-        "Tianjin",
-        "Tianjin, CN",
-        "Tianjin China",
-        "Tianjin Tianjin"
+        "Madrid",
+        "Madrid, ES",
+        "Madrid Spain",
+        "Madrid Madrid"
       ],
-      "countryCode": "CN",
-      "country": "China",
-      "admin1": "Tianjin",
-      "lat": 39.14222,
-      "lon": 117.17667,
-      "population": 11090314
+      "countryCode": "ES",
+      "country": "Spain",
+      "admin1": "Madrid",
+      "lat": 40.4165,
+      "lon": -3.70256,
+      "population": 3255944
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 117.124399,
-        "bottom": 39.101679,
-        "right": 117.228941,
-        "top": 39.182761
+        "left": -3.75285,
+        "bottom": 40.378212,
+        "right": -3.65227,
+        "top": 40.454788
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/tianjin-cn-1792947/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/madrid-es-3117735/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/tianjin-cn-1792947/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/madrid-es-3117735/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/tianjin-cn-1792947/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/madrid-es-3117735/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/tianjin-cn-1792947/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/madrid-es-3117735/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/tianjin-cn-1792947/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/madrid-es-3117735/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/tianjin-cn-1792947/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/madrid-es-3117735/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,16 +86,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 396112,
-      "intersectionCount": 260,
-      "waterGeometryCount": 48,
+      "roadTotalLengthMeters": 257826,
+      "intersectionCount": 179,
+      "waterGeometryCount": 70,
       "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
-      "continent": "Asia",
-      "country": "China",
-      "populationBand": "10m+",
+      "continent": "Europe",
+      "country": "Spain",
+      "populationBand": "3m-5m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

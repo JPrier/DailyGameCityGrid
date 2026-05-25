@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1172451",
-      "canonicalName": "Lahore",
+      "entityId": "city:geonames:5368361",
+      "canonicalName": "Los Angeles",
       "aliases": [
-        "Lahore",
-        "Lahore, PK",
-        "Lahore Pakistan",
-        "Lahore Punjab"
+        "Los Angeles",
+        "Los Angeles, US",
+        "Los Angeles United States",
+        "Los Angeles California"
       ],
-      "countryCode": "PK",
-      "country": "Pakistan",
-      "admin1": "Punjab",
-      "lat": 31.558,
-      "lon": 74.35071,
-      "population": 13004135
+      "countryCode": "US",
+      "country": "United States",
+      "admin1": "California",
+      "lat": 34.05223,
+      "lon": -118.24368,
+      "population": 3820914
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 74.303133,
-        "bottom": 31.517459,
-        "right": 74.398287,
-        "top": 31.598541
+        "left": -118.289892,
+        "bottom": 34.013942,
+        "right": -118.197468,
+        "top": 34.090518
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/lahore-pk-1172451/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/los-angeles-us-5368361/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/lahore-pk-1172451/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/los-angeles-us-5368361/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/lahore-pk-1172451/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/los-angeles-us-5368361/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/lahore-pk-1172451/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/los-angeles-us-5368361/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/lahore-pk-1172451/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/los-angeles-us-5368361/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/lahore-pk-1172451/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/los-angeles-us-5368361/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,16 +86,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 417001,
-      "intersectionCount": 227,
-      "waterGeometryCount": 42,
+      "roadTotalLengthMeters": 295883,
+      "intersectionCount": 183,
+      "waterGeometryCount": 18,
       "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
-      "continent": "Asia",
-      "country": "Pakistan",
-      "populationBand": "10m+",
+      "continent": "North America",
+      "country": "United States",
+      "populationBand": "3m-5m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

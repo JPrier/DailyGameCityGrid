@@ -10,51 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1668341",
-      "canonicalName": "Taipei",
+      "entityId": "city:geonames:6167865",
+      "canonicalName": "Toronto",
       "aliases": [
-        "Taipei",
-        "Taipei, TW",
-        "Taipei Taiwan"
+        "Toronto",
+        "Toronto, CA",
+        "Toronto Canada",
+        "Toronto Ontario"
       ],
-      "countryCode": "TW",
-      "country": "Taiwan",
-      "admin1": "Taiwan",
-      "lat": 25.05306,
-      "lon": 121.52639,
-      "population": 7871900
+      "countryCode": "CA",
+      "country": "Canada",
+      "admin1": "Ontario",
+      "lat": 43.70643,
+      "lon": -79.39864,
+      "population": 2794356
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 121.484125,
-        "bottom": 25.014772,
-        "right": 121.568655,
-        "top": 25.091348
+        "left": -79.451606,
+        "bottom": 43.668142,
+        "right": -79.345674,
+        "top": 43.744718
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/taipei-tw-1668341/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/toronto-ca-6167865/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/taipei-tw-1668341/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/toronto-ca-6167865/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/taipei-tw-1668341/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/toronto-ca-6167865/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -62,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/taipei-tw-1668341/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/toronto-ca-6167865/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -70,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/taipei-tw-1668341/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/toronto-ca-6167865/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/taipei-tw-1668341/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/toronto-ca-6167865/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -85,16 +86,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 337793,
-      "intersectionCount": 248,
+      "roadTotalLengthMeters": 239791,
+      "intersectionCount": 170,
       "waterGeometryCount": 70,
       "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
-      "continent": "Asia",
-      "country": "Taiwan",
-      "populationBand": "5m-10m",
+      "continent": "North America",
+      "country": "Canada",
+      "populationBand": "1m-3m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

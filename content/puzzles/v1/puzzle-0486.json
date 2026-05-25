@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:5368361",
-      "canonicalName": "Los Angeles",
+      "entityId": "city:geonames:1283240",
+      "canonicalName": "Kathmandu",
       "aliases": [
-        "Los Angeles",
-        "Los Angeles, US",
-        "Los Angeles United States",
-        "Los Angeles California"
+        "Kathmandu",
+        "Kathmandu, NP",
+        "Kathmandu Nepal",
+        "Kathmandu Bagmati Province"
       ],
-      "countryCode": "US",
-      "country": "United States",
-      "admin1": "California",
-      "lat": 34.05223,
-      "lon": -118.24368,
-      "population": 3820914
+      "countryCode": "NP",
+      "country": "Nepal",
+      "admin1": "Bagmati Province",
+      "lat": 27.70169,
+      "lon": 85.3206,
+      "population": 1442271
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": -118.287174,
-        "bottom": 34.016194,
-        "right": -118.200186,
-        "top": 34.088266
+        "left": 85.277355,
+        "bottom": 27.663402,
+        "right": 85.363845,
+        "top": 27.739978
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/los-angeles-us-5368361/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/kathmandu-np-1283240/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/los-angeles-us-5368361/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/kathmandu-np-1283240/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/los-angeles-us-5368361/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/kathmandu-np-1283240/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/los-angeles-us-5368361/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/kathmandu-np-1283240/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/los-angeles-us-5368361/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/kathmandu-np-1283240/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/los-angeles-us-5368361/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/kathmandu-np-1283240/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,16 +86,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 285244,
-      "intersectionCount": 185,
-      "waterGeometryCount": 18,
+      "roadTotalLengthMeters": 317973,
+      "intersectionCount": 279,
+      "waterGeometryCount": 70,
       "parkGeometryCount": 80,
-      "railLineCount": 70
+      "railLineCount": 0
     },
     "clues": {
-      "continent": "North America",
-      "country": "United States",
-      "populationBand": "3m-5m",
+      "continent": "Asia",
+      "country": "Nepal",
+      "populationBand": "1m-3m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

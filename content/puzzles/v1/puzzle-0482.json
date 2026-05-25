@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1804651",
-      "canonicalName": "Kunming",
+      "entityId": "city:geonames:1279259",
+      "canonicalName": "Agra",
       "aliases": [
-        "Kunming",
-        "Kunming, CN",
-        "Kunming China",
-        "Kunming Yunnan"
+        "Agra",
+        "Agra, IN",
+        "Agra India",
+        "Agra Uttar Pradesh"
       ],
-      "countryCode": "CN",
-      "country": "China",
-      "admin1": "Yunnan",
-      "lat": 25.03889,
-      "lon": 102.71833,
-      "population": 3855346
+      "countryCode": "IN",
+      "country": "India",
+      "admin1": "Uttar Pradesh",
+      "lat": 27.18333,
+      "lon": 78.01667,
+      "population": 1430055
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 102.678556,
-        "bottom": 25.002854,
-        "right": 102.758104,
-        "top": 25.074926
+        "left": 77.973628,
+        "bottom": 27.145042,
+        "right": 78.059712,
+        "top": 27.221618
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/kunming-cn-1804651/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/agra-in-1279259/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/kunming-cn-1804651/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/agra-in-1279259/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/kunming-cn-1804651/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/agra-in-1279259/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/kunming-cn-1804651/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/agra-in-1279259/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/kunming-cn-1804651/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/agra-in-1279259/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/kunming-cn-1804651/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/agra-in-1279259/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,16 +86,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 330610,
-      "intersectionCount": 249,
-      "waterGeometryCount": 70,
+      "roadTotalLengthMeters": 392515,
+      "intersectionCount": 268,
+      "waterGeometryCount": 34,
       "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
       "continent": "Asia",
-      "country": "China",
-      "populationBand": "3m-5m",
+      "country": "India",
+      "populationBand": "1m-3m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

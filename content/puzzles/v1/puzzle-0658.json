@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:2335204",
-      "canonicalName": "Kano",
+      "entityId": "city:geonames:3176959",
+      "canonicalName": "Florence",
       "aliases": [
-        "Kano",
-        "Kano, NG",
-        "Kano Nigeria",
-        "Kano Kano State"
+        "Florence",
+        "Florence, IT",
+        "Florence Italy",
+        "Florence Tuscany"
       ],
-      "countryCode": "NG",
-      "country": "Nigeria",
-      "admin1": "Kano State",
-      "lat": 12.00012,
-      "lon": 8.51672,
-      "population": 4910000
+      "countryCode": "IT",
+      "country": "Italy",
+      "admin1": "Tuscany",
+      "lat": 43.77925,
+      "lon": 11.24626,
+      "population": 367150
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 8.479879,
-        "bottom": 11.964084,
-        "right": 8.553561,
-        "top": 12.036156
+        "left": 11.199469,
+        "bottom": 43.745466,
+        "right": 11.293051,
+        "top": 43.813034
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/kano-ng-2335204/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/florence-it-3176959/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/kano-ng-2335204/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/florence-it-3176959/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/kano-ng-2335204/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/florence-it-3176959/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/kano-ng-2335204/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/florence-it-3176959/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/kano-ng-2335204/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/florence-it-3176959/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/kano-ng-2335204/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/florence-it-3176959/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,18 +86,18 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 495491,
-      "intersectionCount": 257,
-      "waterGeometryCount": 36,
-      "parkGeometryCount": 7,
-      "railLineCount": 54
+      "roadTotalLengthMeters": 223872,
+      "intersectionCount": 249,
+      "waterGeometryCount": 70,
+      "parkGeometryCount": 80,
+      "railLineCount": 70
     },
     "clues": {
-      "continent": "Africa",
-      "country": "Nigeria",
-      "populationBand": "3m-5m",
+      "continent": "Europe",
+      "country": "Italy",
+      "populationBand": "100k-1m",
       "coastal": false,
-      "hasMajorRapidTransit": true
+      "hasMajorRapidTransit": false
     }
   }
 }

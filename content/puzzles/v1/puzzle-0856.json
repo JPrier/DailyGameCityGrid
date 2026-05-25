@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1808722",
-      "canonicalName": "Hefei",
+      "entityId": "city:geonames:3054643",
+      "canonicalName": "Budapest",
       "aliases": [
-        "Hefei",
-        "Hefei, CN",
-        "Hefei China",
-        "Hefei Anhui"
+        "Budapest",
+        "Budapest, HU",
+        "Budapest Hungary",
+        "Budapest Budapest"
       ],
-      "countryCode": "CN",
-      "country": "China",
-      "admin1": "Anhui",
-      "lat": 31.86389,
-      "lon": 117.28083,
-      "population": 5050000
+      "countryCode": "HU",
+      "country": "Hungary",
+      "admin1": "Budapest",
+      "lat": 47.49835,
+      "lon": 19.04045,
+      "population": 1741041
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 117.235748,
-        "bottom": 31.825602,
-        "right": 117.325912,
-        "top": 31.902178
+        "left": 18.983778,
+        "bottom": 47.460062,
+        "right": 19.097122,
+        "top": 47.536638
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/hefei-cn-1808722/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/budapest-hu-3054643/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/hefei-cn-1808722/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/budapest-hu-3054643/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/hefei-cn-1808722/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/budapest-hu-3054643/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/hefei-cn-1808722/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/budapest-hu-3054643/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/hefei-cn-1808722/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/budapest-hu-3054643/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/hefei-cn-1808722/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/budapest-hu-3054643/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,16 +86,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 573842,
-      "intersectionCount": 249,
-      "waterGeometryCount": 64,
+      "roadTotalLengthMeters": 191238,
+      "intersectionCount": 161,
+      "waterGeometryCount": 70,
       "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
-      "continent": "Asia",
-      "country": "China",
-      "populationBand": "5m-10m",
+      "continent": "Europe",
+      "country": "Hungary",
+      "populationBand": "1m-3m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1794903",
-      "canonicalName": "Shiyan",
+      "entityId": "city:geonames:1821274",
+      "canonicalName": "Macau",
       "aliases": [
-        "Shiyan",
-        "Shiyan, CN",
-        "Shiyan China",
-        "Shiyan Hubei"
+        "Macau",
+        "Macau, MO",
+        "Macau Macao",
+        "Macau 02"
       ],
-      "countryCode": "CN",
-      "country": "China",
-      "admin1": "Hubei",
-      "lat": 32.6475,
-      "lon": 110.77806,
-      "population": 3460000
+      "countryCode": "MO",
+      "country": "Macao",
+      "admin1": "02",
+      "lat": 22.20056,
+      "lon": 113.54611,
+      "population": 649335
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 110.735262,
-        "bottom": 32.611464,
-        "right": 110.820858,
-        "top": 32.683536
+        "left": 113.509621,
+        "bottom": 22.166776,
+        "right": 113.582599,
+        "top": 22.234344
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/shiyan-cn-1794903/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/macau-mo-1821274/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/shiyan-cn-1794903/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/macau-mo-1821274/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/shiyan-cn-1794903/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/macau-mo-1821274/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/shiyan-cn-1794903/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/macau-mo-1821274/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/shiyan-cn-1794903/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/macau-mo-1821274/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/shiyan-cn-1794903/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/macau-mo-1821274/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,18 +86,18 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 335756,
-      "intersectionCount": 332,
-      "waterGeometryCount": 23,
-      "parkGeometryCount": 22,
-      "railLineCount": 70
+      "roadTotalLengthMeters": 259464,
+      "intersectionCount": 284,
+      "waterGeometryCount": 70,
+      "parkGeometryCount": 80,
+      "railLineCount": 36
     },
     "clues": {
       "continent": "Asia",
-      "country": "China",
-      "populationBand": "3m-5m",
+      "country": "Macao",
+      "populationBand": "100k-1m",
       "coastal": false,
-      "hasMajorRapidTransit": true
+      "hasMajorRapidTransit": false
     }
   }
 }

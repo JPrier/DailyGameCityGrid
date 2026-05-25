@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:2553604",
-      "canonicalName": "Casablanca",
+      "entityId": "city:geonames:1857910",
+      "canonicalName": "Kyoto",
       "aliases": [
-        "Casablanca",
-        "Casablanca, MA",
-        "Casablanca Morocco",
-        "Casablanca Casablanca-Settat"
+        "Kyoto",
+        "Kyoto, JP",
+        "Kyoto Japan",
+        "Kyoto Kyoto"
       ],
-      "countryCode": "MA",
-      "country": "Morocco",
-      "admin1": "Casablanca-Settat",
-      "lat": 33.58831,
-      "lon": -7.61138,
-      "population": 3665954
+      "countryCode": "JP",
+      "country": "Japan",
+      "admin1": "Kyoto",
+      "lat": 35.02107,
+      "lon": 135.75385,
+      "population": 1463723
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": -7.654639,
-        "bottom": 33.552274,
-        "right": -7.568121,
-        "top": 33.624346
+        "left": 135.707097,
+        "bottom": 34.982782,
+        "right": 135.800603,
+        "top": 35.059358
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/casablanca-ma-2553604/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/kyoto-jp-1857910/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/casablanca-ma-2553604/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/kyoto-jp-1857910/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/casablanca-ma-2553604/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/kyoto-jp-1857910/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/casablanca-ma-2553604/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/kyoto-jp-1857910/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/casablanca-ma-2553604/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/kyoto-jp-1857910/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/casablanca-ma-2553604/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/kyoto-jp-1857910/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,16 +86,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 289442,
-      "intersectionCount": 213,
-      "waterGeometryCount": 14,
+      "roadTotalLengthMeters": 319238,
+      "intersectionCount": 199,
+      "waterGeometryCount": 70,
       "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
-      "continent": "Africa",
-      "country": "Morocco",
-      "populationBand": "3m-5m",
+      "continent": "Asia",
+      "country": "Japan",
+      "populationBand": "1m-3m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

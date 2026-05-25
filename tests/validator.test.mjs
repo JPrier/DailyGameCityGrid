@@ -10,7 +10,7 @@ const root = fileURLToPath(new URL('..', import.meta.url));
 const fixture = JSON.parse(fs.readFileSync(new URL('../content/puzzles/v1/puzzle-0748.json', import.meta.url), 'utf8'));
 const fixtureStage0 = fixture.extension.assetStages[0].assetPath;
 const fixtureSlug = fixtureStage0.replace(/^content\/assets\/v1\/city-grid\//, '').replace(/\/stage-0\.svg$/, '');
-const firstCandidate = JSON.parse(fs.readFileSync(new URL('../content/candidates/world-top-100-cities-geonames-v1.json', import.meta.url), 'utf8')).cities[0];
+const firstCandidate = JSON.parse(fs.readFileSync(new URL('../content/candidates/world-famous-cities-geonames-v1.json', import.meta.url), 'utf8')).cities[0];
 
 test('validate-package accepts the generated package', () => {
   const result = spawnSync(process.execPath, ['tools/validate-package.mjs'], { cwd: root, encoding: 'utf8' });

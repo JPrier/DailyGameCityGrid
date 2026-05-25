@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:360995",
-      "canonicalName": "Giza",
+      "entityId": "city:geonames:3369157",
+      "canonicalName": "Cape Town",
       "aliases": [
-        "Giza",
-        "Giza, EG",
-        "Giza Egypt",
-        "Giza Giza"
+        "Cape Town",
+        "Cape Town, ZA",
+        "Cape Town South Africa",
+        "Cape Town Western Cape"
       ],
-      "countryCode": "EG",
-      "country": "Egypt",
-      "admin1": "Giza",
-      "lat": 30.00944,
-      "lon": 31.20861,
-      "population": 4367343
+      "countryCode": "ZA",
+      "country": "South Africa",
+      "admin1": "Western Cape",
+      "lat": -33.92584,
+      "lon": 18.42322,
+      "population": 4772846
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 31.166995,
-        "bottom": 29.973404,
-        "right": 31.250225,
-        "top": 30.045476
+        "left": 18.377076,
+        "bottom": -33.964128,
+        "right": 18.469364,
+        "top": -33.887552
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/giza-eg-360995/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/cape-town-za-3369157/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/giza-eg-360995/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/cape-town-za-3369157/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/giza-eg-360995/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/cape-town-za-3369157/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/giza-eg-360995/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/cape-town-za-3369157/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/giza-eg-360995/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/cape-town-za-3369157/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/giza-eg-360995/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/cape-town-za-3369157/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,15 +86,15 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 504779,
-      "intersectionCount": 303,
-      "waterGeometryCount": 62,
+      "roadTotalLengthMeters": 207216,
+      "intersectionCount": 232,
+      "waterGeometryCount": 70,
       "parkGeometryCount": 80,
-      "railLineCount": 43
+      "railLineCount": 70
     },
     "clues": {
       "continent": "Africa",
-      "country": "Egypt",
+      "country": "South Africa",
       "populationBand": "3m-5m",
       "coastal": false,
       "hasMajorRapidTransit": true

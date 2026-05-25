@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1566083",
-      "canonicalName": "Ho Chi Minh City",
+      "entityId": "city:geonames:292223",
+      "canonicalName": "Dubai",
       "aliases": [
-        "Ho Chi Minh City",
-        "Ho Chi Minh City, VN",
-        "Ho Chi Minh City Vietnam",
-        "Ho Chi Minh City Ho Chi Minh City (HCMC)"
+        "Dubai",
+        "Dubai, AE",
+        "Dubai United Arab Emirates",
+        "Dubai Dubai"
       ],
-      "countryCode": "VN",
-      "country": "Vietnam",
-      "admin1": "Ho Chi Minh City (HCMC)",
-      "lat": 10.82302,
-      "lon": 106.62965,
-      "population": 14002598
+      "countryCode": "AE",
+      "country": "United Arab Emirates",
+      "admin1": "Dubai",
+      "lat": 25.07725,
+      "lon": 55.30927,
+      "population": 3790000
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 106.588375,
-        "bottom": 10.782479,
-        "right": 106.670925,
-        "top": 10.863561
+        "left": 55.266997,
+        "bottom": 25.038962,
+        "right": 55.351543,
+        "top": 25.115538
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/ho-chi-minh-city-vn-1566083/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/dubai-ae-292223/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/ho-chi-minh-city-vn-1566083/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/dubai-ae-292223/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/ho-chi-minh-city-vn-1566083/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/dubai-ae-292223/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/ho-chi-minh-city-vn-1566083/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/dubai-ae-292223/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,31 +71,31 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/ho-chi-minh-city-vn-1566083/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/dubai-ae-292223/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/ho-chi-minh-city-vn-1566083/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/dubai-ae-292223/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
       }
     ],
     "geometryMetrics": {
-      "roadLineCount": 380,
-      "roadTotalLengthMeters": 345440,
-      "intersectionCount": 202,
-      "waterGeometryCount": 70,
+      "roadLineCount": 298,
+      "roadTotalLengthMeters": 389636,
+      "intersectionCount": 297,
+      "waterGeometryCount": 52,
       "parkGeometryCount": 80,
-      "railLineCount": 38
+      "railLineCount": 7
     },
     "clues": {
       "continent": "Asia",
-      "country": "Vietnam",
-      "populationBand": "10m+",
+      "country": "United Arab Emirates",
+      "populationBand": "3m-5m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

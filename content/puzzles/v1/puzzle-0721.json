@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1812545",
-      "canonicalName": "Dongguan",
+      "entityId": "city:geonames:2761369",
+      "canonicalName": "Vienna",
       "aliases": [
-        "Dongguan",
-        "Dongguan, CN",
-        "Dongguan China",
-        "Dongguan Guangdong"
+        "Vienna",
+        "Vienna, AT",
+        "Vienna Austria",
+        "Vienna State of Vienna"
       ],
-      "countryCode": "CN",
-      "country": "China",
-      "admin1": "Guangdong",
-      "lat": 23.01797,
-      "lon": 113.74866,
-      "population": 9644871
+      "countryCode": "AT",
+      "country": "Austria",
+      "admin1": "State of Vienna",
+      "lat": 48.20849,
+      "lon": 16.37208,
+      "population": 1691468
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 113.70706,
-        "bottom": 22.979682,
-        "right": 113.79026,
-        "top": 23.056258
+        "left": 16.314626,
+        "bottom": 48.170202,
+        "right": 16.429534,
+        "top": 48.246778
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/dongguan-cn-1812545/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/vienna-at-2761369/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/dongguan-cn-1812545/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/vienna-at-2761369/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/dongguan-cn-1812545/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/vienna-at-2761369/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/dongguan-cn-1812545/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/vienna-at-2761369/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/dongguan-cn-1812545/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/vienna-at-2761369/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/dongguan-cn-1812545/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/vienna-at-2761369/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,16 +86,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 367575,
-      "intersectionCount": 278,
+      "roadTotalLengthMeters": 192789,
+      "intersectionCount": 147,
       "waterGeometryCount": 70,
-      "parkGeometryCount": 75,
-      "railLineCount": 50
+      "parkGeometryCount": 80,
+      "railLineCount": 70
     },
     "clues": {
-      "continent": "Asia",
-      "country": "China",
-      "populationBand": "5m-10m",
+      "continent": "Europe",
+      "country": "Austria",
+      "populationBand": "1m-3m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

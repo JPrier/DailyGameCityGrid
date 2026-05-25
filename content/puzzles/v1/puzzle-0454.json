@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:2037013",
-      "canonicalName": "Harbin",
+      "entityId": "city:geonames:2911298",
+      "canonicalName": "Hamburg",
       "aliases": [
-        "Harbin",
-        "Harbin, CN",
-        "Harbin China",
-        "Harbin Heilongjiang"
+        "Hamburg",
+        "Hamburg, DE",
+        "Hamburg Germany",
+        "Hamburg Hamburg"
       ],
-      "countryCode": "CN",
-      "country": "China",
-      "admin1": "Heilongjiang",
-      "lat": 45.75,
-      "lon": 126.65,
-      "population": 5242897
+      "countryCode": "DE",
+      "country": "Germany",
+      "admin1": "Hamburg",
+      "lat": 53.55073,
+      "lon": 9.99302,
+      "population": 1973896
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 126.595129,
-        "bottom": 45.711712,
-        "right": 126.704871,
-        "top": 45.788288
+        "left": 9.928574,
+        "bottom": 53.512442,
+        "right": 10.057466,
+        "top": 53.589018
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/harbin-cn-2037013/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/hamburg-de-2911298/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/harbin-cn-2037013/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/hamburg-de-2911298/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/harbin-cn-2037013/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/hamburg-de-2911298/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/harbin-cn-2037013/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/hamburg-de-2911298/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/harbin-cn-2037013/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/hamburg-de-2911298/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/harbin-cn-2037013/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/hamburg-de-2911298/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,16 +86,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 458582,
-      "intersectionCount": 215,
-      "waterGeometryCount": 57,
+      "roadTotalLengthMeters": 213394,
+      "intersectionCount": 177,
+      "waterGeometryCount": 70,
       "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
-      "continent": "Asia",
-      "country": "China",
-      "populationBand": "5m-10m",
+      "continent": "Europe",
+      "country": "Germany",
+      "populationBand": "1m-3m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

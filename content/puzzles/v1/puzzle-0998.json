@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1166993",
-      "canonicalName": "Rawalpindi",
+      "entityId": "city:geonames:5856195",
+      "canonicalName": "Honolulu",
       "aliases": [
-        "Rawalpindi",
-        "Rawalpindi, PK",
-        "Rawalpindi Pakistan",
-        "Rawalpindi Punjab"
+        "Honolulu",
+        "Honolulu, US",
+        "Honolulu United States",
+        "Honolulu Hawaii"
       ],
-      "countryCode": "PK",
-      "country": "Pakistan",
-      "admin1": "Punjab",
-      "lat": 33.59733,
-      "lon": 73.0479,
-      "population": 3357612
+      "countryCode": "US",
+      "country": "United States",
+      "admin1": "Hawaii",
+      "lat": 21.30694,
+      "lon": -157.85833,
+      "population": 350964
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 73.004637,
-        "bottom": 33.561294,
-        "right": 73.091163,
-        "top": 33.633366
+        "left": -157.894592,
+        "bottom": 21.273156,
+        "right": -157.822068,
+        "top": 21.340724
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/rawalpindi-pk-1166993/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/honolulu-us-5856195/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/rawalpindi-pk-1166993/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/honolulu-us-5856195/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/rawalpindi-pk-1166993/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/honolulu-us-5856195/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/rawalpindi-pk-1166993/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/honolulu-us-5856195/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/rawalpindi-pk-1166993/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/honolulu-us-5856195/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/rawalpindi-pk-1166993/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/honolulu-us-5856195/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,18 +86,18 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 374112,
-      "intersectionCount": 276,
-      "waterGeometryCount": 19,
+      "roadTotalLengthMeters": 212545,
+      "intersectionCount": 232,
+      "waterGeometryCount": 52,
       "parkGeometryCount": 80,
-      "railLineCount": 70
+      "railLineCount": 6
     },
     "clues": {
-      "continent": "Asia",
-      "country": "Pakistan",
-      "populationBand": "3m-5m",
+      "continent": "North America",
+      "country": "United States",
+      "populationBand": "100k-1m",
       "coastal": false,
-      "hasMajorRapidTransit": true
+      "hasMajorRapidTransit": false
     }
   }
 }

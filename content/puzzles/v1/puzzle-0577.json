@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:108410",
-      "canonicalName": "Riyadh",
+      "entityId": "city:geonames:2253354",
+      "canonicalName": "Dakar",
       "aliases": [
-        "Riyadh",
-        "Riyadh, SA",
-        "Riyadh Saudi Arabia",
-        "Riyadh Riyadh Region"
+        "Dakar",
+        "Dakar, SN",
+        "Dakar Senegal",
+        "Dakar Dakar"
       ],
-      "countryCode": "SA",
-      "country": "Saudi Arabia",
-      "admin1": "Riyadh Region",
-      "lat": 24.68773,
-      "lon": 46.72185,
-      "population": 4205961
+      "countryCode": "SN",
+      "country": "Senegal",
+      "admin1": "Dakar",
+      "lat": 14.6937,
+      "lon": -17.44406,
+      "population": 2646503
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 46.682189,
-        "bottom": 24.651694,
-        "right": 46.761511,
-        "top": 24.723766
+        "left": -17.483643,
+        "bottom": 14.655412,
+        "right": -17.404477,
+        "top": 14.731988
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/riyadh-sa-108410/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/dakar-sn-2253354/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/riyadh-sa-108410/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/dakar-sn-2253354/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/riyadh-sa-108410/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/dakar-sn-2253354/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/riyadh-sa-108410/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/dakar-sn-2253354/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/riyadh-sa-108410/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/dakar-sn-2253354/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/riyadh-sa-108410/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/dakar-sn-2253354/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,16 +86,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 488218,
-      "intersectionCount": 229,
-      "waterGeometryCount": 41,
-      "parkGeometryCount": 42,
-      "railLineCount": 23
+      "roadTotalLengthMeters": 275258,
+      "intersectionCount": 225,
+      "waterGeometryCount": 39,
+      "parkGeometryCount": 74,
+      "railLineCount": 52
     },
     "clues": {
-      "continent": "Asia",
-      "country": "Saudi Arabia",
-      "populationBand": "3m-5m",
+      "continent": "Africa",
+      "country": "Senegal",
+      "populationBand": "1m-3m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1805753",
-      "canonicalName": "Jinan",
+      "entityId": "city:geonames:993800",
+      "canonicalName": "Johannesburg",
       "aliases": [
-        "Jinan",
-        "Jinan, CN",
-        "Jinan China",
-        "Jinan Shandong"
+        "Johannesburg",
+        "Johannesburg, ZA",
+        "Johannesburg South Africa",
+        "Johannesburg Gauteng"
       ],
-      "countryCode": "CN",
-      "country": "China",
-      "admin1": "Shandong",
-      "lat": 36.66833,
-      "lon": 116.99722,
-      "population": 4335989
+      "countryCode": "ZA",
+      "country": "South Africa",
+      "admin1": "Gauteng",
+      "lat": -26.20227,
+      "lon": 28.04363,
+      "population": 9418183
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 116.952293,
-        "bottom": 36.632294,
-        "right": 117.042147,
-        "top": 36.704366
+        "left": 27.998446,
+        "bottom": -26.242811,
+        "right": 28.088814,
+        "top": -26.161729
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/jinan-cn-1805753/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/johannesburg-za-993800/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/jinan-cn-1805753/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/johannesburg-za-993800/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/jinan-cn-1805753/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/johannesburg-za-993800/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/jinan-cn-1805753/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/johannesburg-za-993800/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/jinan-cn-1805753/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/johannesburg-za-993800/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/jinan-cn-1805753/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/johannesburg-za-993800/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,16 +86,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 317863,
-      "intersectionCount": 239,
-      "waterGeometryCount": 70,
+      "roadTotalLengthMeters": 398081,
+      "intersectionCount": 205,
+      "waterGeometryCount": 55,
       "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
-      "continent": "Asia",
-      "country": "China",
-      "populationBand": "3m-5m",
+      "continent": "Africa",
+      "country": "South Africa",
+      "populationBand": "5m-10m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

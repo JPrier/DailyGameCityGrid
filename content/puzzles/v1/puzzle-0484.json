@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1799869",
-      "canonicalName": "Nanning",
+      "entityId": "city:geonames:1264527",
+      "canonicalName": "Chennai",
       "aliases": [
-        "Nanning",
-        "Nanning, CN",
-        "Nanning China",
-        "Nanning Guangxi"
+        "Chennai",
+        "Chennai, IN",
+        "Chennai India",
+        "Chennai Tamil Nadu"
       ],
-      "countryCode": "CN",
-      "country": "China",
-      "admin1": "Guangxi",
-      "lat": 22.81667,
-      "lon": 108.31667,
-      "population": 3839800
+      "countryCode": "IN",
+      "country": "India",
+      "admin1": "Tamil Nadu",
+      "lat": 13.08784,
+      "lon": 80.27847,
+      "population": 4681087
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 108.277575,
-        "bottom": 22.780634,
-        "right": 108.355765,
-        "top": 22.852706
+        "left": 80.239161,
+        "bottom": 13.049552,
+        "right": 80.317779,
+        "top": 13.126128
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/nanning-cn-1799869/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/chennai-in-1264527/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/nanning-cn-1799869/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/chennai-in-1264527/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/nanning-cn-1799869/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/chennai-in-1264527/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/nanning-cn-1799869/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/chennai-in-1264527/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/nanning-cn-1799869/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/chennai-in-1264527/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/nanning-cn-1799869/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/chennai-in-1264527/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,15 +86,15 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 472570,
-      "intersectionCount": 309,
-      "waterGeometryCount": 54,
+      "roadTotalLengthMeters": 263726,
+      "intersectionCount": 222,
+      "waterGeometryCount": 70,
       "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
       "continent": "Asia",
-      "country": "China",
+      "country": "India",
       "populationBand": "3m-5m",
       "coastal": false,
       "hasMajorRapidTransit": true

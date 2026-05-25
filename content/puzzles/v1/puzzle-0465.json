@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1275004",
-      "canonicalName": "Kolkata",
+      "entityId": "city:geonames:292968",
+      "canonicalName": "Abu Dhabi",
       "aliases": [
-        "Kolkata",
-        "Kolkata, IN",
-        "Kolkata India",
-        "Kolkata West Bengal"
+        "Abu Dhabi",
+        "Abu Dhabi, AE",
+        "Abu Dhabi United Arab Emirates",
+        "Abu Dhabi Abu Dhabi"
       ],
-      "countryCode": "IN",
-      "country": "India",
-      "admin1": "West Bengal",
-      "lat": 22.56263,
-      "lon": 88.36304,
-      "population": 4631392
+      "countryCode": "AE",
+      "country": "United Arab Emirates",
+      "admin1": "Abu Dhabi",
+      "lat": 24.45118,
+      "lon": 54.39696,
+      "population": 1807000
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 88.324017,
-        "bottom": 22.526594,
-        "right": 88.402063,
-        "top": 22.598666
+        "left": 54.354899,
+        "bottom": 24.412892,
+        "right": 54.439021,
+        "top": 24.489468
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/kolkata-in-1275004/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/abu-dhabi-ae-292968/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/kolkata-in-1275004/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/abu-dhabi-ae-292968/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/kolkata-in-1275004/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/abu-dhabi-ae-292968/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/kolkata-in-1275004/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/abu-dhabi-ae-292968/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/kolkata-in-1275004/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/abu-dhabi-ae-292968/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/kolkata-in-1275004/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/abu-dhabi-ae-292968/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,16 +86,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 297862,
-      "intersectionCount": 233,
-      "waterGeometryCount": 70,
+      "roadTotalLengthMeters": 351183,
+      "intersectionCount": 220,
+      "waterGeometryCount": 66,
       "parkGeometryCount": 80,
-      "railLineCount": 70
+      "railLineCount": 0
     },
     "clues": {
       "continent": "Asia",
-      "country": "India",
-      "populationBand": "3m-5m",
+      "country": "United Arab Emirates",
+      "populationBand": "1m-3m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

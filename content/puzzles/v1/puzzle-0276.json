@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:2460596",
-      "canonicalName": "Bamako",
+      "entityId": "city:geonames:2306104",
+      "canonicalName": "Accra",
       "aliases": [
-        "Bamako",
-        "Bamako, ML",
-        "Bamako Mali",
-        "Bamako Bamako"
+        "Accra",
+        "Accra, GH",
+        "Accra Ghana",
+        "Accra Greater Accra"
       ],
-      "countryCode": "ML",
-      "country": "Mali",
-      "admin1": "Bamako",
-      "lat": 12.60915,
-      "lon": -7.97522,
-      "population": 4227569
+      "countryCode": "GH",
+      "country": "Ghana",
+      "admin1": "Greater Accra",
+      "lat": 5.55602,
+      "lon": -0.1969,
+      "population": 1963264
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": -8.012147,
-        "bottom": 12.573114,
-        "right": -7.938293,
-        "top": 12.645186
+        "left": -0.235369,
+        "bottom": 5.517732,
+        "right": -0.158431,
+        "top": 5.594308
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/bamako-ml-2460596/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/accra-gh-2306104/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/bamako-ml-2460596/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/accra-gh-2306104/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/bamako-ml-2460596/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/accra-gh-2306104/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/bamako-ml-2460596/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/accra-gh-2306104/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/bamako-ml-2460596/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/accra-gh-2306104/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/bamako-ml-2460596/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/accra-gh-2306104/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,16 +86,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 329054,
-      "intersectionCount": 172,
-      "waterGeometryCount": 18,
+      "roadTotalLengthMeters": 250167,
+      "intersectionCount": 199,
+      "waterGeometryCount": 24,
       "parkGeometryCount": 80,
-      "railLineCount": 0
+      "railLineCount": 17
     },
     "clues": {
       "continent": "Africa",
-      "country": "Mali",
-      "populationBand": "3m-5m",
+      "country": "Ghana",
+      "populationBand": "1m-3m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

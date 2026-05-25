@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1205733",
-      "canonicalName": "Chattogram",
+      "entityId": "city:geonames:1273294",
+      "canonicalName": "Delhi",
       "aliases": [
-        "Chattogram",
-        "Chattogram, BD",
-        "Chattogram Bangladesh",
-        "Chattogram Chittagong"
+        "Delhi",
+        "Delhi, IN",
+        "Delhi India",
+        "Delhi Delhi"
       ],
-      "countryCode": "BD",
-      "country": "Bangladesh",
-      "admin1": "Chittagong",
-      "lat": 22.3384,
-      "lon": 91.83168,
-      "population": 3920222
+      "countryCode": "IN",
+      "country": "India",
+      "admin1": "Delhi",
+      "lat": 28.65195,
+      "lon": 77.23149,
+      "population": 11034555
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 91.79272,
-        "bottom": 22.302364,
-        "right": 91.87064,
-        "top": 22.374436
+        "left": 77.185293,
+        "bottom": 28.611409,
+        "right": 77.277687,
+        "top": 28.692491
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/chattogram-bd-1205733/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/delhi-in-1273294/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/chattogram-bd-1205733/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/delhi-in-1273294/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/chattogram-bd-1205733/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/delhi-in-1273294/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/chattogram-bd-1205733/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/delhi-in-1273294/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/chattogram-bd-1205733/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/delhi-in-1273294/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/chattogram-bd-1205733/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/delhi-in-1273294/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,16 +86,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 321037,
-      "intersectionCount": 305,
+      "roadTotalLengthMeters": 366163,
+      "intersectionCount": 247,
       "waterGeometryCount": 70,
-      "parkGeometryCount": 63,
+      "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
       "continent": "Asia",
-      "country": "Bangladesh",
-      "populationBand": "3m-5m",
+      "country": "India",
+      "populationBand": "10m+",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

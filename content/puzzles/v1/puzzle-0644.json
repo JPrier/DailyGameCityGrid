@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:3451190",
-      "canonicalName": "Rio de Janeiro",
+      "entityId": "city:geonames:2650225",
+      "canonicalName": "Edinburgh",
       "aliases": [
-        "Rio de Janeiro",
-        "Rio de Janeiro, BR",
-        "Rio de Janeiro Brazil",
-        "Rio de Janeiro Rio de Janeiro"
+        "Edinburgh",
+        "Edinburgh, GB",
+        "Edinburgh United Kingdom",
+        "Edinburgh Scotland"
       ],
-      "countryCode": "BR",
-      "country": "Brazil",
-      "admin1": "Rio de Janeiro",
-      "lat": -22.90642,
-      "lon": -43.18223,
-      "population": 6747815
+      "countryCode": "GB",
+      "country": "United Kingdom",
+      "admin1": "Scotland",
+      "lat": 55.95206,
+      "lon": -3.19648,
+      "population": 514990
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": -43.223796,
-        "bottom": -22.944708,
-        "right": -43.140664,
-        "top": -22.868132
+        "left": -3.25682,
+        "bottom": 55.918276,
+        "right": -3.13614,
+        "top": 55.985844
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/rio-de-janeiro-br-3451190/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/edinburgh-gb-2650225/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/rio-de-janeiro-br-3451190/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/edinburgh-gb-2650225/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/rio-de-janeiro-br-3451190/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/edinburgh-gb-2650225/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/rio-de-janeiro-br-3451190/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/edinburgh-gb-2650225/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/rio-de-janeiro-br-3451190/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/edinburgh-gb-2650225/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/rio-de-janeiro-br-3451190/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/edinburgh-gb-2650225/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,18 +86,18 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 243022,
-      "intersectionCount": 314,
+      "roadTotalLengthMeters": 179606,
+      "intersectionCount": 173,
       "waterGeometryCount": 70,
       "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
-      "continent": "South America",
-      "country": "Brazil",
-      "populationBand": "5m-10m",
+      "continent": "Europe",
+      "country": "United Kingdom",
+      "populationBand": "100k-1m",
       "coastal": false,
-      "hasMajorRapidTransit": true
+      "hasMajorRapidTransit": false
     }
   }
 }

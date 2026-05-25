@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:2147714",
-      "canonicalName": "Sydney",
+      "entityId": "city:geonames:2800866",
+      "canonicalName": "Brussels",
       "aliases": [
-        "Sydney",
-        "Sydney, AU",
-        "Sydney Australia",
-        "Sydney New South Wales"
+        "Brussels",
+        "Brussels, BE",
+        "Brussels Belgium",
+        "Brussels Brussels Capital"
       ],
-      "countryCode": "AU",
-      "country": "Australia",
-      "admin1": "New South Wales",
-      "lat": -33.86785,
-      "lon": 151.20732,
-      "population": 5557233
+      "countryCode": "BE",
+      "country": "Belgium",
+      "admin1": "Brussels Capital",
+      "lat": 50.85045,
+      "lon": 4.34878,
+      "population": 1019022
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 151.161208,
-        "bottom": -33.906138,
-        "right": 151.253432,
-        "top": -33.829562
+        "left": 4.288135,
+        "bottom": 50.812162,
+        "right": 4.409425,
+        "top": 50.888738
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/sydney-au-2147714/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/brussels-be-2800866/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/sydney-au-2147714/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/brussels-be-2800866/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/sydney-au-2147714/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/brussels-be-2800866/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/sydney-au-2147714/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/brussels-be-2800866/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/sydney-au-2147714/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/brussels-be-2800866/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/sydney-au-2147714/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/brussels-be-2800866/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,16 +86,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 202884,
-      "intersectionCount": 205,
+      "roadTotalLengthMeters": 199662,
+      "intersectionCount": 179,
       "waterGeometryCount": 70,
       "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
-      "continent": "Oceania",
-      "country": "Australia",
-      "populationBand": "5m-10m",
+      "continent": "Europe",
+      "country": "Belgium",
+      "populationBand": "1m-3m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

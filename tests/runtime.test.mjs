@@ -5,7 +5,7 @@ import { createRuntime } from '../dist/runtime/index.js';
 
 const manifest = JSON.parse(fs.readFileSync(new URL('../content/manifest.json', import.meta.url), 'utf8'));
 const fixture = JSON.parse(fs.readFileSync(new URL('../content/puzzles/v1/puzzle-0748.json', import.meta.url), 'utf8'));
-const candidates = JSON.parse(fs.readFileSync(new URL('../content/candidates/world-top-100-cities-geonames-v1.json', import.meta.url), 'utf8'));
+const candidates = JSON.parse(fs.readFileSync(new URL('../content/candidates/world-famous-cities-geonames-v1.json', import.meta.url), 'utf8'));
 const wrongCities = candidates.cities.filter((city) => city.entityId !== fixture.extension.answer.entityId);
 
 test('validateContent accepts valid manifest and rejects wrong spec version', async () => {

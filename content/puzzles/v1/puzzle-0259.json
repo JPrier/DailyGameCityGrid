@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:3871336",
-      "canonicalName": "Santiago",
+      "entityId": "city:geonames:3173435",
+      "canonicalName": "Milan",
       "aliases": [
-        "Santiago",
-        "Santiago, CL",
-        "Santiago Chile",
-        "Santiago Santiago Metropolitan"
+        "Milan",
+        "Milan, IT",
+        "Milan Italy",
+        "Milan Lombardy"
       ],
-      "countryCode": "CL",
-      "country": "Chile",
-      "admin1": "Santiago Metropolitan",
-      "lat": -33.45694,
-      "lon": -70.64827,
-      "population": 4837295
+      "countryCode": "IT",
+      "country": "Italy",
+      "admin1": "Lombardy",
+      "lat": 45.46427,
+      "lon": 9.18951,
+      "population": 1371498
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": -70.691463,
-        "bottom": -33.492976,
-        "right": -70.605077,
-        "top": -33.420904
+        "left": 9.134918,
+        "bottom": 45.425982,
+        "right": 9.244102,
+        "top": 45.502558
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/santiago-cl-3871336/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/milan-it-3173435/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/santiago-cl-3871336/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/milan-it-3173435/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/santiago-cl-3871336/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/milan-it-3173435/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/santiago-cl-3871336/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/milan-it-3173435/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/santiago-cl-3871336/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/milan-it-3173435/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/santiago-cl-3871336/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/milan-it-3173435/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,16 +86,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 280728,
-      "intersectionCount": 122,
-      "waterGeometryCount": 54,
+      "roadTotalLengthMeters": 134489,
+      "intersectionCount": 216,
+      "waterGeometryCount": 70,
       "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
-      "continent": "South America",
-      "country": "Chile",
-      "populationBand": "3m-5m",
+      "continent": "Europe",
+      "country": "Italy",
+      "populationBand": "1m-3m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

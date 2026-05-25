@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1581130",
-      "canonicalName": "Hanoi",
+      "entityId": "city:geonames:4930956",
+      "canonicalName": "Boston",
       "aliases": [
-        "Hanoi",
-        "Hanoi, VN",
-        "Hanoi Vietnam",
-        "Hanoi Hanoi"
+        "Boston",
+        "Boston, US",
+        "Boston United States",
+        "Boston Massachusetts"
       ],
-      "countryCode": "VN",
-      "country": "Vietnam",
-      "admin1": "Hanoi",
-      "lat": 21.0245,
-      "lon": 105.84117,
-      "population": 8053663
+      "countryCode": "US",
+      "country": "United States",
+      "admin1": "Massachusetts",
+      "lat": 42.35843,
+      "lon": -71.05977,
+      "population": 653833
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 105.800151,
-        "bottom": 20.986212,
-        "right": 105.882189,
-        "top": 21.062788
+        "left": -71.105489,
+        "bottom": 42.324646,
+        "right": -71.014051,
+        "top": 42.392214
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/hanoi-vn-1581130/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/boston-us-4930956/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/hanoi-vn-1581130/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/boston-us-4930956/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/hanoi-vn-1581130/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/boston-us-4930956/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/hanoi-vn-1581130/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/boston-us-4930956/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/hanoi-vn-1581130/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/boston-us-4930956/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/hanoi-vn-1581130/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/boston-us-4930956/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,18 +86,18 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 278032,
-      "intersectionCount": 209,
+      "roadTotalLengthMeters": 236475,
+      "intersectionCount": 183,
       "waterGeometryCount": 70,
       "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
-      "continent": "Asia",
-      "country": "Vietnam",
-      "populationBand": "5m-10m",
+      "continent": "North America",
+      "country": "United States",
+      "populationBand": "100k-1m",
       "coastal": false,
-      "hasMajorRapidTransit": true
+      "hasMajorRapidTransit": false
     }
   }
 }

@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1609350",
-      "canonicalName": "Bangkok",
+      "entityId": "city:geonames:756135",
+      "canonicalName": "Warsaw",
       "aliases": [
-        "Bangkok",
-        "Bangkok, TH",
-        "Bangkok Thailand",
-        "Bangkok Bangkok"
+        "Warsaw",
+        "Warsaw, PL",
+        "Warsaw Poland",
+        "Warsaw Mazovia"
       ],
-      "countryCode": "TH",
-      "country": "Thailand",
-      "admin1": "Bangkok",
-      "lat": 13.75398,
-      "lon": 100.50144,
-      "population": 5104476
+      "countryCode": "PL",
+      "country": "Poland",
+      "admin1": "Mazovia",
+      "lat": 52.22977,
+      "lon": 21.01178,
+      "population": 1702139
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 100.462021,
-        "bottom": 13.715692,
-        "right": 100.540859,
-        "top": 13.792268
+        "left": 20.949268,
+        "bottom": 52.191482,
+        "right": 21.074292,
+        "top": 52.268058
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/bangkok-th-1609350/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/warsaw-pl-756135/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/bangkok-th-1609350/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/warsaw-pl-756135/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/bangkok-th-1609350/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/warsaw-pl-756135/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/bangkok-th-1609350/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/warsaw-pl-756135/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/bangkok-th-1609350/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/warsaw-pl-756135/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/bangkok-th-1609350/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/warsaw-pl-756135/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,16 +86,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 260972,
-      "intersectionCount": 180,
+      "roadTotalLengthMeters": 183722,
+      "intersectionCount": 163,
       "waterGeometryCount": 70,
       "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
-      "continent": "Asia",
-      "country": "Thailand",
-      "populationBand": "5m-10m",
+      "continent": "Europe",
+      "country": "Poland",
+      "populationBand": "1m-3m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

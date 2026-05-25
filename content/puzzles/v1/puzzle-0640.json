@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1797929",
-      "canonicalName": "Qingdao",
+      "entityId": "city:geonames:3936456",
+      "canonicalName": "Lima",
       "aliases": [
-        "Qingdao",
-        "Qingdao, CN",
-        "Qingdao China",
-        "Qingdao Shandong"
+        "Lima",
+        "Lima, PE",
+        "Lima Peru",
+        "Lima Lima Province"
       ],
-      "countryCode": "CN",
-      "country": "China",
-      "admin1": "Shandong",
-      "lat": 36.06488,
-      "lon": 120.38042,
-      "population": 7172451
+      "countryCode": "PE",
+      "country": "Peru",
+      "admin1": "Lima Province",
+      "lat": -12.04318,
+      "lon": -77.02824,
+      "population": 7737002
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 120.333054,
-        "bottom": 36.026592,
-        "right": 120.427786,
-        "top": 36.103168
+        "left": -77.069693,
+        "bottom": -12.083721,
+        "right": -76.986787,
+        "top": -12.002639
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/qingdao-cn-1797929/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/lima-pe-3936456/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/qingdao-cn-1797929/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/lima-pe-3936456/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/qingdao-cn-1797929/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/lima-pe-3936456/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/qingdao-cn-1797929/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/lima-pe-3936456/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/qingdao-cn-1797929/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/lima-pe-3936456/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/qingdao-cn-1797929/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/lima-pe-3936456/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,15 +86,15 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 307095,
-      "intersectionCount": 255,
-      "waterGeometryCount": 70,
+      "roadTotalLengthMeters": 307280,
+      "intersectionCount": 172,
+      "waterGeometryCount": 38,
       "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
-      "continent": "Asia",
-      "country": "China",
+      "continent": "South America",
+      "country": "Peru",
       "populationBand": "5m-10m",
       "coastal": false,
       "hasMajorRapidTransit": true

@@ -10,53 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:13512505",
-      "canonicalName": "Lueliang",
+      "entityId": "city:geonames:4335045",
+      "canonicalName": "New Orleans",
       "aliases": [
-        "Lueliang",
-        "Lüliang",
-        "Lueliang, CN",
-        "Lueliang China",
-        "Lueliang Shanxi"
+        "New Orleans",
+        "New Orleans, US",
+        "New Orleans United States",
+        "New Orleans Louisiana"
       ],
-      "countryCode": "CN",
-      "country": "China",
-      "admin1": "Shanxi",
-      "lat": 37.5192,
-      "lon": 111.14436,
-      "population": 3346500
+      "countryCode": "US",
+      "country": "United States",
+      "admin1": "Louisiana",
+      "lat": 29.95465,
+      "lon": -90.07507,
+      "population": 362701
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 111.098926,
-        "bottom": 37.483164,
-        "right": 111.189794,
-        "top": 37.555236
+        "left": -90.114062,
+        "bottom": 29.920866,
+        "right": -90.036078,
+        "top": 29.988434
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/lueliang-cn-13512505/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/new-orleans-us-4335045/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/lueliang-cn-13512505/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/new-orleans-us-4335045/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/lueliang-cn-13512505/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/new-orleans-us-4335045/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -64,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/lueliang-cn-13512505/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/new-orleans-us-4335045/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -72,33 +71,33 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/lueliang-cn-13512505/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/new-orleans-us-4335045/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/lueliang-cn-13512505/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/new-orleans-us-4335045/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
       }
     ],
     "geometryMetrics": {
-      "roadLineCount": 359,
-      "roadTotalLengthMeters": 330927,
-      "intersectionCount": 281,
-      "waterGeometryCount": 42,
-      "parkGeometryCount": 18,
-      "railLineCount": 10
+      "roadLineCount": 380,
+      "roadTotalLengthMeters": 413237,
+      "intersectionCount": 165,
+      "waterGeometryCount": 46,
+      "parkGeometryCount": 80,
+      "railLineCount": 70
     },
     "clues": {
-      "continent": "Asia",
-      "country": "China",
-      "populationBand": "3m-5m",
+      "continent": "North America",
+      "country": "United States",
+      "populationBand": "100k-1m",
       "coastal": false,
-      "hasMajorRapidTransit": true
+      "hasMajorRapidTransit": false
     }
   }
 }

@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1835848",
-      "canonicalName": "Seoul",
+      "entityId": "city:geonames:2147714",
+      "canonicalName": "Sydney",
       "aliases": [
-        "Seoul",
-        "Seoul, KR",
-        "Seoul South Korea",
-        "Seoul Seoul"
+        "Sydney",
+        "Sydney, AU",
+        "Sydney Australia",
+        "Sydney New South Wales"
       ],
-      "countryCode": "KR",
-      "country": "South Korea",
-      "admin1": "Seoul",
-      "lat": 37.566,
-      "lon": 126.9784,
-      "population": 10349312
+      "countryCode": "AU",
+      "country": "Australia",
+      "admin1": "New South Wales",
+      "lat": -33.86785,
+      "lon": 151.20732,
+      "population": 5557233
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 126.927255,
-        "bottom": 37.525459,
-        "right": 127.029545,
-        "top": 37.606541
+        "left": 151.158495,
+        "bottom": -33.908391,
+        "right": 151.256145,
+        "top": -33.827309
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/seoul-kr-1835848/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/sydney-au-2147714/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/seoul-kr-1835848/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/sydney-au-2147714/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/seoul-kr-1835848/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/sydney-au-2147714/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/seoul-kr-1835848/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/sydney-au-2147714/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/seoul-kr-1835848/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/sydney-au-2147714/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/seoul-kr-1835848/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/sydney-au-2147714/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,16 +86,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 303006,
-      "intersectionCount": 282,
+      "roadTotalLengthMeters": 207537,
+      "intersectionCount": 188,
       "waterGeometryCount": 70,
       "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
-      "continent": "Asia",
-      "country": "South Korea",
-      "populationBand": "10m+",
+      "continent": "Oceania",
+      "country": "Australia",
+      "populationBand": "5m-10m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1815286",
-      "canonicalName": "Chengdu",
+      "entityId": "city:geonames:745044",
+      "canonicalName": "Istanbul",
       "aliases": [
-        "Chengdu",
-        "Chengdu, CN",
-        "Chengdu China",
-        "Chengdu Sichuan"
+        "Istanbul",
+        "Istanbul, TR",
+        "Istanbul Turkey",
+        "Istanbul Istanbul"
       ],
-      "countryCode": "CN",
-      "country": "China",
-      "admin1": "Sichuan",
-      "lat": 30.66667,
-      "lon": 104.06667,
-      "population": 13568357
+      "countryCode": "TR",
+      "country": "Turkey",
+      "admin1": "Istanbul",
+      "lat": 41.01384,
+      "lon": 28.94966,
+      "population": 15701602
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 104.019538,
-        "bottom": 30.626129,
-        "right": 104.113802,
-        "top": 30.707211
+        "left": 28.895932,
+        "bottom": 40.973299,
+        "right": 29.003388,
+        "top": 41.054381
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/chengdu-cn-1815286/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/istanbul-tr-745044/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/chengdu-cn-1815286/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/istanbul-tr-745044/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/chengdu-cn-1815286/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/istanbul-tr-745044/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/chengdu-cn-1815286/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/istanbul-tr-745044/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/chengdu-cn-1815286/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/istanbul-tr-745044/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/chengdu-cn-1815286/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/istanbul-tr-745044/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,15 +86,15 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 271004,
-      "intersectionCount": 246,
-      "waterGeometryCount": 57,
+      "roadTotalLengthMeters": 250659,
+      "intersectionCount": 253,
+      "waterGeometryCount": 70,
       "parkGeometryCount": 80,
-      "railLineCount": 58
+      "railLineCount": 70
     },
     "clues": {
       "continent": "Asia",
-      "country": "China",
+      "country": "Turkey",
       "populationBand": "10m+",
       "coastal": false,
       "hasMajorRapidTransit": true

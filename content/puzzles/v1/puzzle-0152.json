@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:2158177",
-      "canonicalName": "Melbourne",
+      "entityId": "city:geonames:2867714",
+      "canonicalName": "Munich",
       "aliases": [
-        "Melbourne",
-        "Melbourne, AU",
-        "Melbourne Australia",
-        "Melbourne Victoria"
+        "Munich",
+        "Munich, DE",
+        "Munich Germany",
+        "Munich Bavaria"
       ],
-      "countryCode": "AU",
-      "country": "Australia",
-      "admin1": "Victoria",
-      "lat": -37.814,
-      "lon": 144.96332,
-      "population": 5350705
+      "countryCode": "DE",
+      "country": "Germany",
+      "admin1": "Bavaria",
+      "lat": 48.13743,
+      "lon": 11.57549,
+      "population": 1505005
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 144.914854,
-        "bottom": -37.852288,
-        "right": 145.011786,
-        "top": -37.775712
+        "left": 11.518116,
+        "bottom": 48.099142,
+        "right": 11.632864,
+        "top": 48.175718
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/melbourne-au-2158177/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/munich-de-2867714/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/melbourne-au-2158177/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/munich-de-2867714/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/melbourne-au-2158177/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/munich-de-2867714/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/melbourne-au-2158177/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/munich-de-2867714/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/melbourne-au-2158177/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/munich-de-2867714/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/melbourne-au-2158177/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/munich-de-2867714/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,16 +86,16 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 218646,
-      "intersectionCount": 183,
+      "roadTotalLengthMeters": 187117,
+      "intersectionCount": 163,
       "waterGeometryCount": 70,
       "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
-      "continent": "Oceania",
-      "country": "Australia",
-      "populationBand": "5m-10m",
+      "continent": "Europe",
+      "country": "Germany",
+      "populationBand": "1m-3m",
       "coastal": false,
       "hasMajorRapidTransit": true
     }

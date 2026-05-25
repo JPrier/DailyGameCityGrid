@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1793511",
-      "canonicalName": "Taiyuan",
+      "entityId": "city:geonames:184745",
+      "canonicalName": "Nairobi",
       "aliases": [
-        "Taiyuan",
-        "Taiyuan, CN",
-        "Taiyuan China",
-        "Taiyuan Shanxi"
+        "Nairobi",
+        "Nairobi, KE",
+        "Nairobi Kenya",
+        "Nairobi Nairobi County"
       ],
-      "countryCode": "CN",
-      "country": "China",
-      "admin1": "Shanxi",
-      "lat": 37.86944,
-      "lon": 112.56028,
-      "population": 4303673
+      "countryCode": "KE",
+      "country": "Kenya",
+      "admin1": "Nairobi County",
+      "lat": -1.28333,
+      "lon": 36.81667,
+      "population": 4397073
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 112.514631,
-        "bottom": 37.833404,
-        "right": 112.605929,
-        "top": 37.905476
+        "left": 36.778372,
+        "bottom": -1.321618,
+        "right": 36.854968,
+        "top": -1.245042
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/taiyuan-cn-1793511/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/nairobi-ke-184745/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/taiyuan-cn-1793511/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/nairobi-ke-184745/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/taiyuan-cn-1793511/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/nairobi-ke-184745/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/taiyuan-cn-1793511/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/nairobi-ke-184745/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/taiyuan-cn-1793511/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/nairobi-ke-184745/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/taiyuan-cn-1793511/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/nairobi-ke-184745/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,15 +86,15 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 494231,
-      "intersectionCount": 261,
-      "waterGeometryCount": 39,
-      "parkGeometryCount": 43,
+      "roadTotalLengthMeters": 326094,
+      "intersectionCount": 222,
+      "waterGeometryCount": 60,
+      "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
-      "continent": "Asia",
-      "country": "China",
+      "continent": "Africa",
+      "country": "Kenya",
       "populationBand": "3m-5m",
       "coastal": false,
       "hasMajorRapidTransit": true

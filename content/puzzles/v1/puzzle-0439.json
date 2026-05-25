@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1790842",
-      "canonicalName": "Wuzhong",
+      "entityId": "city:geonames:3688689",
+      "canonicalName": "Bogotá",
       "aliases": [
-        "Wuzhong",
-        "Wuzhong, CN",
-        "Wuzhong China",
-        "Wuzhong Ningxia"
+        "Bogotá",
+        "Bogotá, CO",
+        "Bogotá Colombia",
+        "Bogotá Bogota D.C."
       ],
-      "countryCode": "CN",
-      "country": "China",
-      "admin1": "Ningxia",
-      "lat": 37.9867,
-      "lon": 106.201,
-      "population": 7202654
+      "countryCode": "CO",
+      "country": "Colombia",
+      "admin1": "Bogota D.C.",
+      "lat": 4.60971,
+      "lon": -74.08175,
+      "population": 7674366
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 106.15242,
-        "bottom": 37.948412,
-        "right": 106.24958,
-        "top": 38.024988
+        "left": -74.122422,
+        "bottom": 4.569169,
+        "right": -74.041078,
+        "top": 4.650251
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/wuzhong-cn-1790842/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/bogota-co-3688689/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/wuzhong-cn-1790842/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/bogota-co-3688689/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/wuzhong-cn-1790842/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/bogota-co-3688689/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/wuzhong-cn-1790842/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/bogota-co-3688689/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/wuzhong-cn-1790842/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/bogota-co-3688689/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/wuzhong-cn-1790842/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/bogota-co-3688689/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,15 +86,15 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 457128,
-      "intersectionCount": 228,
-      "waterGeometryCount": 35,
-      "parkGeometryCount": 43,
-      "railLineCount": 59
+      "roadTotalLengthMeters": 288774,
+      "intersectionCount": 175,
+      "waterGeometryCount": 70,
+      "parkGeometryCount": 80,
+      "railLineCount": 21
     },
     "clues": {
-      "continent": "Asia",
-      "country": "China",
+      "continent": "South America",
+      "country": "Colombia",
       "populationBand": "5m-10m",
       "coastal": false,
       "hasMajorRapidTransit": true

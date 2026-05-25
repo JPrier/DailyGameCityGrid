@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:6986104",
-      "canonicalName": "Zhongshan",
+      "entityId": "city:geonames:1275004",
+      "canonicalName": "Kolkata",
       "aliases": [
-        "Zhongshan",
-        "Zhongshan, CN",
-        "Zhongshan China",
-        "Zhongshan Guangdong"
+        "Kolkata",
+        "Kolkata, IN",
+        "Kolkata India",
+        "Kolkata West Bengal"
       ],
-      "countryCode": "CN",
-      "country": "China",
-      "admin1": "Guangdong",
-      "lat": 22.52306,
-      "lon": 113.37912,
-      "population": 3841873
+      "countryCode": "IN",
+      "country": "India",
+      "admin1": "West Bengal",
+      "lat": 22.56263,
+      "lon": 88.36304,
+      "population": 4631392
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 113.340108,
-        "bottom": 22.487024,
-        "right": 113.418132,
-        "top": 22.559096
+        "left": 88.321578,
+        "bottom": 22.524342,
+        "right": 88.404502,
+        "top": 22.600918
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/zhongshan-cn-6986104/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/kolkata-in-1275004/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/zhongshan-cn-6986104/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/kolkata-in-1275004/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/zhongshan-cn-6986104/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/kolkata-in-1275004/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/zhongshan-cn-6986104/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/kolkata-in-1275004/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,14 +71,14 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/zhongshan-cn-6986104/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/kolkata-in-1275004/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/zhongshan-cn-6986104/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/kolkata-in-1275004/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
@@ -86,15 +86,15 @@
     ],
     "geometryMetrics": {
       "roadLineCount": 380,
-      "roadTotalLengthMeters": 377561,
-      "intersectionCount": 294,
+      "roadTotalLengthMeters": 309298,
+      "intersectionCount": 214,
       "waterGeometryCount": 70,
       "parkGeometryCount": 80,
-      "railLineCount": 5
+      "railLineCount": 70
     },
     "clues": {
       "continent": "Asia",
-      "country": "China",
+      "country": "India",
       "populationBand": "3m-5m",
       "coastal": false,
       "hasMajorRapidTransit": true

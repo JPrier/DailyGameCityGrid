@@ -10,52 +10,52 @@
   },
   "extension": {
     "answer": {
-      "entityId": "city:geonames:1790630",
-      "canonicalName": "Xi'an",
+      "entityId": "city:geonames:3164603",
+      "canonicalName": "Venice",
       "aliases": [
-        "Xi'an",
-        "Xi'an, CN",
-        "Xi'an China",
-        "Xi'an Shaanxi"
+        "Venice",
+        "Venice, IT",
+        "Venice Italy",
+        "Venice Veneto"
       ],
-      "countryCode": "CN",
-      "country": "China",
-      "admin1": "Shaanxi",
-      "lat": 34.25833,
-      "lon": 108.92861,
-      "population": 9600000
+      "countryCode": "IT",
+      "country": "Italy",
+      "admin1": "Veneto",
+      "lat": 45.43713,
+      "lon": 12.33265,
+      "population": 51298
     },
-    "candidateSetId": "world-top-100-cities-geonames-v1",
+    "candidateSetId": "world-famous-cities-geonames-v1",
     "source": {
       "kind": "osm-derived",
       "sourceManifest": "content/source/osm-source-manifest.json",
-      "sourceExtractId": "overpass-real-osm-world-top-100-geonames-v1",
+      "sourceExtractId": "overpass-real-osm-world-famous-geonames-v1",
       "bbox": {
-        "left": 108.882285,
-        "bottom": 34.220042,
-        "right": 108.974935,
-        "top": 34.296618
+        "left": 12.284504,
+        "bottom": 45.403346,
+        "right": 12.380796,
+        "top": 45.470914
       },
       "geometryVersion": "city-grid-geometry.v1"
     },
     "assetStages": [
       {
         "stage": 0,
-        "assetPath": "content/assets/v1/city-grid/xi-an-cn-1790630/stage-0.svg",
+        "assetPath": "content/assets/v1/city-grid/venice-it-3164603/stage-0.svg",
         "reveals": [
           "roads-tight"
         ]
       },
       {
         "stage": 1,
-        "assetPath": "content/assets/v1/city-grid/xi-an-cn-1790630/stage-1.svg",
+        "assetPath": "content/assets/v1/city-grid/venice-it-3164603/stage-1.svg",
         "reveals": [
           "roads-wide"
         ]
       },
       {
         "stage": 2,
-        "assetPath": "content/assets/v1/city-grid/xi-an-cn-1790630/stage-2.svg",
+        "assetPath": "content/assets/v1/city-grid/venice-it-3164603/stage-2.svg",
         "reveals": [
           "water",
           "coastline"
@@ -63,7 +63,7 @@
       },
       {
         "stage": 3,
-        "assetPath": "content/assets/v1/city-grid/xi-an-cn-1790630/stage-3.svg",
+        "assetPath": "content/assets/v1/city-grid/venice-it-3164603/stage-3.svg",
         "reveals": [
           "parks",
           "rail"
@@ -71,33 +71,33 @@
       },
       {
         "stage": 4,
-        "assetPath": "content/assets/v1/city-grid/xi-an-cn-1790630/stage-4.svg",
+        "assetPath": "content/assets/v1/city-grid/venice-it-3164603/stage-4.svg",
         "reveals": [
           "anonymous-landmarks"
         ]
       },
       {
         "stage": 5,
-        "assetPath": "content/assets/v1/city-grid/xi-an-cn-1790630/stage-5.svg",
+        "assetPath": "content/assets/v1/city-grid/venice-it-3164603/stage-5.svg",
         "reveals": [
           "full-map-geometry"
         ]
       }
     ],
     "geometryMetrics": {
-      "roadLineCount": 380,
-      "roadTotalLengthMeters": 485401,
-      "intersectionCount": 233,
+      "roadLineCount": 291,
+      "roadTotalLengthMeters": 60145,
+      "intersectionCount": 146,
       "waterGeometryCount": 70,
       "parkGeometryCount": 80,
       "railLineCount": 70
     },
     "clues": {
-      "continent": "Asia",
-      "country": "China",
-      "populationBand": "5m-10m",
+      "continent": "Europe",
+      "country": "Italy",
+      "populationBand": "100k-1m",
       "coastal": false,
-      "hasMajorRapidTransit": true
+      "hasMajorRapidTransit": false
     }
   }
 }
