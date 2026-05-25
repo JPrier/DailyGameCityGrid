@@ -59,7 +59,7 @@
   <header class="city-grid__header">
     <h2 data-testid="puzzle-title">{puzzle.display.title}</h2>
     <p data-testid="initial-prompt">{puzzle.display.initialPrompt}</p>
-    <p class="city-grid__sr-only" data-testid="clue-stage">{revealedStage}</p>
+    <p hidden data-testid="clue-stage">{revealedStage}</p>
   </header>
 
   <figure class="city-grid__map" data-testid="city-grid-map">
