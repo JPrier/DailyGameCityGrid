@@ -67,6 +67,14 @@
     {#if assetUrl}
       <img data-testid="city-grid-stage-asset" src={assetUrl} alt={`North-up unlabeled city grid, ${stageLabels[revealedStage] ?? `Stage ${revealedStage}`}`} />
     {/if}
+    <ul class="city-grid__legend" data-testid="city-grid-map-legend" aria-label="Map legend">
+      <li><span class="city-grid__legend-swatch city-grid__legend-swatch--major"></span>Major roads</li>
+      <li><span class="city-grid__legend-swatch city-grid__legend-swatch--street"></span>Streets</li>
+      <li><span class="city-grid__legend-swatch city-grid__legend-swatch--water"></span>Water</li>
+      <li><span class="city-grid__legend-swatch city-grid__legend-swatch--park"></span>Parks</li>
+      <li><span class="city-grid__legend-swatch city-grid__legend-swatch--rail"></span>Rail</li>
+      <li><span class="city-grid__legend-arrow">N</span>North</li>
+    </ul>
   </figure>
 
   <form class="city-grid__form" on:submit|preventDefault={submit}>
@@ -160,6 +168,74 @@
     display: block;
     width: min(100%, 680px);
     height: auto;
+  }
+
+  .city-grid__legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.85rem;
+    margin: 0.85rem 0 0;
+    padding: 0.75rem;
+    border: 1px solid rgba(30, 52, 50, 0.12);
+    border-radius: 0.85rem;
+    background: rgba(255, 250, 240, 0.78);
+    color: #2b403b;
+    list-style: none;
+    font-size: 0.88rem;
+    font-weight: 800;
+  }
+
+  .city-grid__legend li {
+    display: inline-flex;
+    gap: 0.4rem;
+    align-items: center;
+  }
+
+  .city-grid__legend-swatch {
+    display: inline-block;
+    width: 1.55rem;
+    border-radius: 999px;
+  }
+
+  .city-grid__legend-swatch--major {
+    height: 0.32rem;
+    background: #263e38;
+    box-shadow: 0 0 0 0.16rem #fcf7e8;
+  }
+
+  .city-grid__legend-swatch--street {
+    height: 0.2rem;
+    background: #78847a;
+    box-shadow: 0 0 0 0.12rem #fbf7eb;
+  }
+
+  .city-grid__legend-swatch--water {
+    height: 0.42rem;
+    background: #117fa8;
+    box-shadow: 0 0 0 0.14rem #d9f2fb;
+  }
+
+  .city-grid__legend-swatch--park {
+    height: 0.65rem;
+    border-radius: 0.2rem;
+    background: #c4d5a3;
+    border: 1px solid #7c9860;
+  }
+
+  .city-grid__legend-swatch--rail {
+    height: 0.16rem;
+    background: repeating-linear-gradient(90deg, #815739 0 0.35rem, transparent 0.35rem 0.58rem);
+  }
+
+  .city-grid__legend-arrow {
+    display: inline-grid;
+    place-items: center;
+    width: 1.15rem;
+    height: 1.15rem;
+    border: 1px solid rgba(35, 57, 52, 0.34);
+    border-radius: 999px;
+    color: #233934;
+    line-height: 1;
   }
 
   .city-grid__form {

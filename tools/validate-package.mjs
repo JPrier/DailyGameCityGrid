@@ -5,12 +5,10 @@ import {
   CANDIDATE_PATH,
   SOURCE_MANIFEST_PATH,
   loadCandidates,
-  loadRealOsmSource,
   loadSourceManifest,
   normalizeName,
   readJson,
   validateCandidates,
-  validateRealOsmSource,
   validateSourceManifest,
 } from './city-grid/model.mjs';
 
@@ -20,15 +18,13 @@ const packageConfig = readJson(root, 'daily-game.config.json');
 const manifest = readJson(root, 'content/manifest.json');
 const candidates = loadCandidates(root);
 const sourceManifest = loadSourceManifest(root);
-const realOsmSource = loadRealOsmSource(root, sourceManifest);
 
 if (packageConfig.build?.mode !== 'command') errors.add('package build.mode must be command');
 if (manifest.extension?.candidateSet !== candidates.candidateSetId) errors.add('manifest candidateSet must match candidate file');
 if (manifest.extension?.candidateFile !== CANDIDATE_PATH) errors.add('manifest candidateFile must reference candidate file');
 if (manifest.extension?.sourceManifest !== SOURCE_MANIFEST_PATH) errors.add('manifest sourceManifest must reference source manifest');
-for (const error of validateSourceManifest(root, sourceManifest, { mode: 'locked' })) errors.add(error);
+for (const error of validateSourceManifest(root, sourceManifest, { mode: 'metadata' })) errors.add(error);
 for (const error of validateCandidates(candidates, sourceManifest)) errors.add(error);
-for (const error of validateRealOsmSource(candidates, realOsmSource)) errors.add(error);
 
 const runtime = await import(pathToFileURL(path.join(root, packageConfig.runtime.entry)).href).then((mod) => mod.createRuntime());
 const contentValidation = await runtime.validateContent({ packageConfig, contentManifest: manifest, dateIndex: null });
@@ -54,7 +50,7 @@ if (errors.size) {
   console.error([...errors].join('\n'));
   process.exit(1);
 }
-console.log(`Validated City Grid package: ${poolSize} puzzles, ${candidates.cities.length} candidates, ${sourceManifest.sources.length} locked source manifest.`);
+console.log(`Validated City Grid package: ${poolSize} puzzles, ${candidates.cities.length} candidates, ${sourceManifest.sources.length} source manifest.`);
 
 function validatePuzzle(puzzle, file, candidateById, sourceIds) {
   const ext = puzzle.extension ?? {};

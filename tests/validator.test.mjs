@@ -58,7 +58,7 @@ test('validate-package rejects candidate/runtime alias drift through runtime val
 
 function copyPackage() {
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'city-grid-validate-'));
-  for (const entry of ['daily-game.config.json', '.cache', 'content', 'dist', 'tools']) {
+  for (const entry of ['daily-game.config.json', 'content', 'dist', 'tools']) {
     fs.cpSync(path.join(root, entry), path.join(tmp, entry), { recursive: true });
   }
   return tmp;

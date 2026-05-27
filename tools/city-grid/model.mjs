@@ -20,14 +20,14 @@ const OVERPASS_ENDPOINTS = [
   'https://overpass.kumi.systems/api/interpreter',
 ];
 const MAX_SOURCE_ELEMENTS = {
-  roadsMajor: 260,
-  roadsMinor: 900,
+  roadsMajor: 700,
+  roadsMinor: 3200,
   rail: 100,
   water: 160,
   parks: 140,
 };
-const MAX_POINTS_PER_ELEMENT = 40;
-const SOURCE_SELECTION_VERSION = 'coverage-roads-v2';
+const MAX_POINTS_PER_ELEMENT = 36;
+const SOURCE_SELECTION_VERSION = 'coverage-roads-v3';
 
 export function readJson(root, rel) {
   return JSON.parse(fs.readFileSync(path.join(root, rel), 'utf8'));
@@ -268,6 +268,7 @@ export function renderSvgStage(geometry, stage) {
     '<g clip-path="url(#mapCrop)">',
   ];
   if (stage >= 2) {
+    parts.push('<g data-layer="water-casing">', ...water.map((item) => renderFeature(item, 'water-casing', stage)), '</g>');
     parts.push('<g data-layer="water">', ...water.map((item) => renderFeature(item, 'water', stage)), '</g>');
   }
   if (stage >= 3) {
@@ -329,9 +330,9 @@ function roadQueryFor(bboxValue) {
   const bbox = overpassBbox(bboxValue);
   return `[out:json][timeout:60];
 (
-  way["highway"~"^(motorway|trunk|primary|secondary|tertiary|residential|unclassified|service|living_street|pedestrian|road)$"](${bbox});
+  way["highway"]["area"!="yes"](${bbox});
 );
-out body geom;`;
+out body geom(${bbox});`;
 }
 
 function contextQueryFor(bboxValue) {
@@ -346,7 +347,7 @@ function contextQueryFor(bboxValue) {
   way["landuse"~"^(grass|recreation_ground)$"](${bbox});
   way["natural"="wood"](${bbox});
 );
-out body geom;`;
+out body geom(${bbox});`;
 }
 
 async function fetchOverpassElements(city, query) {
@@ -372,11 +373,12 @@ async function fetchOverpassElements(city, query) {
 }
 
 function trimOsmElement(element) {
+  const geometry = validLatLonPoints(element.geometry ?? []);
   return {
     type: element.type,
     id: element.id,
     tags: Object.fromEntries(Object.entries(element.tags ?? {}).filter(([key]) => ['highway', 'railway', 'natural', 'waterway', 'leisure', 'landuse'].includes(key))),
-    geometry: capPoints(simplifyLatLon(element.geometry, 0.00008), MAX_POINTS_PER_ELEMENT).map(({ lat, lon }) => ({ lat: round(lat, 7), lon: round(lon, 7) })),
+    geometry: capPoints(simplifyLatLon(geometry, 0.00008), MAX_POINTS_PER_ELEMENT).map(({ lat, lon }) => ({ lat: round(lat, 7), lon: round(lon, 7) })),
   };
 }
 
@@ -385,6 +387,8 @@ function selectRenderableElements(elements) {
   for (const element of elements) {
     const layer = layerForTags(element.tags ?? {});
     if (!layer) continue;
+    element.geometry = validLatLonPoints(element.geometry ?? []);
+    if (element.geometry.length < 2) continue;
     if (!groups.has(layer)) groups.set(layer, []);
     groups.get(layer).push(element);
   }
@@ -396,8 +400,19 @@ function selectRenderableElements(elements) {
 }
 
 function layerForTags(tags) {
-  if (['motorway', 'trunk', 'primary', 'secondary'].includes(tags.highway)) return 'roadsMajor';
-  if (['tertiary', 'residential', 'unclassified', 'service', 'living_street', 'pedestrian', 'road'].includes(tags.highway)) return 'roadsMinor';
+  if (['motorway', 'motorway_link', 'trunk', 'trunk_link', 'primary', 'primary_link', 'secondary', 'secondary_link'].includes(tags.highway)) return 'roadsMajor';
+  if ([
+    'tertiary',
+    'tertiary_link',
+    'residential',
+    'unclassified',
+    'service',
+    'living_street',
+    'pedestrian',
+    'road',
+    'busway',
+    'bus_guideway',
+  ].includes(tags.highway)) return 'roadsMinor';
   if (['rail', 'subway', 'light_rail', 'tram'].includes(tags.railway)) return 'rail';
   if (tags.natural === 'water' || tags.natural === 'coastline' || ['river', 'canal'].includes(tags.waterway)) return 'water';
   if (tags.leisure === 'park' || ['grass', 'recreation_ground'].includes(tags.landuse) || tags.natural === 'wood') return 'parks';
@@ -436,7 +451,7 @@ function elementImportance(element) {
 function geometryBins(geometry) {
   if (!geometry.length) return [];
   const bins = new Set();
-  for (const point of geometry) {
+  for (const point of validLatLonPoints(geometry)) {
     const latBin = Math.floor(point.lat * 800);
     const lonBin = Math.floor(point.lon * 800);
     bins.add(`${latBin}:${lonBin}`);
@@ -551,10 +566,15 @@ function featureImportance(item) {
   const natural = item.tags?.natural;
   const waterway = item.tags?.waterway;
   if (highway === 'motorway') return 900;
+  if (highway === 'motorway_link') return 870;
   if (highway === 'trunk') return 820;
+  if (highway === 'trunk_link') return 790;
   if (highway === 'primary') return 740;
+  if (highway === 'primary_link') return 710;
   if (highway === 'secondary') return 660;
+  if (highway === 'secondary_link') return 630;
   if (highway === 'tertiary') return 560;
+  if (highway === 'tertiary_link') return 530;
   if (railway === 'subway' || railway === 'light_rail') return 520;
   if (railway === 'rail') return 500;
   if (natural === 'coastline') return 480;
@@ -564,6 +584,7 @@ function featureImportance(item) {
   if (highway === 'residential') return 360;
   if (highway === 'unclassified') return 340;
   if (highway === 'living_street') return 320;
+  if (highway === 'pedestrian') return 300;
   if (highway === 'service') return 260;
   return 100;
 }
@@ -584,10 +605,15 @@ function styleAttrs(item, style, stage) {
     'stroke-linejoin': 'round',
   };
   if (style === 'water') {
-    attrs.fill = item.type === 'polygon' ? '#b7d5dd' : 'none';
-    attrs.stroke = '#5e93a3';
-    attrs['stroke-width'] = item.type === 'polygon' ? '1.15' : stage >= 5 ? '2.6' : '2';
-    attrs.opacity = stage >= 5 ? '0.86' : '0.74';
+    attrs.fill = item.type === 'polygon' ? '#7fc8e6' : 'none';
+    attrs.stroke = '#117fa8';
+    attrs['stroke-width'] = item.type === 'polygon' ? '1.35' : stage >= 5 ? '4.6' : '3.8';
+    attrs.opacity = stage >= 5 ? '0.94' : '0.88';
+  } else if (style === 'water-casing') {
+    attrs.fill = item.type === 'polygon' ? '#d9f2fb' : 'none';
+    attrs.stroke = '#d9f2fb';
+    attrs['stroke-width'] = item.type === 'polygon' ? '2.4' : stage >= 5 ? '8.2' : '6.8';
+    attrs.opacity = stage >= 5 ? '0.95' : '0.9';
   } else if (style === 'park') {
     attrs.fill = item.type === 'polygon' ? '#c4d5a3' : 'none';
     attrs.stroke = '#7c9860';
@@ -625,10 +651,15 @@ function pathData(points, close) {
 
 function lengthMeters(geometry) {
   let total = 0;
-  for (let index = 1; index < geometry.length; index += 1) {
-    total += distanceMeters(geometry[index - 1], geometry[index]);
+  const points = validLatLonPoints(geometry);
+  for (let index = 1; index < points.length; index += 1) {
+    total += distanceMeters(points[index - 1], points[index]);
   }
   return total;
+}
+
+function validLatLonPoints(points) {
+  return points.filter((point) => Number.isFinite(point?.lat) && Number.isFinite(point?.lon));
 }
 
 function distanceMeters(a, b) {
