@@ -77,6 +77,15 @@
     </ul>
   </figure>
 
+  {#if reveal}
+    <aside class="city-grid__reveal" data-testid="answer-reveal">
+      <span>Correct city</span>
+      <h3>{reveal.canonicalName}</h3>
+      <p>{reveal.admin1}, {reveal.country}</p>
+      <p>Population: {reveal.population.toLocaleString()}</p>
+    </aside>
+  {/if}
+
   <form class="city-grid__form" on:submit|preventDefault={submit}>
     <label for="city-grid-guess">City guess</label>
     <input id="city-grid-guess" data-testid="guess-input" bind:value={guess} disabled={disabled} autocomplete="off" list="city-grid-candidates" placeholder="Start typing one of the top 100 world cities" />
@@ -95,6 +104,18 @@
   {/if}
 
   <p class="city-grid__guess-count" data-testid="guess-count">Guesses used: {state.guessCount} / {state.maxGuesses}</p>
+
+  {#if latestEvaluation?.feedback?.length}
+    <div class="city-grid__latest" aria-label="Latest feedback">
+      <h3>Latest clue</h3>
+      {#each latestEvaluation.feedback as item}
+        <p class={`city-grid__feedback city-grid__feedback--${item.severity ?? 'neutral'}`} data-testid={`latest-feedback-${item.key}`}>
+          <strong>{item.label}</strong>
+          <span>{feedbackValue(item)}</span>
+        </p>
+      {/each}
+    </div>
+  {/if}
 
   <section data-testid="guess-history" aria-label="Guess history">
     {#each history as entry, index}
@@ -115,31 +136,11 @@
     {/each}
   </section>
 
-  {#if latestEvaluation?.feedback?.length}
-    <div class="city-grid__latest" aria-label="Latest feedback">
-      <h3>Latest clue</h3>
-      {#each latestEvaluation.feedback as item}
-        <p class={`city-grid__feedback city-grid__feedback--${item.severity ?? 'neutral'}`} data-testid={`latest-feedback-${item.key}`}>
-          <strong>{item.label}</strong>
-          <span>{feedbackValue(item)}</span>
-        </p>
-      {/each}
-    </div>
-  {/if}
-
   {#if history.at(-1)?.feedback}
     <p class="city-grid__sr-only" data-testid="city-grid-distance-feedback">{history.at(-1).feedback.find((item) => item.key === 'distance')?.displayValue ?? ''}</p>
     <p class="city-grid__sr-only" data-testid="city-grid-direction-feedback">{history.at(-1).feedback.find((item) => item.key === 'direction')?.displayValue ?? ''}</p>
   {/if}
 
-  {#if reveal}
-    <aside class="city-grid__reveal" data-testid="answer-reveal">
-      <h3>{reveal.canonicalName}</h3>
-      <p>{reveal.admin1}, {reveal.country}</p>
-      <p>Population: {reveal.population.toLocaleString()}</p>
-      <p>The full north-up map is now visible: street network, water, rail, parks, and landmarks.</p>
-    </aside>
-  {/if}
 </section>
 
 <style>
@@ -298,19 +299,52 @@
     font-weight: 700;
   }
 
-  .city-grid__history-row,
-  .city-grid__reveal {
+  .city-grid__history-row {
     border-left: 0.35rem solid #226d68;
-    padding: 0.75rem 1rem;
+    padding: 0.6rem 0.75rem;
     background: rgba(34, 109, 104, 0.08);
     border-radius: 0.75rem;
   }
 
+  .city-grid__reveal {
+    justify-self: end;
+    width: min(100%, 22rem);
+    padding: 0.65rem 0.8rem;
+    border: 1px solid rgba(36, 80, 46, 0.22);
+    border-left: 0.35rem solid #24502e;
+    border-radius: 0.75rem;
+    background: #dff0d6;
+    color: #24502e;
+  }
+
+  .city-grid__reveal span {
+    display: block;
+    margin-bottom: 0.2rem;
+    font-size: 0.7rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .city-grid__reveal h3,
+  .city-grid__reveal p {
+    margin: 0;
+  }
+
+  .city-grid__reveal h3 {
+    font-size: 1.05rem;
+  }
+
+  .city-grid__reveal p {
+    font-size: 0.88rem;
+    font-weight: 700;
+  }
+
   .city-grid__history-row header {
     display: flex;
-    gap: 0.75rem;
+    gap: 0.55rem;
     align-items: baseline;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.55rem;
   }
 
   .city-grid__history-row h3 {
@@ -327,14 +361,14 @@
   .city-grid__feedback-grid,
   .city-grid__latest {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
-    gap: 0.65rem;
+    grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr));
+    gap: 0.45rem;
   }
 
   .city-grid__latest {
-    padding: 1rem;
+    padding: 0.7rem;
     border: 1px solid rgba(30, 52, 50, 0.14);
-    border-radius: 1rem;
+    border-radius: 0.8rem;
     background: #fffaf0;
   }
 
@@ -345,10 +379,10 @@
 
   .city-grid__feedback {
     display: grid;
-    gap: 0.25rem;
+    gap: 0.16rem;
     margin: 0;
-    padding: 0.75rem;
-    border-radius: 0.75rem;
+    padding: 0.5rem 0.6rem;
+    border-radius: 0.6rem;
     background: #eee7d9;
     color: #1e3432;
   }

@@ -255,6 +255,9 @@ export function renderSvgStage(geometry, stage) {
   const rail = importantLines(layers.rail);
   const water = importantLines(layers.water);
   const parks = importantLines(layers.parks);
+  const roadPoints = [...layers.roadsMajor, ...layers.roadsMinor].flatMap((item) => item.points);
+  const waterFills = coastlineWaterFills(water, roadPoints);
+  const coastal = water.some((item) => item.tags?.natural === 'coastline');
   const visibleMajorRoads = majorRoads.slice(0, stage >= 5 ? majorRoads.length : ([42, 72, 96, 112, 160][stage] ?? majorRoads.length));
   const visibleMinorRoads = minorRoads.slice(0, stage >= 5 ? minorRoads.length : ([0, 70, 120, 160, 240][stage] ?? minorRoads.length));
   const parts = [
@@ -268,6 +271,15 @@ export function renderSvgStage(geometry, stage) {
     '<g clip-path="url(#mapCrop)">',
   ];
   if (stage >= 2) {
+    if (coastal) parts.push('<rect data-layer="coastal-water-base" x="8" y="8" width="404" height="304" fill="#76c5e2" opacity="0.78"/>');
+    parts.push('<g data-layer="water-fill">', ...waterFills.map(renderWaterFill), '</g>');
+    if (coastal) {
+      parts.push('<g data-layer="land-wash">');
+      parts.push(...visibleMajorRoads.map(renderLandWash));
+      parts.push(...visibleMinorRoads.map(renderLandWash));
+      if (stage >= 3) parts.push(...parks.map(renderLandWash));
+      parts.push('</g>');
+    }
     parts.push('<g data-layer="water-casing">', ...water.map((item) => renderFeature(item, 'water-casing', stage)), '</g>');
     parts.push('<g data-layer="water">', ...water.map((item) => renderFeature(item, 'water', stage)), '</g>');
   }
@@ -593,6 +605,140 @@ function renderFeature(item, style, stage) {
   const d = pathData(item.points, item.type === 'polygon');
   const attrs = styleAttrs(item, style, stage);
   return `<path d="${d}" ${attrs}/>`;
+}
+
+function renderWaterFill(points) {
+  return `<path d="${pathData(points, true)}" fill="#76c5e2" stroke="none" opacity="0.74"/>`;
+}
+
+function renderLandWash(item) {
+  if (item.type === 'polygon') {
+    return `<path d="${pathData(item.points, true)}" fill="#f7f1e3" stroke="#f7f1e3" stroke-width="8" opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/>`;
+  }
+  return `<path d="${pathData(item.points, false)}" fill="none" stroke="#f7f1e3" stroke-width="28" opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/>`;
+}
+
+function coastlineWaterFills(waterItems, roadPoints) {
+  const fills = [];
+  for (const item of waterItems) {
+    if (item.type !== 'line' || item.tags?.natural !== 'coastline' || item.points.length < 2) continue;
+    if (!coastlineTouchesCrop(item.points)) continue;
+    const clockwise = boundaryClosedPolygon(item.points, 'clockwise');
+    const counterClockwise = boundaryClosedPolygon(item.points, 'counter-clockwise');
+    if (clockwise.length < 3 || counterClockwise.length < 3) continue;
+    fills.push(roadPointHits(clockwise, roadPoints) <= roadPointHits(counterClockwise, roadPoints) ? clockwise : counterClockwise);
+  }
+  return fills;
+}
+
+function coastlineTouchesCrop(points) {
+  const first = points[0];
+  const last = points.at(-1);
+  return distanceToCrop(first) < 42 || distanceToCrop(last) < 42 || points.some((point) => distanceToCrop(point) < 14);
+}
+
+function boundaryClosedPolygon(points, direction) {
+  const first = points[0];
+  const last = points.at(-1);
+  const snapFirst = nearestCropPoint(first);
+  const snapLast = nearestCropPoint(last);
+  const boundary = boundaryPath(snapLast, snapFirst, direction);
+  return [...points, snapLast, ...boundary.slice(1, -1), snapFirst];
+}
+
+function boundaryPath(from, to, direction) {
+  if (direction === 'counter-clockwise') {
+    return boundaryPath(to, from, 'clockwise').reverse();
+  }
+  const perimeter = cropPerimeter();
+  const start = perimeterOffset(from);
+  let end = perimeterOffset(to);
+  if (end < start) end += perimeter;
+  const corners = cropCorners()
+    .map((point) => ({ point, offset: perimeterOffset(point) }))
+    .flatMap(({ point, offset }) => (offset <= start ? [{ point, offset: offset + perimeter }] : [{ point, offset }]));
+  return [
+    from,
+    ...corners
+      .filter(({ offset }) => offset > start && offset < end)
+      .sort((a, b) => a.offset - b.offset)
+      .map(({ point }) => point),
+    to,
+  ];
+}
+
+function nearestCropPoint(point) {
+  const crop = cropRect();
+  const candidates = [
+    { x: clamp(point.x, crop.left, crop.right), y: crop.top },
+    { x: crop.right, y: clamp(point.y, crop.top, crop.bottom) },
+    { x: clamp(point.x, crop.left, crop.right), y: crop.bottom },
+    { x: crop.left, y: clamp(point.y, crop.top, crop.bottom) },
+  ];
+  return candidates.sort((a, b) => squaredDistance(point, a) - squaredDistance(point, b))[0];
+}
+
+function distanceToCrop(point) {
+  return Math.sqrt(squaredDistance(point, nearestCropPoint(point)));
+}
+
+function perimeterOffset(point) {
+  const crop = cropRect();
+  if (Math.abs(point.y - crop.top) <= Math.abs(point.x - crop.right) && Math.abs(point.y - crop.top) <= Math.abs(point.y - crop.bottom) && Math.abs(point.y - crop.top) <= Math.abs(point.x - crop.left)) {
+    return clamp(point.x, crop.left, crop.right) - crop.left;
+  }
+  if (Math.abs(point.x - crop.right) <= Math.abs(point.y - crop.bottom) && Math.abs(point.x - crop.right) <= Math.abs(point.x - crop.left)) {
+    return crop.right - crop.left + clamp(point.y, crop.top, crop.bottom) - crop.top;
+  }
+  if (Math.abs(point.y - crop.bottom) <= Math.abs(point.x - crop.left)) {
+    return crop.right - crop.left + crop.bottom - crop.top + crop.right - clamp(point.x, crop.left, crop.right);
+  }
+  return crop.right - crop.left + crop.bottom - crop.top + crop.right - crop.left + crop.bottom - clamp(point.y, crop.top, crop.bottom);
+}
+
+function cropRect() {
+  return { left: 8, top: 8, right: 412, bottom: 312 };
+}
+
+function cropCorners() {
+  const crop = cropRect();
+  return [
+    { x: crop.right, y: crop.top },
+    { x: crop.right, y: crop.bottom },
+    { x: crop.left, y: crop.bottom },
+    { x: crop.left, y: crop.top },
+  ];
+}
+
+function cropPerimeter() {
+  const crop = cropRect();
+  return 2 * (crop.right - crop.left + crop.bottom - crop.top);
+}
+
+function squaredDistance(a, b) {
+  return (a.x - b.x) ** 2 + (a.y - b.y) ** 2;
+}
+
+function roadPointHits(polygon, roadPoints) {
+  if (!roadPoints.length) return 0;
+  let hits = 0;
+  const sampleEvery = Math.max(1, Math.floor(roadPoints.length / 600));
+  for (let index = 0; index < roadPoints.length; index += sampleEvery) {
+    if (pointInPolygon(roadPoints[index], polygon)) hits += 1;
+  }
+  return hits;
+}
+
+function pointInPolygon(point, polygon) {
+  let inside = false;
+  for (let i = 0, j = polygon.length - 1; i < polygon.length; j = i, i += 1) {
+    const a = polygon[i];
+    const b = polygon[j];
+    if ((a.y > point.y) !== (b.y > point.y) && point.x < ((b.x - a.x) * (point.y - a.y)) / (b.y - a.y || 0.000001) + a.x) {
+      inside = !inside;
+    }
+  }
+  return inside;
 }
 
 function styleAttrs(item, style, stage) {
