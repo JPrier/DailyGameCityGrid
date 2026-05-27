@@ -28,11 +28,6 @@
         "run": "npm ci"
       },
       {
-        "name": "generate-content",
-        "run": "npm run generate:content:locked",
-        "timeoutSeconds": 1800
-      },
-      {
         "name": "build-runtime",
         "run": "npm run build:runtime"
       },
