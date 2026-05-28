@@ -56,7 +56,7 @@ test('renderer outputs six staged SVGs without labels or answer strings', () => 
   assert.match(stages[5], /data-orientation="north-up"/);
   assert.match(stages[5], /data-layer="north-up-compass"/);
   assert.match(stages[5], /data-layer="final-detail-network"/);
-  assert.ok((stages[5].match(/<path/g) ?? []).length > (stages[4].match(/<path/g) ?? []).length);
+  assert.ok(svgGeometryCount(stages[5]) > svgGeometryCount(stages[4]));
   for (const svg of stages) {
     assert.doesNotMatch(svg, /<text[\s>]/i);
     assert.doesNotMatch(svg.toLowerCase(), new RegExp(fixtureCity.canonicalName.toLowerCase()));
@@ -109,7 +109,34 @@ test('first reveal prefers central arterials over edge-only motorways', () => {
   assert.match(svg, /M174 136 L246 136/);
 });
 
-test('coastlines render deterministic water-side polygons instead of full-map water masks', () => {
+test('first reveal renders a substantially larger major and arterial road network', () => {
+  const majorRoads = Array.from({ length: 180 }, (_, index) => ({
+    id: 40000 + index,
+    type: 'line',
+    tags: { highway: index % 2 === 0 ? 'primary' : 'secondary' },
+    points: [
+      { x: 20 + (index % 30) * 12, y: 30 + Math.floor(index / 30) * 42 },
+      { x: 28 + (index % 30) * 12, y: 70 + Math.floor(index / 30) * 42 },
+    ],
+    lengthMeters: 900,
+  }));
+  const svg = renderSvgStage({
+    layers: {
+      roadsMajor: majorRoads,
+      roadsMinor: [],
+      rail: [],
+      water: [],
+      parks: [],
+      landmarks: [],
+    },
+  }, 0);
+
+  assert.ok((svg.match(/data-layer="major-road"/g) ?? []).length >= 1);
+  assert.match(svg, /M20 30 L28 70/);
+  assert.match(svg, /M368 240 L376 280/);
+});
+
+test('coastlines render as boundaries without inferred crop-filling water masks', () => {
   const svg = renderSvgStage({
     layers: {
       roadsMajor: [
@@ -145,9 +172,10 @@ test('coastlines render deterministic water-side polygons instead of full-map wa
 
   assert.doesNotMatch(svg, /data-layer="coastal-water-base"/);
   assert.doesNotMatch(svg, /data-layer="coastline-land-fill"/);
-  assert.match(svg, /data-layer="coastline-water-fill"/);
-  assert.match(svg, /L412 312/);
-  assert.match(svg, /L8 312/);
+  assert.doesNotMatch(svg, /data-layer="coastline-water-fill"/);
+  assert.match(svg, /data-layer="coastline"/);
+  assert.match(svg, /M8 160 L412 160/);
+  assert.doesNotMatch(svg, /M8 160 L412 160 L412 312/);
 });
 
 test('locked source cache is optional for generated package validation', () => {
@@ -166,6 +194,13 @@ test('generated fixture puzzle includes source provenance and existing assets', 
     assert.equal(fs.existsSync(path.join(root, stage.assetPath)), true);
   }
 });
+
+function svgGeometryCount(svg) {
+  const pathSegments = [...svg.matchAll(/\sd="([^"]*)"/g)]
+    .reduce((count, [, d]) => count + (d.match(/(?:^|\s)M/g) ?? []).length, 0);
+  const nonPathGeometry = (svg.match(/<(polyline|polygon|circle)\b/gi) ?? []).length;
+  return pathSegments + nonPathGeometry;
+}
 
 function fixtureOsmSource(city) {
   const centerLat = city.lat;

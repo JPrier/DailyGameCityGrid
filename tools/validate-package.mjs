@@ -110,7 +110,10 @@ function validateSvgAsset(assetPath, displayPath, answer) {
 }
 
 function geometryCount(svg) {
-  return (svg.match(/<(path|polyline|polygon|circle)\b/gi) ?? []).length;
+  const pathSegments = [...svg.matchAll(/\sd="([^"]*)"/g)]
+    .reduce((count, [, d]) => count + (d.match(/(?:^|\s)M/g) ?? []).length, 0);
+  const nonPathGeometry = (svg.match(/<(polyline|polygon|circle)\b/gi) ?? []).length;
+  return pathSegments + nonPathGeometry;
 }
 
 function recordRuntimeErrors(result, label) {
