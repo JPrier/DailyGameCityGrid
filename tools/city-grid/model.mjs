@@ -258,9 +258,7 @@ export function renderSvgStage(geometry, stage) {
   const rail = importantLines(layers.rail);
   const water = importantLines(layers.water);
   const parks = importantLines(layers.parks);
-  const roadPoints = [...layers.roadsMajor, ...layers.roadsMinor].flatMap((item) => item.points);
-  const coastlineLandFills = coastlineLandPolygons(water, roadPoints);
-  const coastal = water.some((item) => item.tags?.natural === 'coastline') && coastalLandCoverage(coastlineLandFills) >= 0.18;
+  const coastlineWaterFills = coastlineWaterPolygons(water);
   const visibleMajorRoads = majorRoads.slice(0, stage >= 5 ? majorRoads.length : ([64, 112, 148, 180, 240][stage] ?? majorRoads.length));
   const visibleMinorRoads = minorRoads.slice(0, stage >= 5 ? minorRoads.length : ([0, 48, 100, 150, 240][stage] ?? minorRoads.length));
   const parts = [
@@ -274,10 +272,7 @@ export function renderSvgStage(geometry, stage) {
     '<g clip-path="url(#mapCrop)">',
   ];
   if (stage >= 2) {
-    if (coastal) {
-      parts.push('<rect data-layer="coastal-water-base" x="8" y="8" width="404" height="304" fill="#76c5e2" opacity="0.82"/>');
-      parts.push('<g data-layer="coastline-land-fill">', ...coastlineLandFills.map(renderCoastlineLandFill), '</g>');
-    }
+    parts.push('<g data-layer="coastline-water-fill">', ...coastlineWaterFills.map(renderCoastlineWaterFill), '</g>');
     parts.push('<g data-layer="water-casing">', ...water.map((item) => renderFeature(item, 'water-casing', stage)), '</g>');
     parts.push('<g data-layer="water">', ...water.map((item) => renderFeature(item, 'water', stage)), '</g>');
   }
@@ -692,37 +687,57 @@ function renderFeature(item, style, stage) {
   return `<path d="${d}" ${attrs}/>`;
 }
 
-function renderCoastlineLandFill(points) {
-  return `<path d="${pathData(points, true)}" fill="#f7f1e3" stroke="#f7f1e3" stroke-width="1.5" opacity="0.98" stroke-linejoin="round"/>`;
+function renderCoastlineWaterFill(points) {
+  return `<path d="${pathData(points, true)}" fill="#7fc8e6" stroke="#d9f2fb" stroke-width="1.8" opacity="0.88" stroke-linejoin="round"/>`;
 }
 
-function coastlineLandPolygons(waterItems, roadPoints) {
+function coastlineWaterPolygons(waterItems) {
   const fills = [];
   for (const points of coastlineChains(waterItems)) {
-    if (closedLine(points)) {
-      const polygon = withoutClosingPoint(points);
-      if (Math.abs(polygonArea(polygon)) > 18) fills.push(polygon);
-      continue;
-    }
+    if (closedLine(points)) continue;
     if (!coastlineTouchesCrop(points)) continue;
     const clockwise = boundaryClosedPolygon(points, 'clockwise');
     const counterClockwise = boundaryClosedPolygon(points, 'counter-clockwise');
     if (clockwise.length < 3 || counterClockwise.length < 3) continue;
-    const clockwiseDensity = roadPointDensity(clockwise, roadPoints);
-    const counterClockwiseDensity = roadPointDensity(counterClockwise, roadPoints);
-    const land = clockwiseDensity >= counterClockwiseDensity ? clockwise : counterClockwise;
-    if (validCoastalLandArea(land)) fills.push(land);
+    const water = coastlineWaterSidePolygon(points, clockwise, counterClockwise);
+    if (water && validCoastalWaterArea(water)) fills.push(water);
   }
   return fills;
 }
 
-function coastalLandCoverage(polygons) {
-  return polygons.reduce((total, points) => total + Math.abs(polygonArea(points)), 0) / cropArea();
+function coastlineWaterSidePolygon(points, clockwise, counterClockwise) {
+  for (const sample of coastlineWaterSideSamples(points)) {
+    if (pointInPolygon(sample, clockwise)) return clockwise;
+    if (pointInPolygon(sample, counterClockwise)) return counterClockwise;
+  }
+  return null;
 }
 
-function validCoastalLandArea(points) {
+function coastlineWaterSideSamples(points) {
+  const segments = [];
+  for (let index = 1; index < points.length; index += 1) {
+    const start = points[index - 1];
+    const end = points[index];
+    const length = pointDistance(start, end);
+    if (length <= 0.1) continue;
+    segments.push({ start, end, length });
+  }
+  return segments
+    .sort((a, b) => b.length - a.length)
+    .flatMap(({ start, end, length }) => {
+      const dx = end.x - start.x;
+      const dy = end.y - start.y;
+      const midpoint = { x: (start.x + end.x) / 2, y: (start.y + end.y) / 2 };
+      return [4, 10, 18].map((distance) => ({
+        x: midpoint.x + (-dy / length) * distance,
+        y: midpoint.y + (dx / length) * distance,
+      }));
+    });
+}
+
+function validCoastalWaterArea(points) {
   const area = Math.abs(polygonArea(points));
-  return area > 18 && area < cropArea() * 0.84;
+  return area > 0.1;
 }
 
 function coastlineChains(waterItems) {
@@ -765,10 +780,6 @@ function joinCoastlineChains(a, b) {
 
 function closedLine(points) {
   return points.length > 2 && pointDistance(points[0], points.at(-1)) <= 4.5;
-}
-
-function withoutClosingPoint(points) {
-  return closedLine(points) ? points.slice(0, -1) : points;
 }
 
 function coastlineTouchesCrop(points) {
@@ -876,20 +887,6 @@ function polygonArea(points) {
     area += a.x * b.y - b.x * a.y;
   }
   return area / 2;
-}
-
-function roadPointHits(polygon, roadPoints) {
-  if (!roadPoints.length) return 0;
-  let hits = 0;
-  const sampleEvery = Math.max(1, Math.floor(roadPoints.length / 600));
-  for (let index = 0; index < roadPoints.length; index += sampleEvery) {
-    if (pointInPolygon(roadPoints[index], polygon)) hits += 1;
-  }
-  return hits;
-}
-
-function roadPointDensity(polygon, roadPoints) {
-  return roadPointHits(polygon, roadPoints) / Math.max(1, Math.abs(polygonArea(polygon)));
 }
 
 function pointInPolygon(point, polygon) {

@@ -6,9 +6,8 @@
 <rect width="420" height="320" fill="#ede7d8"/>
 <rect x="8" y="8" width="404" height="304" rx="16" fill="#f7f1e3" stroke="#d8cbb2" stroke-width="1.25"/>
 <g clip-path="url(#mapCrop)">
-<rect data-layer="coastal-water-base" x="8" y="8" width="404" height="304" fill="#76c5e2" opacity="0.82"/>
-<g data-layer="coastline-land-fill">
-<path d="M8.5 277.1 L30.5 271.3 L83.7 261.5 L92.7 259.6 L101.7 263.3 L99.6 261 L103.2 258.4 L149.7 250.8 L160.7 247.3 L166 242 L158.9 247.4 L149.3 250 L146.3 244.9 L151 243.4 L146.1 244.6 L144.8 242.3 L149.5 240.8 L148.3 238.7 L146.6 239.3 L149.6 233.3 L156.3 226.4 L161.2 225.2 L163.9 226.6 L163.3 224.7 L165.7 223.5 L166.7 219.6 L170.8 218.4 L193.8 213.2 L276.6 200 L292.8 193.6 L300.7 195.2 L298 194.8 L297.6 192.4 L301.1 189.6 L361.1 178.3 L389 170.9 L410.6 162.3 L412 162.3 L412 8 L8 8 L8 277.1 Z" fill="#f7f1e3" stroke="#f7f1e3" stroke-width="1.5" opacity="0.98" stroke-linejoin="round"/>
+<g data-layer="coastline-water-fill">
+<path d="M8.5 277.1 L30.5 271.3 L83.7 261.5 L92.7 259.6 L101.7 263.3 L99.6 261 L103.2 258.4 L149.7 250.8 L160.7 247.3 L166 242 L158.9 247.4 L149.3 250 L146.3 244.9 L151 243.4 L146.1 244.6 L144.8 242.3 L149.5 240.8 L148.3 238.7 L146.6 239.3 L149.6 233.3 L156.3 226.4 L161.2 225.2 L163.9 226.6 L163.3 224.7 L165.7 223.5 L166.7 219.6 L170.8 218.4 L193.8 213.2 L276.6 200 L292.8 193.6 L300.7 195.2 L298 194.8 L297.6 192.4 L301.1 189.6 L361.1 178.3 L389 170.9 L410.6 162.3 L412 162.3 L412 312 L8 312 L8 277.1 Z" fill="#7fc8e6" stroke="#d9f2fb" stroke-width="1.8" opacity="0.88" stroke-linejoin="round"/>
 </g>
 <g data-layer="water-casing">
 <path d="M276.6 200 L292.8 193.6 L300.7 195.2 L298 194.8 L297.6 192.4 L301.1 189.6 L361.1 178.3 L389 170.9 L410.6 162.3" fill="none" stroke="#d9f2fb" stroke-width="8.2" opacity="0.95" stroke-linecap="round" stroke-linejoin="round"/>

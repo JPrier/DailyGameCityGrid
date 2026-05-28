@@ -109,7 +109,7 @@ test('first reveal prefers central arterials over edge-only motorways', () => {
   assert.match(svg, /M174 136 L246 136/);
 });
 
-test('coastal water base is skipped when coastline land masks are too small', () => {
+test('coastlines render deterministic water-side polygons instead of full-map water masks', () => {
   const svg = renderSvgStage({
     layers: {
       roadsMajor: [
@@ -132,13 +132,10 @@ test('coastal water base is skipped when coastline land masks are too small', ()
           type: 'line',
           tags: { natural: 'coastline' },
           points: [
-            { x: 20, y: 20 },
-            { x: 90, y: 20 },
-            { x: 90, y: 90 },
-            { x: 20, y: 90 },
-            { x: 20, y: 20 },
+            { x: 8, y: 160 },
+            { x: 412, y: 160 },
           ],
-          lengthMeters: 280,
+          lengthMeters: 1000,
         },
       ],
       parks: [],
@@ -148,6 +145,9 @@ test('coastal water base is skipped when coastline land masks are too small', ()
 
   assert.doesNotMatch(svg, /data-layer="coastal-water-base"/);
   assert.doesNotMatch(svg, /data-layer="coastline-land-fill"/);
+  assert.match(svg, /data-layer="coastline-water-fill"/);
+  assert.match(svg, /L412 312/);
+  assert.match(svg, /L8 312/);
 });
 
 test('locked source cache is optional for generated package validation', () => {

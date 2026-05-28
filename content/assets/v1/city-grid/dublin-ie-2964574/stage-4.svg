@@ -6,6 +6,12 @@
 <rect width="420" height="320" fill="#ede7d8"/>
 <rect x="8" y="8" width="404" height="304" rx="16" fill="#f7f1e3" stroke="#d8cbb2" stroke-width="1.25"/>
 <g clip-path="url(#mapCrop)">
+<g data-layer="coastline-water-fill">
+<path d="M417 129.5 L404.1 129.7 L404.5 124.7 L400.7 119.4 L396.8 111.5 L397 91.9 L375.4 92 L375.7 82.1 L374.2 81 L329.9 79.2 L330.1 67.6 L302.7 65 L278.3 57.7 L271.6 58.7 L274.8 55.5 L289.4 50.3 L297 45.1 L306.9 46.7 L311.5 48.9 L331.7 55 L344.9 55.3 L354.5 55.6 L374.3 60.7 L382.6 63.6 L388.8 63.2 L389.5 65.1 L389.1 62.9 L410.2 56.5 L412 56.5 L412 129.5 Z" fill="#7fc8e6" stroke="#d9f2fb" stroke-width="1.8" opacity="0.88" stroke-linejoin="round"/>
+<path d="M416.5 271.5 L390.2 258.1 L378.3 250.5 L367.4 241.8 L354.7 230.3 L350.9 228.1 L349 225 L346.3 215.9 L344.7 216 L345.1 212.9 L342.5 191 L335.5 174 L330.8 162 L323.1 155.3 L324 150.8 L332 144.1 L336.4 146.2 L379 152.3 L382.5 146.9 L405.8 142.5 L412.6 142.5 L412 142.5 L412 271.5 Z" fill="#7fc8e6" stroke="#d9f2fb" stroke-width="1.8" opacity="0.88" stroke-linejoin="round"/>
+<path d="M311.5 48.9 L314.9 50.8 L314.9 8 L412 8 L412 312 L8 312 L8 8 L311.5 8 Z" fill="#7fc8e6" stroke="#d9f2fb" stroke-width="1.8" opacity="0.88" stroke-linejoin="round"/>
+<path d="M382.5 146.9 L383.1 144.9 L412 144.9 L412 8 L8 8 L8 312 L412 312 L412 146.9 Z" fill="#7fc8e6" stroke="#d9f2fb" stroke-width="1.8" opacity="0.88" stroke-linejoin="round"/>
+</g>
 <g data-layer="water-casing">
 <path d="M396.8 111.5 L397 91.9 L375.4 92 L375.7 82.1 L374.2 81 L329.9 79.2 L330.1 67.6 L302.7 65" fill="none" stroke="#d9f2fb" stroke-width="6.8" opacity="0.9" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M336.4 146.2 L379 152.3 L382.5 146.9" fill="none" stroke="#d9f2fb" stroke-width="6.8" opacity="0.9" stroke-linecap="round" stroke-linejoin="round"/>
