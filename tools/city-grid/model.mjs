@@ -260,7 +260,7 @@ export function renderSvgStage(geometry, stage) {
   const parks = importantLines(layers.parks);
   const roadPoints = [...layers.roadsMajor, ...layers.roadsMinor].flatMap((item) => item.points);
   const coastlineLandFills = coastlineLandPolygons(water, roadPoints);
-  const coastal = coastlineLandFills.length > 0 && water.some((item) => item.tags?.natural === 'coastline');
+  const coastal = water.some((item) => item.tags?.natural === 'coastline') && coastalLandCoverage(coastlineLandFills) >= 0.18;
   const visibleMajorRoads = majorRoads.slice(0, stage >= 5 ? majorRoads.length : ([64, 112, 148, 180, 240][stage] ?? majorRoads.length));
   const visibleMinorRoads = minorRoads.slice(0, stage >= 5 ? minorRoads.length : ([0, 48, 100, 150, 240][stage] ?? minorRoads.length));
   const parts = [
@@ -274,8 +274,10 @@ export function renderSvgStage(geometry, stage) {
     '<g clip-path="url(#mapCrop)">',
   ];
   if (stage >= 2) {
-    if (coastal) parts.push('<rect data-layer="coastal-water-base" x="8" y="8" width="404" height="304" fill="#76c5e2" opacity="0.82"/>');
-    parts.push('<g data-layer="coastline-land-fill">', ...coastlineLandFills.map(renderCoastlineLandFill), '</g>');
+    if (coastal) {
+      parts.push('<rect data-layer="coastal-water-base" x="8" y="8" width="404" height="304" fill="#76c5e2" opacity="0.82"/>');
+      parts.push('<g data-layer="coastline-land-fill">', ...coastlineLandFills.map(renderCoastlineLandFill), '</g>');
+    }
     parts.push('<g data-layer="water-casing">', ...water.map((item) => renderFeature(item, 'water-casing', stage)), '</g>');
     parts.push('<g data-layer="water">', ...water.map((item) => renderFeature(item, 'water', stage)), '</g>');
   }
@@ -712,6 +714,10 @@ function coastlineLandPolygons(waterItems, roadPoints) {
     if (validCoastalLandArea(land)) fills.push(land);
   }
   return fills;
+}
+
+function coastalLandCoverage(polygons) {
+  return polygons.reduce((total, points) => total + Math.abs(polygonArea(points)), 0) / cropArea();
 }
 
 function validCoastalLandArea(points) {

@@ -109,6 +109,47 @@ test('first reveal prefers central arterials over edge-only motorways', () => {
   assert.match(svg, /M174 136 L246 136/);
 });
 
+test('coastal water base is skipped when coastline land masks are too small', () => {
+  const svg = renderSvgStage({
+    layers: {
+      roadsMajor: [
+        {
+          id: 1,
+          type: 'line',
+          tags: { highway: 'primary' },
+          points: [
+            { x: 120, y: 150 },
+            { x: 280, y: 150 },
+          ],
+          lengthMeters: 1000,
+        },
+      ],
+      roadsMinor: [],
+      rail: [],
+      water: [
+        {
+          id: 2,
+          type: 'line',
+          tags: { natural: 'coastline' },
+          points: [
+            { x: 20, y: 20 },
+            { x: 90, y: 20 },
+            { x: 90, y: 90 },
+            { x: 20, y: 90 },
+            { x: 20, y: 20 },
+          ],
+          lengthMeters: 280,
+        },
+      ],
+      parks: [],
+      landmarks: [],
+    },
+  }, 2);
+
+  assert.doesNotMatch(svg, /data-layer="coastal-water-base"/);
+  assert.doesNotMatch(svg, /data-layer="coastline-land-fill"/);
+});
+
 test('locked source cache is optional for generated package validation', () => {
   const source = sourceManifest.sources[0];
   const local = path.join(root, source.localPath);
