@@ -63,6 +63,52 @@ test('renderer outputs six staged SVGs without labels or answer strings', () => 
   }
 });
 
+test('first reveal prefers central arterials over edge-only motorways', () => {
+  const edgeMotorways = Array.from({ length: 90 }, (_, index) => ({
+    id: 10000 + index,
+    type: 'line',
+    tags: { highway: 'motorway' },
+    points: [
+      { x: 10 + (index % 20), y: 12 + Math.floor(index / 20) },
+      { x: 120 + (index % 20), y: 12 + Math.floor(index / 20) },
+    ],
+    lengthMeters: 900,
+  }));
+  const centralPrimaries = Array.from({ length: 12 }, (_, index) => ({
+    id: 20000 + index,
+    type: 'line',
+    tags: { highway: 'primary' },
+    points: [
+      { x: 176 + index * 4, y: 132 },
+      { x: 176 + index * 4, y: 188 },
+    ],
+    lengthMeters: 480,
+  }));
+  const centralTertiaries = Array.from({ length: 12 }, (_, index) => ({
+    id: 30000 + index,
+    type: 'line',
+    tags: { highway: 'tertiary' },
+    points: [
+      { x: 174, y: 136 + index * 4 },
+      { x: 246, y: 136 + index * 4 },
+    ],
+    lengthMeters: 420,
+  }));
+  const svg = renderSvgStage({
+    layers: {
+      roadsMajor: [...edgeMotorways, ...centralPrimaries],
+      roadsMinor: centralTertiaries,
+      rail: [],
+      water: [],
+      parks: [],
+      landmarks: [],
+    },
+  }, 0);
+
+  assert.match(svg, /M176 132 L176 188/);
+  assert.match(svg, /M174 136 L246 136/);
+});
+
 test('locked source cache is optional for generated package validation', () => {
   const source = sourceManifest.sources[0];
   const local = path.join(root, source.localPath);

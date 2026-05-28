@@ -27,6 +27,7 @@ const MAX_SOURCE_ELEMENTS = {
   parks: 140,
 };
 const MAX_POINTS_PER_ELEMENT = 36;
+const ARTERIAL_MINOR_HIGHWAYS = new Set(['tertiary', 'tertiary_link']);
 const SOURCE_SELECTION_VERSION = 'coverage-roads-v3';
 
 export function readJson(root, rel) {
@@ -250,16 +251,18 @@ export function geometryForCity(city, realOsmSource) {
 
 export function renderSvgStage(geometry, stage) {
   const layers = geometry.layers;
-  const majorRoads = importantLines(layers.roadsMajor);
-  const minorRoads = importantLines(layers.roadsMinor);
+  const arterialMinorRoads = layers.roadsMinor.filter(isArterialMinorRoad);
+  const localMinorRoads = layers.roadsMinor.filter((item) => !isArterialMinorRoad(item));
+  const majorRoads = roadRevealLines([...layers.roadsMajor, ...arterialMinorRoads]);
+  const minorRoads = importantLines(localMinorRoads);
   const rail = importantLines(layers.rail);
   const water = importantLines(layers.water);
   const parks = importantLines(layers.parks);
   const roadPoints = [...layers.roadsMajor, ...layers.roadsMinor].flatMap((item) => item.points);
   const coastlineLandFills = coastlineLandPolygons(water, roadPoints);
   const coastal = coastlineLandFills.length > 0 && water.some((item) => item.tags?.natural === 'coastline');
-  const visibleMajorRoads = majorRoads.slice(0, stage >= 5 ? majorRoads.length : ([42, 72, 96, 112, 160][stage] ?? majorRoads.length));
-  const visibleMinorRoads = minorRoads.slice(0, stage >= 5 ? minorRoads.length : ([0, 70, 120, 160, 240][stage] ?? minorRoads.length));
+  const visibleMajorRoads = majorRoads.slice(0, stage >= 5 ? majorRoads.length : ([64, 112, 148, 180, 240][stage] ?? majorRoads.length));
+  const visibleMinorRoads = minorRoads.slice(0, stage >= 5 ? minorRoads.length : ([0, 48, 100, 150, 240][stage] ?? minorRoads.length));
   const parts = [
     '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 320" role="img" aria-label="Unlabeled north-up street-grid crop" data-orientation="north-up">',
     '<metadata>{"orientation":"north-up","projection":"local-web-mercator"}</metadata>',
@@ -563,6 +566,93 @@ function importantLines(items) {
     if (rightImportance !== leftImportance) return rightImportance - leftImportance;
     return (right.lengthMeters ?? 0) - (left.lengthMeters ?? 0);
   });
+}
+
+function roadRevealLines(items) {
+  const ranked = [...items].sort((left, right) => {
+    const scoreDelta = roadRevealScore(right) - roadRevealScore(left);
+    if (scoreDelta !== 0) return scoreDelta;
+    return (right.lengthMeters ?? 0) - (left.lengthMeters ?? 0);
+  });
+  const selected = [];
+  const deferred = [];
+  const highwayCounts = new Map();
+  for (const item of ranked) {
+    const highway = item.tags?.highway ?? 'unknown';
+    const count = highwayCounts.get(highway) ?? 0;
+    if (selected.length < 240 && count >= roadRevealTypeCap(highway)) {
+      deferred.push(item);
+      continue;
+    }
+    selected.push(item);
+    highwayCounts.set(highway, count + 1);
+  }
+  return [...selected, ...deferred];
+}
+
+function roadRevealScore(item) {
+  const rank = roadRevealRank(item.tags?.highway);
+  const centerDistance = normalizedFeatureCenterDistance(item);
+  const centrality = Math.max(0.22, 1 - centerDistance * 0.55);
+  const lengthScore = Math.min(170, Math.sqrt(item.lengthMeters ?? 0) * 7);
+  const spanScore = Math.min(120, featureSpan(item) * 0.42);
+  return rank * 12 * centrality + lengthScore + spanScore;
+}
+
+function roadRevealRank(highway) {
+  if (highway === 'motorway') return 100;
+  if (highway === 'trunk') return 96;
+  if (highway === 'primary') return 92;
+  if (highway === 'secondary') return 86;
+  if (highway === 'tertiary') return 78;
+  if (highway === 'motorway_link') return 72;
+  if (highway === 'trunk_link') return 70;
+  if (highway === 'primary_link') return 68;
+  if (highway === 'secondary_link') return 64;
+  if (highway === 'tertiary_link') return 58;
+  return 40;
+}
+
+function roadRevealTypeCap(highway) {
+  if (highway?.endsWith('_link')) return 10;
+  if (highway === 'motorway' || highway === 'trunk') return 18;
+  if (highway === 'primary' || highway === 'secondary') return 36;
+  if (highway === 'tertiary') return 44;
+  return 24;
+}
+
+function normalizedFeatureCenterDistance(item) {
+  const center = featureCenter(item);
+  return Math.hypot((center.x - VIEWBOX.width / 2) / ((VIEWBOX.width - VIEWBOX.pad * 2) / 2), (center.y - VIEWBOX.height / 2) / ((VIEWBOX.height - VIEWBOX.pad * 2) / 2));
+}
+
+function featureCenter(item) {
+  const points = item.points ?? [];
+  if (!points.length) return { x: VIEWBOX.width / 2, y: VIEWBOX.height / 2 };
+  return {
+    x: points.reduce((sum, point) => sum + point.x, 0) / points.length,
+    y: points.reduce((sum, point) => sum + point.y, 0) / points.length,
+  };
+}
+
+function featureSpan(item) {
+  const points = item.points ?? [];
+  if (points.length < 2) return 0;
+  let minX = Infinity;
+  let maxX = -Infinity;
+  let minY = Infinity;
+  let maxY = -Infinity;
+  for (const point of points) {
+    minX = Math.min(minX, point.x);
+    maxX = Math.max(maxX, point.x);
+    minY = Math.min(minY, point.y);
+    maxY = Math.max(maxY, point.y);
+  }
+  return Math.hypot(maxX - minX, maxY - minY);
+}
+
+function isArterialMinorRoad(item) {
+  return ARTERIAL_MINOR_HIGHWAYS.has(item.tags?.highway);
 }
 
 function featureImportance(item) {
